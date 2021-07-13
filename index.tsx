@@ -1,5 +1,3 @@
-import {ReactElement} from "react";
+import { theme, ThemeProvider } from "./src/theme";
 
-export const SampleComponent = (): ReactElement => {
-    return (<h1>Sample</h1>)
-}
+export default { theme, ThemeProvider };
