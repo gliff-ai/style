@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "description": "Theme styles for gliff.ai apps",
   "main": "dist/main.js",
-  "module": "dist/src/index.tsx",
-  "typings": "dist/src/index.d.ts",
+  "module": "/index.tsx",
+  "typings": "dist/index.d.ts",
   "files": [
     "dist/*"
   ],

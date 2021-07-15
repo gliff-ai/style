@@ -2,9 +2,6 @@ import { createTheme } from "@material-ui/core/styles";
 import type {} from "@material-ui/lab/themeAugmentation"; // Required to add autocomplete to Theme until v5
 
 export { ThemeProvider } from "@material-ui/core";
-export const imgSrc = (src: string, type = "svg"): string =>
-  // eslint-disable-next-line import/no-dynamic-require
-  require(`@/assets/${src}.${type}`) as string;
 
 export const white = "#FFF";
 export const lightestGrey = "#FAFAFA";
