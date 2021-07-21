@@ -9,12 +9,12 @@
     "dist/*"
   ],
   "scripts": {
-    "build": "webpack --progress --config webpack.development.js",
-    "format": "npx --no-install prettier --write *.ts*",
-    "prettier": "npx --no-install prettier -c *.ts*",
+    "build": "webpack --progress --config webpack.build.js",
+    "format": "npx --no-install prettier --write *.tsx",
+    "prettier": "npx --no-install prettier -c *.tsx",
     "lint": "npm run lint:ts && npm run prettier",
-    "lint:ts": "npx eslint *.ts*",
-    "serve": "webpack serve --config webpack.development.js",
+    "lint:ts": "npx eslint *.tsx",
+    "serve": "webpack serve --config webpack.build.js",
     "test": "jest --coverage --passWithNoTests",
     "prepublishOnly": "rm -r dist/; webpack --progress --config webpack.package.js"
   },
