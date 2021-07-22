@@ -1,9 +1,8 @@
 const path = require("path");
 
 module.exports = {
-  entry: {
-    main: "./src/index.tsx",
-  },
+  entry: "./src/index.tsx",
+  mode: "production",
   devtool: "source-map",
   output: {
     filename: "main.js",

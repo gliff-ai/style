@@ -5,7 +5,7 @@ const path = require("path");
 const port = process.env.PORT || 3000;
 
 module.exports = {
-  entry: "./examples/src/index.tsx",
+  entry: "./src/index.tsx",
   mode: "development",
   devtool: "eval-source-map",
   module: {
