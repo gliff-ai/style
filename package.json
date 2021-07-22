@@ -3,17 +3,17 @@
   "version": "0.0.1",
   "description": "Theme styles for gliff.ai apps",
   "main": "dist/main.js",
-  "module": "dist/src/index.tsx",
-  "typings": "dist/src/index.d.ts",
+  "module": "/index.tsx",
+  "typings": "dist/index.d.ts",
   "files": [
     "dist/*"
   ],
   "scripts": {
     "build": "webpack --progress --config webpack.build.js",
-    "format": "npx --no-install prettier --write src/{**,.}/*.ts*",
-    "prettier": "npx --no-install prettier -c src/{**,.}/*.ts*",
+    "format": "npx --no-install prettier --write src/*.ts*",
+    "prettier": "npx --no-install prettier -c src/*.ts*",
     "lint": "npm run lint:ts && npm run prettier",
-    "lint:ts": "npx eslint src/{**,.}/*.ts*",
+    "lint:ts": "npx eslint src/*.ts*",
     "serve": "webpack serve --config webpack.build.js",
     "test": "jest --coverage --passWithNoTests",
     "prepublishOnly": "rm -r dist/; webpack --progress --config webpack.package.js"
@@ -27,7 +27,7 @@
     "url": "https://github.com/gliff-ai/style/issues"
   },
   "homepage": "https://github.com/gliff-ai/style#readme",
-   "devDependencies": {
+  "devDependencies": {
     "@babel/core": "^7.13.8",
     "@babel/plugin-proposal-class-properties": "^7.13.0",
     "@babel/preset-env": "^7.12.17",
