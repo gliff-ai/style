@@ -3,11 +3,11 @@ import {
   Snackbar,
   SnackbarContent,
   SlideProps,
-  Theme,
   makeStyles,
 } from "@material-ui/core";
+import { theme } from "./theme";
 
-const useStyle = makeStyles((theme: Theme) => ({
+const useStyle = makeStyles(() => ({
   snackbar: {
     background: theme.palette.info.light,
   },
@@ -24,6 +24,7 @@ interface Props {
 
 function BaseSnackbar(props: Props): ReactElement {
   const classes = useStyle();
+
   return (
     <Snackbar
       open={props.open}

@@ -12,4 +12,8 @@ export {
   darkGrey,
 } from "./theme";
 
-export { BaseSnackbar } from "./BaseSnackbar";
+export {
+  BaseSnackbar,
+  BaseSnackbarProps,
+  TransitionProps,
+} from "./BaseSnackbar";
