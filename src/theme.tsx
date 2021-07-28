@@ -179,6 +179,15 @@ export const theme = createTheme({
           backgroundColor: white,
         },
       },
+      colorDefault: {
+        backgroundColor: white,
+        "&:hover": {
+          backgroundColor: mainGreen,
+        },
+        "&:hover svg": {
+          fill: black,
+        },
+      },
     },
   },
 
