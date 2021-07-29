@@ -17,3 +17,5 @@ export {
   BaseSnackbarProps,
   TransitionProps,
 } from "./BaseSnackbar";
+
+export { HtmlTooltip } from "./BaseHtmlTooltip";
