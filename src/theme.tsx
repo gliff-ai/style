@@ -59,7 +59,12 @@ export const theme = createTheme({
         },
       },
     },
-
+    MuiInputBase: {
+      root: {
+        backgroundColor: white,
+        borderRadius: "6px",
+      },
+    },
     MuiOutlinedInput: {
       root: {
         height: "50px",
