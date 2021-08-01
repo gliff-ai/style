@@ -19,3 +19,5 @@ export {
 } from "./BaseSnackbar";
 
 export { HtmlTooltip } from "./BaseHtmlTooltip";
+
+export { BaseIconButton, BaseIconButtonProps } from "./BaseIconButton";
