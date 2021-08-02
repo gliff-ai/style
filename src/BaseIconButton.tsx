@@ -7,9 +7,10 @@ import {
   Typography,
   Tooltip,
   TooltipProps,
+  ThemeProvider,
 } from "@material-ui/core";
 import SVG from "react-inlinesvg";
-import { theme } from "@/theme";
+import { theme } from "./theme";
 
 const useStyles = (props: Props) =>
   makeStyles({
@@ -63,45 +64,47 @@ function BaseIconButton(props: Props): ReactElement {
   const classes = useStyles(props)();
 
   return (
-    <Tooltip
-      key={props.tooltip.name}
-      classes={{
-        tooltip: classes.tooltip,
-      }}
-      title={
-        <Box className={classes.mainbox}>
-          <Box mr={3} ml={2}>
-            <Typography>{props.tooltip.name}</Typography>
-          </Box>
-        </Box>
-      }
-      placement={props.tooltipPlacement}
-    >
-      <IconButton
-        ref={(ref) => {
-          if (!ref || !props.setRefCallback) return;
-          props.setRefCallback(ref);
+    <ThemeProvider theme={theme}>
+      <Tooltip
+        key={props.tooltip.name}
+        classes={{
+          tooltip: classes.tooltip,
         }}
-        className={
-          props.tooltip?.styling
-            ? `${classes.extraButtonStyling} ${classes.iconButton}`
-            : classes.iconButton
+        title={
+          <Box className={classes.mainbox}>
+            <Box mr={3} ml={2}>
+              <Typography>{props.tooltip.name}</Typography>
+            </Box>
+          </Box>
         }
-        onMouseUp={props.onMouseUp}
-        onMouseDown={props.onMouseDown}
-        onClick={props.onClick}
-        size={props.buttonSize}
-        edge={props.buttonEdge}
+        placement={props.tooltipPlacement}
       >
-        <Avatar>
-          <SVG
-            src={props.tooltip.icon}
-            className={classes.svgLarge}
-            fill={props.active ? theme.palette.primary.main : null}
-          />
-        </Avatar>
-      </IconButton>
-    </Tooltip>
+        <IconButton
+          ref={(ref) => {
+            if (!ref || !props.setRefCallback) return;
+            props.setRefCallback(ref);
+          }}
+          className={
+            props.tooltip?.styling
+              ? `${classes.extraButtonStyling} ${classes.iconButton}`
+              : classes.iconButton
+          }
+          onMouseUp={props.onMouseUp}
+          onMouseDown={props.onMouseDown}
+          onClick={props.onClick}
+          size={props.buttonSize}
+          edge={props.buttonEdge}
+        >
+          <Avatar>
+            <SVG
+              src={props.tooltip.icon}
+              className={classes.svgLarge}
+              fill={props.active ? theme.palette.primary.main : null}
+            />
+          </Avatar>
+        </IconButton>
+      </Tooltip>
+    </ThemeProvider>
   );
 }
 
@@ -115,4 +118,4 @@ BaseIconButton.defaultProps = {
   onClick: null,
 };
 
-export { BaseIconButton, Props as BaseIconButtonProps };
+export { BaseIconButton };

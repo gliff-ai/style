@@ -20,4 +20,4 @@ export {
 
 export { HtmlTooltip } from "./BaseHtmlTooltip";
 
-export { BaseIconButton, BaseIconButtonProps } from "./BaseIconButton";
+export { BaseIconButton } from "./BaseIconButton";
