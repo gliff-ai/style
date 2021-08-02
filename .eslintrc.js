@@ -5,7 +5,7 @@ module.exports = {
     tsconfigRootDir: __dirname,
     project: ["./tsconfig.json"],
   },
-  plugins: ["@typescript-eslint"],
+  plugins: ["@typescript-eslint", "mui-unused-classes"],
   extends: [
     "eslint:recommended",
     "airbnb-typescript",
@@ -19,6 +19,7 @@ module.exports = {
       rules: {
         "global-require": 0,
         "@typescript-eslint/no-var-requires": 0,
+        "mui-unused-classes/unused-classes": 2,
         "no-void": ["error", { allowAsStatement: true }],
         "react/react-in-jsx-scope": "off", // This isn't true as of React 17
         "react/jsx-indent": "off", // this just argues with prettier, and we validate against prettier anyway
