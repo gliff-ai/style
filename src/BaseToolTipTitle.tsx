@@ -1,5 +1,11 @@
 import { ReactElement } from "react";
-import { Avatar, makeStyles, Box, Typography } from "@material-ui/core";
+import {
+  Avatar,
+  makeStyles,
+  Box,
+  Typography,
+  ThemeProvider,
+} from "@material-ui/core";
 
 import { theme } from "./theme";
 import { ToolTip } from "./toolTips";
@@ -39,28 +45,30 @@ export const BaseTooltipTitle = ({ tooltip }: Props): ReactElement => {
   const classes = useStyles();
 
   return (
-    <Box className={classes.mainbox}>
-      <Box mr={3} ml={2}>
-        <Typography>{tooltip.name}</Typography>
-      </Box>
-      {tooltip.shortcutSymbol ? (
-        <>
-          <Avatar className={classes.popoverAvatar}>
-            <Typography className={classes.avatarFontSize}>
-              {tooltip.shortcut}
-            </Typography>
-          </Avatar>
-          <div className={classes.spaceBetweenAvatar}>
+    <ThemeProvider theme={theme}>
+      <Box className={classes.mainbox}>
+        <Box mr={3} ml={2}>
+          <Typography>{tooltip.name}</Typography>
+        </Box>
+        {tooltip.shortcutSymbol ? (
+          <>
             <Avatar className={classes.popoverAvatar}>
               <Typography className={classes.avatarFontSize}>
-                {tooltip.shortcutSymbol}
+                {tooltip.shortcut}
               </Typography>
             </Avatar>
-          </div>
-        </>
-      ) : (
-        <Avatar className={classes.popoverAvatar}>{tooltip.shortcut}</Avatar>
-      )}
-    </Box>
+            <div className={classes.spaceBetweenAvatar}>
+              <Avatar className={classes.popoverAvatar}>
+                <Typography className={classes.avatarFontSize}>
+                  {tooltip.shortcutSymbol}
+                </Typography>
+              </Avatar>
+            </div>
+          </>
+        ) : (
+          <Avatar className={classes.popoverAvatar}>{tooltip.shortcut}</Avatar>
+        )}
+      </Box>
+    </ThemeProvider>
   );
 };

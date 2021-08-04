@@ -5,6 +5,7 @@ import {
   makeStyles,
   Tooltip,
   TooltipProps,
+  ThemeProvider,
 } from "@material-ui/core";
 import SVG from "react-inlinesvg";
 import { theme } from "./theme";
@@ -22,7 +23,7 @@ interface Props {
   onClick?: (event: MouseEvent) => void;
   onMouseDown?: (event: MouseEvent) => void;
   onMouseUp?: (event: MouseEvent) => void;
-  fill: boolean;
+  fill?: boolean;
   buttonSize?: "small" | "medium";
   buttonEdge?: "start" | "end";
   tooltipPlacement?: TooltipProps["placement"];
@@ -64,33 +65,41 @@ export const BaseIconButton = (props: Props): ReactElement => {
   );
 
   return (
-    <Tooltip
-      key={props.tooltip.name}
-      classes={{
-        tooltip: classes.tooltip,
-      }}
-      title={<BaseTooltipTitle tooltip={props.tooltip} />}
-      placement={props.tooltipPlacement}
-    >
-      <IconButton
-        ref={(ref) => {
-          if (!ref || !props.setRefCallback) return;
-          props.setRefCallback(ref);
+    <ThemeProvider theme={theme}>
+      <Tooltip
+        key={props.tooltip.name}
+        classes={{
+          tooltip: classes.tooltip,
         }}
-        className={classes.iconButton}
-        onMouseUp={props.onMouseUp}
-        onMouseDown={props.onMouseDown}
-        onClick={props.onClick}
-        size={props.buttonSize}
-        edge={props.buttonEdge}
+        title={
+          props.tooltip?.icon ? (
+            <BaseTooltipTitle tooltip={props.tooltip} />
+          ) : (
+            props.tooltip.name
+          )
+        }
+        placement={props.tooltipPlacement}
       >
-        {props.hasAvatar && props.enabled ? (
-          <Avatar>{svgIcon}</Avatar>
-        ) : (
-          <>{svgIcon}</>
-        )}
-      </IconButton>
-    </Tooltip>
+        <IconButton
+          ref={(ref) => {
+            if (!ref || !props.setRefCallback) return;
+            props.setRefCallback(ref);
+          }}
+          className={classes.iconButton}
+          onMouseUp={props.onMouseUp}
+          onMouseDown={props.onMouseDown}
+          onClick={props.onClick}
+          size={props.buttonSize}
+          edge={props.buttonEdge}
+        >
+          {props.hasAvatar && props.enabled ? (
+            <Avatar>{svgIcon}</Avatar>
+          ) : (
+            <>{svgIcon}</>
+          )}
+        </IconButton>
+      </Tooltip>
+    </ThemeProvider>
   );
 };
 
@@ -107,4 +116,5 @@ BaseIconButton.defaultProps = {
   tooltipStyling: null,
   buttonStyling: null,
   enabled: true,
+  fill: false,
 };
