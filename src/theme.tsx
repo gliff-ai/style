@@ -57,8 +57,13 @@ export const theme = createTheme({
         body: {
           height: "100%",
         },
+        "#react-container": {
+          overflow: "hidden",
+          height: "100%",
+        },
       },
     },
+
     MuiInputBase: {
       root: {
         backgroundColor: white,
