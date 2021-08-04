@@ -17,7 +17,6 @@ interface ToolTip {
   shortcut?: string;
   shortcutSymbol?: string;
 }
-type ToolTips = { [name: string]: ToolTip };
 interface Props {
   tooltip: ToolTip;
   onClick?: (event: MouseEvent) => void;
