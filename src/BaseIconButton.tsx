@@ -9,7 +9,7 @@ import {
 } from "@material-ui/core";
 import SVG from "react-inlinesvg";
 import { theme } from "./theme";
-import { BaseTooltipTitle } from "./BaseTooltipTitle";
+import { BaseTooltipTitle } from "./BaseToolTipTitle";
 
 interface ToolTip {
   name: string;
