@@ -27,7 +27,6 @@ interface Props {
   buttonEdge?: "start" | "end";
   tooltipPlacement?: TooltipProps["placement"];
   setRefCallback?: (ref: HTMLButtonElement) => void;
-  svgStyling?: CSSProperties;
   tooltipStyling?: CSSProperties;
   buttonStyling?: CSSProperties;
   hasAvatar?: boolean;
@@ -49,9 +48,8 @@ export const BaseIconButton = (props: Props): ReactElement => {
       ...props.tooltipStyling,
     },
     svg: {
-      width: "55%",
+      width: props.buttonSize === "medium" ? "45px" : "55%",
       height: "auto",
-      ...props.svgStyling,
     },
   })(props);
 
@@ -110,7 +108,6 @@ BaseIconButton.defaultProps = {
   onMouseUp: null,
   onMouseDown: null,
   onClick: null,
-  svgStyling: null,
   hasAvatar: true,
   tooltipStyling: null,
   buttonStyling: null,
