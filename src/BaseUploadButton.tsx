@@ -23,7 +23,7 @@ interface Props {
   hasAvatar?: boolean;
 }
 
-export const BaseButton = (props: Props): ReactElement => {
+export const BaseUploadButton = (props: Props): ReactElement => {
   const classes = makeStyles({
     iconButton: {
       marginBottom: "5px",
@@ -36,7 +36,7 @@ export const BaseButton = (props: Props): ReactElement => {
       color: "#2B2F3A",
     },
     svg: {
-      width: "55%",
+      width: props.buttonSize === "medium" ? "45px" : "55%",
       height: "auto",
     },
   })(props);
@@ -74,7 +74,7 @@ export const BaseButton = (props: Props): ReactElement => {
   );
 };
 
-BaseButton.defaultProps = {
+BaseUploadButton.defaultProps = {
   buttonSize: "small",
   tooltipPlacement: "right",
   onMouseUp: null,
