@@ -10,7 +10,7 @@ import {
 import SVG from "react-inlinesvg";
 import { theme } from "./theme";
 import { ToolTip } from "./toolTips";
-import { BaseTooltipTitle } from "./BaseTooltipTitle";
+import { BaseTooltipTitle } from "./BaseToolTipTitle";
 
 interface Props {
   tooltip: ToolTip;
