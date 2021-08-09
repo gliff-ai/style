@@ -44,30 +44,32 @@ const useStyles = makeStyles({
 export const BaseTooltipTitle = ({ tooltip }: Props): ReactElement => {
   const classes = useStyles();
 
+  const hasShortcutSymbol = tooltip.shortcutSymbol ? (
+    <>
+      <Avatar className={classes.popoverAvatar}>
+        <Typography className={classes.avatarFontSize}>
+          {tooltip.shortcut}
+        </Typography>
+      </Avatar>
+      <div className={classes.spaceBetweenAvatar}>
+        <Avatar className={classes.popoverAvatar}>
+          <Typography className={classes.avatarFontSize}>
+            {tooltip.shortcutSymbol}
+          </Typography>
+        </Avatar>
+      </div>
+    </>
+  ) : (
+    <Avatar className={classes.popoverAvatar}>{tooltip.shortcut}</Avatar>
+  );
+
   return (
     <ThemeProvider theme={theme}>
       <Box className={classes.mainbox}>
         <Box mr={3} ml={2}>
           <Typography>{tooltip.name}</Typography>
         </Box>
-        {tooltip.shortcutSymbol ? (
-          <>
-            <Avatar className={classes.popoverAvatar}>
-              <Typography className={classes.avatarFontSize}>
-                {tooltip.shortcut}
-              </Typography>
-            </Avatar>
-            <div className={classes.spaceBetweenAvatar}>
-              <Avatar className={classes.popoverAvatar}>
-                <Typography className={classes.avatarFontSize}>
-                  {tooltip.shortcutSymbol}
-                </Typography>
-              </Avatar>
-            </div>
-          </>
-        ) : (
-          <Avatar className={classes.popoverAvatar}>{tooltip.shortcut}</Avatar>
-        )}
+        {!tooltip.shortcut ? null : hasShortcutSymbol}
       </Box>
     </ThemeProvider>
   );
