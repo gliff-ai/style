@@ -7,10 +7,10 @@ import {
   Button,
   ThemeProvider,
 } from "@material-ui/core";
-import { BaseTooltipTitle } from "@/BaseTooltipTitle";
 import SVG from "react-inlinesvg";
 import { theme } from "./theme";
 import { ToolTip } from "./toolTips";
+import { BaseTooltipTitle } from "./BaseTooltipTitle.tsx";
 
 interface Props {
   tooltip: ToolTip;
