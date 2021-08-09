@@ -8,8 +8,8 @@ import {
   ThemeProvider,
 } from "@material-ui/core";
 import SVG from "react-inlinesvg";
+import { BaseTooltipTitle } from "@/BaseTooltipTitle";
 import { theme } from "./theme";
-import { BaseTooltipTitle } from "./BaseTooltipTitle";
 import { ToolTip } from "./interface";
 
 interface Props {
