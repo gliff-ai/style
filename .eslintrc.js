@@ -18,6 +18,7 @@ module.exports = {
       files: ["*.ts", "*.tsx"],
       rules: {
         "global-require": 0,
+        "import/extensions": 0,
         "@typescript-eslint/no-var-requires": 0,
         "mui-unused-classes/unused-classes": 2,
         "no-void": ["error", { allowAsStatement: true }],
