@@ -2,18 +2,18 @@ import { MouseEvent, ReactElement } from "react";
 import {
   Avatar,
   makeStyles,
-  Tooltip,
   TooltipProps,
   Button,
   ThemeProvider,
 } from "@material-ui/core";
 import SVG from "react-inlinesvg";
 import { theme } from "./theme";
-import { ToolTip } from "./toolTips";
+import { Tooltip } from "./tooltips";
 import { BaseTooltipTitle } from "./BaseTooltipTitle";
+import { HtmlTooltip } from "./BaseHtmlTooltip";
 
 interface Props {
-  tooltip: ToolTip;
+  tooltip: Tooltip;
   onClick?: (event: MouseEvent) => void;
   onMouseDown?: (event: MouseEvent) => void;
   onMouseUp?: (event: MouseEvent) => void;
@@ -51,7 +51,7 @@ export const BaseUploadButton = (props: Props): ReactElement => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Tooltip
+      <HtmlTooltip
         key={props.tooltip.name}
         classes={{
           tooltip: classes.tooltip,
@@ -69,7 +69,7 @@ export const BaseUploadButton = (props: Props): ReactElement => {
         >
           {props.hasAvatar ? <Avatar>{svgIcon}</Avatar> : <>{svgIcon}</>}
         </Button>
-      </Tooltip>
+      </HtmlTooltip>
     </ThemeProvider>
   );
 };

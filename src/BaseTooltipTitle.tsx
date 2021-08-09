@@ -8,10 +8,10 @@ import {
 } from "@material-ui/core";
 
 import { theme } from "./theme";
-import { ToolTip } from "./toolTips";
+import { Tooltip } from "./tooltips";
 
 interface Props {
-  tooltip: ToolTip;
+  tooltip: Tooltip;
 }
 
 const useStyles = makeStyles({

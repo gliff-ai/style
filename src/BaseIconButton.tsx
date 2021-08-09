@@ -3,17 +3,17 @@ import {
   IconButton,
   Avatar,
   makeStyles,
-  Tooltip,
   TooltipProps,
   ThemeProvider,
 } from "@material-ui/core";
 import SVG from "react-inlinesvg";
 import { BaseTooltipTitle } from "./BaseTooltipTitle";
+import { HtmlTooltip } from "./BaseHtmlTooltip";
 import { theme } from "./theme";
-import { ToolTip } from "./interface";
+import { Tooltip } from "./interface";
 
 interface Props {
-  tooltip: ToolTip;
+  tooltip: Tooltip;
   onClick?: (event: MouseEvent) => void;
   onMouseDown?: (event: MouseEvent) => void;
   onMouseUp?: (event: MouseEvent) => void;
@@ -54,7 +54,7 @@ export const BaseIconButton = (props: Props): ReactElement => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Tooltip
+      <HtmlTooltip
         key={props.tooltip.name}
         classes={{
           tooltip: classes.tooltip,
@@ -86,7 +86,7 @@ export const BaseIconButton = (props: Props): ReactElement => {
             <>{svgIcon}</>
           )}
         </IconButton>
-      </Tooltip>
+      </HtmlTooltip>
     </ThemeProvider>
   );
 };

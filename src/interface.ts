@@ -1,4 +1,4 @@
-export interface ToolTip {
+export interface Tooltip {
   name: string;
   icon: string;
   shortcut?: string;
