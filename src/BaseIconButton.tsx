@@ -8,7 +8,7 @@ import {
   ThemeProvider,
 } from "@material-ui/core";
 import SVG from "react-inlinesvg";
-import { BaseTooltipTitle } from "./BaseTooltipTitle.tsx";
+import { BaseTooltipTitle } from "./BaseTooltipTitle";
 import { theme } from "./theme";
 import { ToolTip } from "./interface";
 
