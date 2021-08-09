@@ -1,9 +1,4 @@
-interface ToolTip {
-  name: string;
-  icon: string;
-  shortcut?: string;
-  shortcutSymbol?: string;
-}
+import { ToolTip } from "./interface";
 
 type ToolTips = { [name: string]: ToolTip };
 

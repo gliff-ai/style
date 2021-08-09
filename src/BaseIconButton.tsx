@@ -9,14 +9,9 @@ import {
 } from "@material-ui/core";
 import SVG from "react-inlinesvg";
 import { theme } from "./theme";
-import { BaseTooltipTitle } from "./BaseToolTipTitle";
+import { BaseTooltipTitle } from "./BaseTooltipTitle";
+import { ToolTip } from "./interface";
 
-interface ToolTip {
-  name: string;
-  icon: string;
-  shortcut?: string;
-  shortcutSymbol?: string;
-}
 interface Props {
   tooltip: ToolTip;
   onClick?: (event: MouseEvent) => void;
