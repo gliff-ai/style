@@ -5,6 +5,7 @@ import {
   makeStyles,
   TooltipProps,
   ThemeProvider,
+  Button,
 } from "@material-ui/core";
 import SVG from "react-inlinesvg";
 import { BaseTooltipTitle } from "./BaseTooltipTitle";
@@ -24,6 +25,7 @@ interface Props {
   setRefCallback?: (ref: HTMLButtonElement) => void;
   hasAvatar?: boolean;
   enabled?: boolean;
+  component?: "span" | "button";
 }
 
 export const BaseIconButton = (props: Props): ReactElement => {
@@ -68,24 +70,38 @@ export const BaseIconButton = (props: Props): ReactElement => {
         }
         placement={props.tooltipPlacement}
       >
-        <IconButton
-          ref={(ref) => {
-            if (!ref || !props.setRefCallback) return;
-            props.setRefCallback(ref);
-          }}
-          className={classes.iconButton}
-          onMouseUp={props.onMouseUp}
-          onMouseDown={props.onMouseDown}
-          onClick={props.onClick}
-          size={props.buttonSize}
-          edge={props.buttonEdge}
-        >
-          {props.hasAvatar && props.enabled ? (
-            <Avatar>{svgIcon}</Avatar>
-          ) : (
-            <>{svgIcon}</>
-          )}
-        </IconButton>
+        {props.component === "span" ? (
+          <Button
+            component="span"
+            className={classes.iconButton}
+            onClick={props.onClick}
+          >
+            {props.hasAvatar && props.enabled ? (
+              <Avatar>{svgIcon}</Avatar>
+            ) : (
+              <>{svgIcon}</>
+            )}
+          </Button>
+        ) : (
+          <IconButton
+            ref={(ref) => {
+              if (!ref || !props.setRefCallback) return;
+              props.setRefCallback(ref);
+            }}
+            className={classes.iconButton}
+            onMouseUp={props.onMouseUp}
+            onMouseDown={props.onMouseDown}
+            onClick={props.onClick}
+            size={props.buttonSize}
+            edge={props.buttonEdge}
+          >
+            {props.hasAvatar && props.enabled ? (
+              <Avatar>{svgIcon}</Avatar>
+            ) : (
+              <>{svgIcon}</>
+            )}
+          </IconButton>
+        )}
       </HtmlTooltip>
     </ThemeProvider>
   );
@@ -102,4 +118,5 @@ BaseIconButton.defaultProps = {
   hasAvatar: true,
   enabled: true,
   fill: false,
+  component: "button",
 };
