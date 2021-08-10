@@ -34,12 +34,6 @@ export const BaseIconButton = (props: Props): ReactElement => {
       marginBottom: "5px",
       marginTop: "7px",
     },
-    tooltip: {
-      backgroundColor: "#FFFFFF",
-      fontSize: theme.typography.pxToRem(12),
-      border: "1px solid #dadde9",
-      color: "#2B2F3A",
-    },
     svg: {
       width: props.buttonSize === "medium" ? "45px" : "55%",
       height: "auto",
@@ -58,9 +52,6 @@ export const BaseIconButton = (props: Props): ReactElement => {
     <ThemeProvider theme={theme}>
       <HtmlTooltip
         key={props.tooltip.name}
-        classes={{
-          tooltip: classes.tooltip,
-        }}
         title={
           props.tooltip?.icon ? (
             <BaseTooltipTitle tooltip={props.tooltip} />

@@ -26,12 +26,7 @@ const useStyles = makeStyles({
     alignItems: "center",
     justifyItems: "space-between",
   },
-  tooltip: {
-    backgroundColor: "#FFFFFF",
-    fontSize: theme.typography.pxToRem(12),
-    border: "1px solid #dadde9",
-    color: "#2B2F3A",
-  },
+
   spaceBetweenAvatar: {
     marginLeft: "3px",
   },
