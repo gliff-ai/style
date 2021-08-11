@@ -26,6 +26,7 @@ interface Props {
   hasAvatar?: boolean;
   enabled?: boolean;
   component?: "span" | "button";
+  type?: "button" | "submit";
 }
 
 export const BaseIconButton = (props: Props): ReactElement => {
@@ -75,6 +76,7 @@ export const BaseIconButton = (props: Props): ReactElement => {
           </Button>
         ) : (
           <IconButton
+            type={props.type}
             ref={(ref) => {
               if (!ref || !props.setRefCallback) return;
               props.setRefCallback(ref);
@@ -110,4 +112,5 @@ BaseIconButton.defaultProps = {
   enabled: true,
   fill: false,
   component: "button",
+  type: "button",
 };
