@@ -4,6 +4,7 @@ import {
   SnackbarContent,
   SlideProps,
   makeStyles,
+  ThemeProvider,
 } from "@material-ui/core";
 import { theme } from "./theme";
 
@@ -26,13 +27,15 @@ function BaseSnackbar(props: Props): ReactElement {
   const classes = useStyle();
 
   return (
-    <Snackbar
-      open={props.open}
-      onClose={props.handleClose}
-      TransitionComponent={props?.transition}
-    >
-      <SnackbarContent className={classes.snackbar} message={props.message} />
-    </Snackbar>
+    <ThemeProvider theme={theme}>
+      <Snackbar
+        open={props.open}
+        onClose={props.handleClose}
+        TransitionComponent={props?.transition}
+      >
+        <SnackbarContent className={classes.snackbar} message={props.message} />
+      </Snackbar>
+    </ThemeProvider>
   );
 }
 

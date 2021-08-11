@@ -1,121 +1,113 @@
-import React, { MouseEvent, ReactElement, CSSProperties } from "react";
+import React, { MouseEvent, ReactElement } from "react";
 import {
   IconButton,
   Avatar,
   makeStyles,
-  Box,
-  Typography,
-  Tooltip,
   TooltipProps,
   ThemeProvider,
+  Button,
 } from "@material-ui/core";
 import SVG from "react-inlinesvg";
+import { BaseTooltipTitle } from "./BaseTooltipTitle";
+import { HtmlTooltip } from "./BaseHtmlTooltip";
 import { theme } from "./theme";
-
-const useStyles = (props: Props) =>
-  makeStyles({
-    iconButton: { margin: "6px", padding: "0px" },
-    svgLarge: { width: "50%", height: "auto" },
-    popoverAvatar: {
-      backgroundColor: theme.palette.primary.main,
-      color: "#2B2F3A",
-      width: "30px",
-      height: "30px",
-    },
-    mainbox: {
-      display: "flex",
-      alignItems: "center",
-      justifyItems: "space-between",
-    },
-    tooltip: {
-      backgroundColor: "#FFFFFF",
-      fontSize: theme.typography.pxToRem(12),
-      border: "1px solid #dadde9",
-      color: "#2B2F3A",
-    },
-    avatarFontSize: {
-      fontSize: "11px",
-      fontWeight: 600,
-    },
-    extraButtonStyling: { ...props.tooltip.styling },
-  });
-
-export interface ToolTip {
-  name: string;
-  icon: string;
-  shortcut?: string;
-  shortcutSymbol?: string;
-  styling?: CSSProperties;
-}
+import { Tooltip } from "./interface";
 
 interface Props {
-  tooltip: ToolTip;
+  tooltip: Tooltip;
   onClick?: (event: MouseEvent) => void;
   onMouseDown?: (event: MouseEvent) => void;
   onMouseUp?: (event: MouseEvent) => void;
-  active: boolean;
+  fill?: boolean;
   buttonSize?: "small" | "medium";
   buttonEdge?: "start" | "end";
   tooltipPlacement?: TooltipProps["placement"];
   setRefCallback?: (ref: HTMLButtonElement) => void;
+  hasAvatar?: boolean;
+  enabled?: boolean;
+  component?: "span" | "button";
 }
 
-function BaseIconButton(props: Props): ReactElement {
-  const classes = useStyles(props)();
+export const BaseIconButton = (props: Props): ReactElement => {
+  const classes = makeStyles({
+    iconButton: {
+      marginBottom: "5px",
+      marginTop: "7px",
+    },
+    svg: {
+      width: props.buttonSize === "medium" ? "45px" : "55%",
+      height: "auto",
+    },
+  })(props);
+
+  const svgIcon = (
+    <SVG
+      src={props.tooltip.icon}
+      className={classes.svg}
+      fill={props.fill ? theme.palette.primary.main : null}
+    />
+  );
 
   return (
     <ThemeProvider theme={theme}>
-      <Tooltip
+      <HtmlTooltip
         key={props.tooltip.name}
-        classes={{
-          tooltip: classes.tooltip,
-        }}
         title={
-          <Box className={classes.mainbox}>
-            <Box mr={3} ml={2}>
-              <Typography>{props.tooltip.name}</Typography>
-            </Box>
-          </Box>
+          props.tooltip?.icon ? (
+            <BaseTooltipTitle tooltip={props.tooltip} />
+          ) : (
+            props.tooltip.name
+          )
         }
         placement={props.tooltipPlacement}
       >
-        <IconButton
-          ref={(ref) => {
-            if (!ref || !props.setRefCallback) return;
-            props.setRefCallback(ref);
-          }}
-          className={
-            props.tooltip?.styling
-              ? `${classes.extraButtonStyling} ${classes.iconButton}`
-              : classes.iconButton
-          }
-          onMouseUp={props.onMouseUp}
-          onMouseDown={props.onMouseDown}
-          onClick={props.onClick}
-          size={props.buttonSize}
-          edge={props.buttonEdge}
-        >
-          <Avatar>
-            <SVG
-              src={props.tooltip.icon}
-              className={classes.svgLarge}
-              fill={props.active ? theme.palette.primary.main : null}
-            />
-          </Avatar>
-        </IconButton>
-      </Tooltip>
+        {props.component === "span" ? (
+          <Button
+            component="span"
+            className={classes.iconButton}
+            onClick={props.onClick}
+          >
+            {props.hasAvatar && props.enabled ? (
+              <Avatar>{svgIcon}</Avatar>
+            ) : (
+              <>{svgIcon}</>
+            )}
+          </Button>
+        ) : (
+          <IconButton
+            ref={(ref) => {
+              if (!ref || !props.setRefCallback) return;
+              props.setRefCallback(ref);
+            }}
+            className={classes.iconButton}
+            onMouseUp={props.onMouseUp}
+            onMouseDown={props.onMouseDown}
+            onClick={props.onClick}
+            size={props.buttonSize}
+            edge={props.buttonEdge}
+          >
+            {props.hasAvatar && props.enabled ? (
+              <Avatar>{svgIcon}</Avatar>
+            ) : (
+              <>{svgIcon}</>
+            )}
+          </IconButton>
+        )}
+      </HtmlTooltip>
     </ThemeProvider>
   );
-}
+};
 
 BaseIconButton.defaultProps = {
+  buttonSize: "small",
+  buttonEdge: "start",
   tooltipPlacement: "right",
-  buttonSize: null,
-  buttonEdge: null,
   setRefCallback: null,
   onMouseUp: null,
   onMouseDown: null,
   onClick: null,
+  hasAvatar: true,
+  enabled: true,
+  fill: false,
+  component: "button",
 };
-
-export { BaseIconButton };
