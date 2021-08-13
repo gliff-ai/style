@@ -56,6 +56,7 @@ export const theme = createTheme({
         },
         body: {
           height: "100%",
+          backgroundColor: lightGrey,
         },
         "#react-container": {
           overflow: "hidden",
