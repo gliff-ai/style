@@ -14,7 +14,7 @@ export const BaseTextButton = (props: Props): ReactElement => {
         backgroundColor: theme.palette.info.main,
       },
     },
-  })(props);
+  })();
 
   return (
     <ThemeProvider theme={theme}>
