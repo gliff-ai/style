@@ -21,5 +21,6 @@ export {
 export { HtmlTooltip } from "./BaseHtmlTooltip";
 
 export { BaseIconButton } from "./BaseIconButton";
+export { BaseTextButton } from "./BaseTextButton";
 export { BaseTooltipTitle } from "./BaseTooltipTitle";
 export { Tooltip, Tooltips } from "./tooltips";
