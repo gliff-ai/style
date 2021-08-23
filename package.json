@@ -9,12 +9,12 @@
     "dist/*"
   ],
   "scripts": {
-    "build": "webpack --progress --config webpack.build.js",
+    "build": "snowpack build",
     "format": "npx --no-install prettier --write src/*.ts*",
     "prettier": "npx --no-install prettier -c src/*.ts*",
     "lint": "npm run lint:ts && npm run prettier",
     "lint:ts": "npx eslint src/*.ts*",
-    "serve": "webpack serve --config webpack.build.js",
+    "serve": "snowpack dev",
     "test": "jest --coverage --passWithNoTests",
     "prepublishOnly": "rm -r dist/; webpack --progress --config webpack.package.js"
   },
@@ -27,12 +27,20 @@
     "url": "https://github.com/gliff-ai/style/issues"
   },
   "homepage": "https://github.com/gliff-ai/style#readme",
+  "snowpack": {
+    "packageOptions": {
+      "esbuild": {
+        "inject": "./jsx-shim.js"
+      }
+    }
+  },
   "devDependencies": {
     "@babel/core": "^7.13.8",
     "@babel/plugin-proposal-class-properties": "^7.13.0",
-    "@babel/preset-env": "^7.12.17",
-    "@babel/preset-react": "^7.12.13",
-    "@babel/preset-typescript": "^7.12.17",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-react": "^7.14.5",
+    "@babel/preset-typescript": "^7.15.0",
+    "@snowpack/plugin-react-refresh": "^2.5.0",
     "@types/jest": "^26.0.21",
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.1",
@@ -61,6 +69,7 @@
     "react-dom": "^17.0.1",
     "sass": "^1.32.8",
     "sass-loader": "^12.0.0",
+    "snowpack": "^3.8.6",
     "style-loader": "^3.0.0",
     "ts-loader": "^9.1.1",
     "typescript": "^4.2.3",
@@ -77,6 +86,7 @@
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
     "@material-ui/lab": "^4.0.0-alpha.58",
+    "@snowpack/plugin-babel": "^2.1.7",
     "react-inlinesvg": "^2.3.0"
   }
 }
