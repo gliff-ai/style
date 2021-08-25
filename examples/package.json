@@ -1,0 +1,31 @@
+{
+  "name": "@gliff-ai/style-example",
+  "version": "0.0.1",
+  "description": "Example page for gliff.ai styles",
+  "main": "main.js",
+  "files": [
+    "dist/*"
+  ],
+  "scripts": {
+    "build": "esbuild src/main.tsx --bundle --inject:src/react-shim.js --outfile=dist/main.js --preserve-symlinks --target=chrome90",
+    "serve": " esbuild src/main.tsx --bundle --inject:src/react-shim.js --servedir=dist --outfile=dist/main.js --preserve-symlinks --target=chrome90"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gliff-ai/style.git"
+  },
+  "license": "AGPL-3.0-only",
+  "bugs": {
+    "url": "https://github.com/gliff-ai/style/issues"
+  },
+  "homepage": "https://github.com/gliff-ai/style#readme",
+  "dependencies": {
+    "@gliff-ai/style": "link:..",
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
+    "@material-ui/lab": "^4.0.0-alpha.60",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-inlinesvg": "^2.3.0"
+  }
+}

@@ -6,10 +6,10 @@ import {
   TooltipProps,
   ThemeProvider,
   Button,
-} from "@material-ui/core";
+} from "@material-ui/core/es";
 import SVG from "react-inlinesvg";
 import { BaseTooltipTitle } from "./BaseTooltipTitle";
-import { HtmlTooltip } from "./BaseHtmlTooltip";
+import { HtmlTooltip } from "./HtmlTooltip";
 import { theme } from "./theme";
 import { Tooltip } from "./interface";
 

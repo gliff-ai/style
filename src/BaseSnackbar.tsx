@@ -1,4 +1,4 @@
-import { ReactElement, ComponentType } from "react";
+import { ReactElement, ComponentType, SyntheticEvent } from "react";
 import {
   Snackbar,
   SnackbarContent,
@@ -18,7 +18,7 @@ type TransitionProps = Omit<SlideProps, "direction">;
 
 interface Props {
   open: boolean;
-  handleClose: () => void;
+  handleClose: (event: SyntheticEvent | MouseEvent, reason?: string) => void;
   message: ReactElement;
   transition?: ComponentType<TransitionProps> | null;
 }
@@ -28,11 +28,7 @@ function BaseSnackbar(props: Props): ReactElement {
 
   return (
     <ThemeProvider theme={theme}>
-      <Snackbar
-        open={props.open}
-        onClose={props.handleClose}
-        TransitionComponent={props?.transition}
-      >
+      <Snackbar open={props.open} onClose={props.handleClose}>
         <SnackbarContent className={classes.snackbar} message={props.message} />
       </Snackbar>
     </ThemeProvider>
@@ -43,4 +39,7 @@ BaseSnackbar.defaultProps = {
   transition: null,
 };
 
-export { BaseSnackbar, Props as BaseSnackbarProps, TransitionProps };
+BaseSnackbar.muiName = Snackbar.muiName;
+
+export { BaseSnackbar };
+export type { Props as BaseSnackbarProps, TransitionProps };

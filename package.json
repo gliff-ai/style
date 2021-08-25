@@ -1,22 +1,23 @@
 {
   "name": "@gliff-ai/style",
-  "version": "0.0.1",
+  "version": "0.7.1-snow",
   "description": "Theme styles for gliff.ai apps",
-  "main": "dist/main.js",
-  "module": "/index.tsx",
+  "module": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
     "dist/*"
   ],
   "scripts": {
-    "build": "snowpack build",
+    "build:ts": "esbuild src/*.ts* --outdir=dist --format=esm",
+    "watch": "yarn run build:ts --watch",
+    "build:types": "tsc --emitDeclarationOnly --declaration",
+    "build": "yarn run build:ts && yarn run build:types",
     "format": "npx --no-install prettier --write src/*.ts*",
     "prettier": "npx --no-install prettier -c src/*.ts*",
-    "lint": "npm run lint:ts && npm run prettier",
-    "lint:ts": "npx eslint src/*.ts*",
-    "serve": "snowpack dev",
+    "lint": "yarn run lint:ts && yarn run prettier",
+    "lint:ts": "yarn run eslint src/*.ts*",
     "test": "jest --coverage --passWithNoTests",
-    "prepublishOnly": "rm -r dist/; webpack --progress --config webpack.package.js"
+    "prepublishOnly": "rm -r build/; npm build"
   },
   "repository": {
     "type": "git",
@@ -27,66 +28,32 @@
     "url": "https://github.com/gliff-ai/style/issues"
   },
   "homepage": "https://github.com/gliff-ai/style#readme",
-  "snowpack": {
-    "packageOptions": {
-      "esbuild": {
-        "inject": "./jsx-shim.js"
-      }
-    }
-  },
   "devDependencies": {
-    "@babel/core": "^7.13.8",
-    "@babel/plugin-proposal-class-properties": "^7.13.0",
-    "@babel/preset-env": "^7.15.0",
-    "@babel/preset-react": "^7.14.5",
-    "@babel/preset-typescript": "^7.15.0",
-    "@snowpack/plugin-react-refresh": "^2.5.0",
     "@types/jest": "^26.0.21",
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.1",
-    "@types/resize-observer-browser": "^0.1.5",
     "@typescript-eslint/eslint-plugin": "^4.19.0",
     "@typescript-eslint/parser": "^4.18.0",
-    "babel-loader": "^8.2.2",
-    "copy-webpack-plugin": "^9.0.0",
-    "css-loader": "^5.1.3",
     "eslint": "^7.22.0",
     "eslint-config-airbnb-typescript": "^12.3.1",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-node": "^0.3.6",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-mui-unused-classes": "^1.0.3",
     "eslint-plugin-prettier": "^3.3.0",
     "eslint-plugin-react": "^7.23.1",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "eslint-webpack-plugin": "^2.5.2",
-    "file-loader": "^6.2.0",
-    "html-webpack-plugin": "^5.2.0",
     "jest": "^27.0.3",
     "prettier": "=2.3.0",
-    "raw-loader": "^4.0.2",
-    "react": "^17.0.0",
-    "react-dom": "^17.0.1",
-    "sass": "^1.32.8",
-    "sass-loader": "^12.0.0",
-    "snowpack": "^3.8.6",
-    "style-loader": "^3.0.0",
-    "ts-loader": "^9.1.1",
-    "typescript": "^4.2.3",
-    "url-loader": "^4.1.1",
-    "webpack": "^5.27.2",
-    "webpack-cli": "^4.5.0",
-    "webpack-dev-server": "^3.11.2"
+    "typescript": "^4.2.3"
   },
   "peerDependencies": {
-    "react": "^17.0.0",
-    "react-dom": "^17.0.1"
-  },
-  "dependencies": {
-    "@material-ui/core": "^4.11.3",
-    "@material-ui/icons": "^4.11.2",
-    "@material-ui/lab": "^4.0.0-alpha.58",
-    "@snowpack/plugin-babel": "^2.1.7",
+    "@material-ui/core": "*",
+    "@material-ui/icons": "*",
+    "@material-ui/lab": "*",
+    "react": "*",
+    "react-dom": "*",
     "react-inlinesvg": "^2.3.0"
   }
 }

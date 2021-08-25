@@ -1,4 +1,4 @@
-import { createTheme } from "@material-ui/core/styles";
+import { createTheme } from "@material-ui/core/es/styles";
 import type {} from "@material-ui/lab/themeAugmentation"; // Required to add autocomplete to Theme until v5
 
 export const white = "#FFFFFF";
@@ -8,7 +8,8 @@ export const veryLightBlue = "#DADDE9";
 export const middleGrey = "#A1A1A1";
 export const darkGrey = "#2B2F3A";
 export const black = "#000000";
-export const mainGreen = "#02FFAD";
+// export const mainGreen = "#02FFAD";
+export const mainGreen = "#aa00aa";
 export const purple = "#AE79FF";
 export const blue = "#00DBFF";
 

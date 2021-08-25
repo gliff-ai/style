@@ -5,7 +5,7 @@ import {
   Box,
   Typography,
   ThemeProvider,
-} from "@material-ui/core";
+} from "@material-ui/core/es";
 
 import { theme } from "./theme";
 import { Tooltip } from "./tooltips";
