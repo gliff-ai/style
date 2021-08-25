@@ -16,6 +16,7 @@
       "@/*": ["src/*"]
     },
     "experimentalDecorators": true,
+    "types": []
   },
   "include": [
     "typings/**/*",
@@ -28,6 +29,7 @@
   ],
   "exclude": [
     "src/**/*_.tsx",
-    "examples/*"
+    "examples/*",
+    ".yarn/**"
   ]
 }

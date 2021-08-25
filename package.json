@@ -1,6 +1,6 @@
 {
   "name": "@gliff-ai/style",
-  "version": "0.7.1-snow",
+  "version": "1.0.0-pre",
   "description": "Theme styles for gliff.ai apps",
   "module": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -10,7 +10,7 @@
   "scripts": {
     "build:ts": "esbuild src/*.ts* --outdir=dist --format=esm",
     "watch": "yarn run build:ts --watch",
-    "build:types": "tsc --emitDeclarationOnly --declaration",
+    "build:types": "tsc --emitDeclarationOnly --declaration --skipLibCheck",
     "build": "yarn run build:ts && yarn run build:types",
     "format": "npx --no-install prettier --write src/*.ts*",
     "prettier": "npx --no-install prettier -c src/*.ts*",
