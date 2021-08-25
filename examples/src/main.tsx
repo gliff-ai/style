@@ -1,16 +1,16 @@
 import ReactDOM from "react-dom";
 
 import { BaseTextButton, HtmlTooltip, BaseSnackbar } from "@gliff-ai/style";
-import { useState } from "react";
+import { useState, SyntheticEvent, MouseEvent, ReactElement } from "react";
 
-const SnackBar = (): React.ReactElement => {
+const SnackBar = (): ReactElement => {
   const [open, setOpen] = useState(false);
 
     const handleClick = () => {
     setOpen(true);
   };
 
-    const handleClose = (event: React.SyntheticEvent | React.MouseEvent, reason?: string) => {
+    const handleClose = (event: SyntheticEvent | MouseEvent, reason?: string) => {
     if (reason === 'clickaway') {
       return;
     }
