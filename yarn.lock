@@ -470,6 +470,7 @@ __metadata:
     "@material-ui/core": ^4.11.3
     "@material-ui/icons": ^4.11.2
     "@material-ui/lab": ^4.0.0-alpha.60
+    "@material-ui/types": ^5.1.0
     "@types/jest": ^26.0.21
     "@types/react": ^17.0.3
     "@types/react-dom": ^17.0.1
@@ -878,6 +879,18 @@ __metadata:
     "@types/react":
       optional: true
   checksum: 64ac0938ee6f48011ba596f7422ab0660d9a8d9b4f5f183b39bd63185b1ce724209f65580f0af686d59b524603ffa57418ca2d443b69bec894303f80779c61f8
+  languageName: node
+  linkType: hard
+
+"@material-ui/types@npm:^5.1.0":
+  version: 5.1.8
+  resolution: "@material-ui/types@npm:5.1.8"
+  peerDependencies:
+    "@types/react": "*"
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: 5b81ea231b8868857ce79618d2420c67fc2932d54e4128d779c798d7c1f151dad1c114a574180b330a03accf1dda47c5064f801ea3e58ff7ed4c4cfc36713309
   languageName: node
   linkType: hard
 

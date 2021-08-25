@@ -26,5 +26,8 @@
     "typings/**/*.ts",
     "./jest-setup.ts"
   ],
-  "exclude": ["src/**/*_.tsx"]
+  "exclude": [
+    "src/**/*_.tsx",
+    "examples/*"
+  ]
 }
