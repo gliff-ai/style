@@ -29,6 +29,7 @@ __metadata:
     "@material-ui/core": ^4.11.3
     "@material-ui/icons": ^4.11.2
     "@material-ui/lab": ^4.0.0-alpha.60
+    esbuild: ^0.12.22
     react: ^17.0.2
     react-dom: ^17.0.2
     react-inlinesvg: ^2.3.0
@@ -254,6 +255,15 @@ __metadata:
     "@babel/runtime": ^7.8.7
     csstype: ^3.0.2
   checksum: 863ba9e086f7093df3376b43e74ce4422571d404fc9828bf2c56140963d5edf0e56160f9b2f3bb61b282c07f8fc8134f023c98fd684bddcb12daf7b0f14d951c
+  languageName: node
+  linkType: hard
+
+"esbuild@npm:^0.12.22":
+  version: 0.12.22
+  resolution: "esbuild@npm:0.12.22"
+  bin:
+    esbuild: bin/esbuild
+  checksum: db14cc10914d40a875da1b102cee7479ebe1b085cdc2deaa8e275468ada9bf3c6b793bd6004a031a9f2e34865fe629dc59030c5fe4820978f1cf071966aa2c5d
   languageName: node
   linkType: hard
 
