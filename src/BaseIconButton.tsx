@@ -8,6 +8,7 @@ import {
   Button,
 } from "@material-ui/core";
 import SVG from "react-inlinesvg";
+
 import { BaseTooltipTitle } from "./BaseTooltipTitle";
 import { HtmlTooltip } from "./HtmlTooltip";
 import { theme } from "./theme";

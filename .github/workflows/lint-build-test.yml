@@ -13,11 +13,11 @@ jobs:
         with:
           node-version: 15
       - name: Setup dependencies
-        run: npm i -g eslint prettier && npm i
+        run: yarn --frozen-lockfile
       - name: Lint
-        run: npm run lint:ts
+        run: yarn run lint:ts
       - name: Prettier
-        run: npm run prettier
+        run: yarn run prettier
   Build:
     runs-on: ubuntu-latest
     timeout-minutes: 2
@@ -29,9 +29,9 @@ jobs:
         with:
           node-version: 15
       - name: Setup dependencies
-        run: npm i
+        run: yarn --frozen-lockfile
       - name: Build
-        run: npm run build
+        run: yarn run build
   Test:
     runs-on: ubuntu-latest
     timeout-minutes: 2
@@ -43,9 +43,9 @@ jobs:
         with:
           node-version: 15
       - name: Setup dependencies
-        run: npm i
+        run: yarn --frozen-lockfile
       - name: Test
-        run: npm run test
+        run: yarn run test
   publish:
     name: Publish
     needs: test
@@ -59,7 +59,7 @@ jobs:
         with:
           node-version: 15
       - name: Setup dependencies
-        run: npm i --omit=peer
+        run: yarn --frozen-lockfile
       - name: Prepare
         run: npm run prepublishOnly
       - name: Publish
