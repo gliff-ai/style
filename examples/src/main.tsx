@@ -37,7 +37,7 @@ const app = (
 
     <h4>HtmlTooltip</h4>
     <HtmlTooltip key="Key" title={<>Title</>} placement="right">
-      <img src="http://placehold.it/25x25" alt="Icon" />
+      <img src="https://via.placeholder.com/50x50/aaffff" alt="Icon" />
     </HtmlTooltip>
 
     <h4>SnackBar</h4>
