@@ -25,10 +25,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@gliff-ai/style-example@workspace:."
   dependencies:
-    "@gliff-ai/style": "link:.."
+    "@gliff-ai/style": "portal:../"
     "@material-ui/core": ^4.11.3
     "@material-ui/icons": ^4.11.2
     "@material-ui/lab": ^4.0.0-alpha.60
+    "@yarnpkg/esbuild-plugin-pnp": ^1.0.1-rc.2
     esbuild: ^0.12.22
     react: ^17.0.2
     react-dom: ^17.0.2
@@ -36,9 +37,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@gliff-ai/style@link:..::locator=%40gliff-ai%2Fstyle-example%40workspace%3A.":
+"@gliff-ai/style@portal:../::locator=%40gliff-ai%2Fstyle-example%40workspace%3A.":
   version: 0.0.0-use.local
-  resolution: "@gliff-ai/style@link:..::locator=%40gliff-ai%2Fstyle-example%40workspace%3A."
+  resolution: "@gliff-ai/style@portal:../::locator=%40gliff-ai%2Fstyle-example%40workspace%3A."
+  peerDependencies:
+    "@material-ui/core": ^4.11.3
+    "@material-ui/icons": ^4.11.2
+    "@material-ui/lab": ^4.0.0-alpha.60
+    react: ^17.0.2
+    react-dom: ^17.0.2
+    react-inlinesvg: ^2.3.0
   languageName: node
   linkType: soft
 
@@ -214,6 +222,19 @@ __metadata:
   version: 0.16.2
   resolution: "@types/scheduler@npm:0.16.2"
   checksum: b6b4dcfeae6deba2e06a70941860fb1435730576d3689225a421280b7742318d1548b3d22c1f66ab68e414f346a9542f29240bc955b6332c5b11e561077583bc
+  languageName: node
+  linkType: hard
+
+"@yarnpkg/esbuild-plugin-pnp@npm:^1.0.1-rc.2":
+  version: 1.0.1-rc.2
+  resolution: "@yarnpkg/esbuild-plugin-pnp@npm:1.0.1-rc.2"
+  dependencies:
+    tslib: ^1.13.0
+  peerDependencies:
+    esbuild: ">=0.8.36"
+  bin:
+    esbuild-plugin-pnp: ./lib/cli.js
+  checksum: b00531f12b68b49d05b285e638ebc9060aa298558850f8be0e304e084afbb09d4838f83dbe11b0ad4735f873cbc785f518158bc86e7095b73508456847f02b6c
   languageName: node
   linkType: hard
 
@@ -520,5 +541,12 @@ __metadata:
   version: 1.0.3
   resolution: "tiny-warning@npm:1.0.3"
   checksum: da62c4acac565902f0624b123eed6dd3509bc9a8d30c06e017104bedcf5d35810da8ff72864400ad19c5c7806fc0a8323c68baf3e326af7cb7d969f846100d71
+  languageName: node
+  linkType: hard
+
+"tslib@npm:^1.13.0":
+  version: 1.14.1
+  resolution: "tslib@npm:1.14.1"
+  checksum: dbe628ef87f66691d5d2959b3e41b9ca0045c3ee3c7c7b906cc1e328b39f199bb1ad9e671c39025bd56122ac57dfbf7385a94843b1cc07c60a4db74795829acd
   languageName: node
   linkType: hard

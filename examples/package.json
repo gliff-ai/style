@@ -2,13 +2,14 @@
   "name": "@gliff-ai/style-example",
   "version": "0.0.1",
   "description": "Example page for gliff.ai styles",
-  "main": "main.js",
+  "main": "dist/index.js",
+  "type": "module",
   "files": [
     "dist/*"
   ],
   "scripts": {
-    "build": "esbuild src/main.tsx --bundle --inject:src/react-shim.js --outfile=dist/main.js --preserve-symlinks --target=chrome90 && cp index.html dist/",
-    "serve": "cp index.html dist/ && esbuild src/main.tsx --bundle --inject:src/react-shim.js --servedir=dist --outfile=dist/main.js --preserve-symlinks --target=chrome90"
+    "build": "esbuild src/main.tsx --bundle --inject:src/react-shim.js --outfile=dist/main.js --preserve-symlinks  && cp index.html dist/",
+    "serve": "cp index.html dist/ && esbuild src/main.tsx --bundle --inject:src/react-shim.js --servedir=dist --outfile=dist/main.js --preserve-symlinks "
   },
   "repository": {
     "type": "git",
@@ -20,7 +21,7 @@
   },
   "homepage": "https://github.com/gliff-ai/style#readme",
   "dependencies": {
-    "@gliff-ai/style": "link:..",
+    "@gliff-ai/style": "portal:../",
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
     "@material-ui/lab": "^4.0.0-alpha.60",
@@ -29,6 +30,7 @@
     "react-inlinesvg": "^2.3.0"
   },
   "devDependencies": {
+    "@yarnpkg/esbuild-plugin-pnp": "^1.0.1-rc.2",
     "esbuild": "^0.12.22"
   }
 }

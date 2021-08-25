@@ -2,6 +2,8 @@
   "name": "@gliff-ai/style",
   "version": "1.0.0-pre",
   "description": "Theme styles for gliff.ai apps",
+  "type": "module",
+  "main": "dist/index.js",
   "module": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
