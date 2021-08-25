@@ -1,5 +1,5 @@
 import { MouseEvent, ReactElement } from "react";
-import { makeStyles, ThemeProvider, Button } from "@material-ui/core/es";
+import { makeStyles, ThemeProvider, Button } from "@material-ui/core";
 import { theme } from "./theme";
 
 interface Props {

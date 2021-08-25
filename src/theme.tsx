@@ -1,4 +1,4 @@
-import { createTheme } from "@material-ui/core/es/styles";
+import { createTheme } from "@material-ui/core/styles";
 import type {} from "@material-ui/lab/themeAugmentation"; // Required to add autocomplete to Theme until v5
 
 export const white = "#FFFFFF";
