@@ -2,10 +2,11 @@ import { ReactElement, ComponentType } from "react";
 import {
   Snackbar,
   SnackbarContent,
-  SlideProps,
   makeStyles,
   ThemeProvider,
 } from "@material-ui/core";
+
+import type { SlideProps } from "@material-ui/core";
 import { theme } from "./theme";
 
 const useStyle = makeStyles(() => ({
@@ -25,17 +26,22 @@ interface Props {
 
 function BaseSnackbar(props: Props): ReactElement {
   const classes = useStyle();
-
+  
   return (
-    <ThemeProvider theme={theme}>
-      <Snackbar
-        open={props.open}
-        onClose={props.handleClose}
-        TransitionComponent={props?.transition}
-      >
-        <SnackbarContent className={classes.snackbar} message={props.message} />
-      </Snackbar>
-    </ThemeProvider>
+    <ThemeProvider
+      theme={theme}
+      children={
+        <Snackbar
+          open={props.open}
+          onClose={props.handleClose}
+        >
+          <SnackbarContent
+            className={classes.snackbar}
+            message={props.message}
+          />
+        </Snackbar>
+      }
+    />
   );
 }
 
@@ -43,5 +49,5 @@ BaseSnackbar.defaultProps = {
   transition: null,
 };
 
-export { BaseSnackbar};
-export type {Props as BaseSnackbarProps, TransitionProps }
+export { BaseSnackbar };
+export type { Props as BaseSnackbarProps, TransitionProps };
