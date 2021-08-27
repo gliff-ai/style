@@ -12,14 +12,9 @@ export {
   darkGrey,
 } from "./theme";
 
-export {
-  BaseSnackbar,
-} from "./BaseSnackbar";
+export { BaseSnackbar } from "./BaseSnackbar";
 
-export type {
-  BaseSnackbarProps,
-  TransitionProps,
-} from "./BaseSnackbar";
+export type { BaseSnackbarProps } from "./BaseSnackbar";
 
 export { HtmlTooltip } from "./BaseHtmlTooltip";
 
