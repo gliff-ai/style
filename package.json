@@ -15,7 +15,8 @@
     "prettier": "npx --no-install prettier -c src/*.ts*",
     "lint": "npm run lint:ts && npm run prettier",
     "lint:ts": "npx --no-install eslint src/*.ts*",
-    "serve": "webpack serve --config webpack.build.js",
+    "serve": "vite",
+    "build:example": "vite build",
     "test": "jest --coverage --passWithNoTests"
   },
   "repository": {
