@@ -43,4 +43,5 @@ BaseSnackbar.defaultProps = {
   transition: null,
 };
 
-export { BaseSnackbar, Props as BaseSnackbarProps, TransitionProps };
+export { BaseSnackbar};
+export type {Props as BaseSnackbarProps, TransitionProps }
