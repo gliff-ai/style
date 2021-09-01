@@ -8,7 +8,7 @@ import {
 } from "@material-ui/core";
 
 import { theme } from "./theme";
-import { Tooltip } from "./tooltips";
+import type { Tooltip } from "./tooltips";
 
 interface Props {
   tooltip: Tooltip;

@@ -1,11 +1,11 @@
-import { ReactElement, ComponentType } from "react";
+import { ReactElement } from "react";
 import {
   Snackbar,
   SnackbarContent,
-  SlideProps,
   makeStyles,
   ThemeProvider,
 } from "@material-ui/core";
+
 import { theme } from "./theme";
 
 const useStyle = makeStyles(() => ({
@@ -14,13 +14,10 @@ const useStyle = makeStyles(() => ({
   },
 }));
 
-type TransitionProps = Omit<SlideProps, "direction">;
-
 interface Props {
   open: boolean;
   handleClose: () => void;
   message: ReactElement;
-  transition?: ComponentType<TransitionProps> | null;
 }
 
 function BaseSnackbar(props: Props): ReactElement {
@@ -28,19 +25,12 @@ function BaseSnackbar(props: Props): ReactElement {
 
   return (
     <ThemeProvider theme={theme}>
-      <Snackbar
-        open={props.open}
-        onClose={props.handleClose}
-        TransitionComponent={props?.transition}
-      >
+      <Snackbar open={props.open} onClose={props.handleClose}>
         <SnackbarContent className={classes.snackbar} message={props.message} />
       </Snackbar>
     </ThemeProvider>
   );
 }
 
-BaseSnackbar.defaultProps = {
-  transition: null,
-};
-
-export { BaseSnackbar, Props as BaseSnackbarProps, TransitionProps };
+export { BaseSnackbar };
+export type { Props as BaseSnackbarProps };

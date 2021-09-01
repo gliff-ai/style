@@ -12,15 +12,13 @@ export {
   darkGrey,
 } from "./theme";
 
-export {
-  BaseSnackbar,
-  BaseSnackbarProps,
-  TransitionProps,
-} from "./BaseSnackbar";
+export { BaseSnackbar } from "./BaseSnackbar";
+
+export type { BaseSnackbarProps } from "./BaseSnackbar";
 
 export { HtmlTooltip } from "./BaseHtmlTooltip";
 
 export { BaseIconButton } from "./BaseIconButton";
 export { BaseTextButton } from "./BaseTextButton";
 export { BaseTooltipTitle } from "./BaseTooltipTitle";
-export { Tooltip, Tooltips } from "./tooltips";
+export type { Tooltip, Tooltips } from "./tooltips";
