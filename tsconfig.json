@@ -4,7 +4,7 @@
     "noImplicitAny": true,
     "module": "es2020",
     "sourceMap": true,
-    "target": "es6",
+    "target": "es2020",
     "jsx": "react-jsx",
     "allowJs": false,
     "moduleResolution": "node",
