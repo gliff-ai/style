@@ -1,6 +1,6 @@
 {
   "name": "@gliff-ai/style",
-  "version": "0.8.3",
+  "version": "0.8.4",
   "description": "Theme styles for gliff.ai apps",
   "main": "dist/index.es.js",
   "module": "dist/index.es.js",
