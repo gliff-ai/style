@@ -22,3 +22,11 @@ export { BaseIconButton } from "./BaseIconButton";
 export { BaseTextButton } from "./BaseTextButton";
 export { BaseTooltipTitle } from "./BaseTooltipTitle";
 export type { Tooltip, Tooltips } from "./tooltips";
+
+export const imgSrc = (src: string, type = "svg"): string =>
+  new URL(`/src/assets/${src}.${type}`, import.meta.url).href;
+
+export const generateClassName =
+  (prefix: string) =>
+  (rule: Record<"key", string>): string =>
+    `${prefix}-${rule.key}-${Math.floor(Math.random() * 10e9)}`;
