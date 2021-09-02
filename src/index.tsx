@@ -1,5 +1,3 @@
-import { Rule } from "jss";
-
 export {
   theme,
   lightGrey,
@@ -28,4 +26,7 @@ export type { Tooltip, Tooltips } from "./tooltips";
 export const imgSrc = (src: string, type = "svg"): string =>
   new URL(`/src/assets/${src}.${type}`, import.meta.url).href;
 
-export const generateClassName = (prefix: string) => (rule: Record<"key", string>): string => `${prefix}-${rule.key}-${Math.floor(Math.random() * 10e9)}`;
+export const generateClassName =
+  (prefix: string) =>
+  (rule: Record<"key", string>): string =>
+    `${prefix}-${rule.key}-${Math.floor(Math.random() * 10e9)}`;
