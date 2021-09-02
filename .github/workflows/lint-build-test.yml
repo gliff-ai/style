@@ -60,6 +60,8 @@ jobs:
           node-version: 15
       - name: Setup dependencies
         run: npm i --omit=peer
+      - name: Build
+        run: npm run build
       - name: Publish
         uses: mikeal/merge-release@master
         env:
