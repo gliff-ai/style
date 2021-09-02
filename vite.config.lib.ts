@@ -20,8 +20,7 @@ export default defineConfig({
         "react-router-dom",
         "@material-ui/core",
         "@material-ui/icons",
-        "@material-ui/lab",
-        "@gliff-ai/styles",
+        "@material-ui/lab"
       ],
       output: {
         // Provide global variables to use in the UMD build
