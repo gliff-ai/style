@@ -1,22 +1,22 @@
-import { ReactElement, useState, MouseEvent } from "react";
-import { makeStyles, Popover, TooltipProps } from "@material-ui/core";
-import { BaseIconButton } from "./BaseIconButton";
-import { Tooltip } from "./interface";
+import { ReactElement, useState, MouseEvent, useEffect } from "react";
+import { makeStyles, Popover, PopoverOrigin } from "@material-ui/core";
+import { BaseIconButton, BaseIconButtonProps } from "./BaseIconButton";
 
 const useStyle = makeStyles(() => ({
   popoverPaper: {
-    padding: "5px",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "transparent",
   },
 }));
 
-interface Props {
-  tooltip: Tooltip;
-  tooltipPlacement?: TooltipProps["placement"];
+interface Props extends BaseIconButtonProps {
+  children?: JSX.Element[] | JSX.Element | null;
+  anchorOrigin?: PopoverOrigin;
+  transformOrigin?: PopoverOrigin;
+  triggerClosing?: number | null;
   enabled?: boolean;
-  childrens?: JSX.Element[] | null;
 }
 
 export function BasePopover(props: Props): ReactElement | null {
@@ -33,29 +33,39 @@ export function BasePopover(props: Props): ReactElement | null {
     setAnchorEl(null);
   };
 
+  useEffect(() => {
+    setAnchorEl(null);
+  }, [props.triggerClosing]);
+
   return (
     <>
-      <BaseIconButton
-        tooltip={props.tooltip}
-        onClick={handleClick}
-        enabled={props.enabled}
-        tooltipPlacement={props.tooltipPlacement}
-      />
+      {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+      <BaseIconButton {...props} onClick={handleClick} />
       <Popover
         id={`popover-${props.tooltip.name}`}
         open={Boolean(anchorEl)}
         anchorEl={anchorEl}
         onClose={handleClose}
+        anchorOrigin={props.anchorOrigin}
+        transformOrigin={props.transformOrigin}
         classes={{ paper: classes.popoverPaper }}
       >
-        {props.childrens}
+        {props.children}
       </Popover>
     </>
   );
 }
 
 BasePopover.defaultProps = {
-  enabled: false,
-  tooltipPlacement: "right",
   childrens: null,
+  anchorOrigin: {
+    vertical: "top",
+    horizontal: "left",
+  },
+  transformOrigin: {
+    vertical: "top",
+    horizontal: "left",
+  },
+  enabled: true,
+  triggerClosing: null,
 };
