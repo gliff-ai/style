@@ -12,7 +12,7 @@ import type { Tooltip } from "./tooltips";
 
 type Props = {
   tooltip: Omit<Tooltip, "icon">;
-}
+};
 
 const useStyles = makeStyles({
   popoverAvatar: {

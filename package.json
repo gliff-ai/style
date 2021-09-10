@@ -13,7 +13,7 @@
     "watch": "npx vite build -c vite.config.lib.ts --watch",
     "format": "npx --no-install prettier --write src/*.ts*",
     "prettier": "npx --no-install prettier -c src/*.ts*",
-    "lint": "npm run lint:ts && npm run prettier",
+    "lint": "tsc --noEmit && npm run lint:ts && npm run prettier",
     "lint:ts": "npx --no-install eslint src/*.ts*",
     "serve": "vite",
     "build:example": "vite build",

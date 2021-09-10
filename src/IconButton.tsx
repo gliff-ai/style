@@ -5,9 +5,8 @@ import {
   makeStyles,
   TooltipProps,
   ThemeProvider,
-  Button,
 } from "@material-ui/core";
-import type {IconButtonProps} from "@material-ui/core/IconButton";
+import type { IconButtonProps } from "@material-ui/core/IconButton";
 import SVG from "react-inlinesvg";
 import { BaseTooltipTitle } from "./BaseTooltipTitle";
 import { HtmlTooltip } from "./BaseHtmlTooltip";
@@ -19,15 +18,13 @@ export interface Tooltip {
   shortcutSymbol?: string;
 }
 
-interface Props extends Pick<IconButtonProps, "size" | "disabled"> {
+export interface Props extends Pick<IconButtonProps, "size" | "disabled" | "type"> {
   tooltip: Tooltip;
+  icon: string;
   onClick?: (event: MouseEvent) => void;
-  onMouseDown?: (event: MouseEvent) => void;
-  onMouseUp?: (event: MouseEvent) => void;
   fill?: boolean;
   tooltipPlacement?: TooltipProps["placement"];
   setRefCallback?: (ref: HTMLButtonElement) => void;
-  icon?: string;
 }
 
 export const IconButton = (props: Props): ReactElement => {
@@ -67,21 +64,32 @@ export const IconButton = (props: Props): ReactElement => {
         }
         placement={props.tooltipPlacement}
       >
-          <MaterialIconButton
-            ref={(ref) => {
-              if (!ref || !props.setRefCallback) return;
-              props.setRefCallback(ref);
-            }}
-            size={props.size}
-            disabled={props.disabled}
+        <MaterialIconButton
+          ref={(ref) => {
+            if (!ref || !props.setRefCallback) return;
+            props.setRefCallback(ref);
+          }}
+          size={props.size}
+          disabled={props.disabled}
+          type={props.type}
+          onClick={props.onClick}
+        >
+          <Avatar
+            className={props.size === "small" ? classes.small : classes.medium}
           >
-              <Avatar className={props.size === "small" ? classes.small : classes.medium}>{svgIcon}</Avatar>
-          </MaterialIconButton>
+            {svgIcon}
+          </Avatar>
+        </MaterialIconButton>
       </HtmlTooltip>
     </ThemeProvider>
   );
 };
 
 IconButton.defaultProps = {
-  size: "small"
-};
+  size: "small",
+  tooltipPlacement: "right",
+  setRefCallback: null,
+  onClick: null,
+  fill: false,
+  type: "button",
+} as Props;
