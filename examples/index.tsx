@@ -50,8 +50,13 @@ const app = (
     <h4>Icon Button</h4>
 
     <div>
-      <ButtonGroup>
+      <ButtonGroup orientation="vertical">
         <IconButton tooltip={{ name: "Small Button" }} icon={imgSrc("icon")} />
+        <IconButton tooltip={{ name: "Small Button" }} icon={imgSrc("icon")} />
+        <IconButton tooltip={{ name: "Small Button" }} icon={imgSrc("icon")} />
+      </ButtonGroup>
+      <br /><br />
+      <ButtonGroup>
         <IconButton
           tooltip={{ name: "Medium Button" }}
           icon={imgSrc("icon")}
