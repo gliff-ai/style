@@ -157,9 +157,12 @@ export const theme = createTheme({
         border: "1px solid",
         borderColor: veryLightBlue,
         borderRadius: "9px",
-        padding: "8px",
+        paddingTop: "8px",
+        paddingBottom: "8px",
         background: lightestGrey,
-        width: "63px",
+      },
+      groupedOutlinedVertical: {
+        border: "none",
       },
     },
     MuiDivider: {
