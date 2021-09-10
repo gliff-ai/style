@@ -1,17 +1,17 @@
 import { useState, SyntheticEvent, MouseEvent, ReactElement } from "react";
 import ReactDOM from "react-dom";
-
-import { BaseTextButton, HtmlTooltip, BaseSnackbar } from "../src";
+import { BaseTextButton, HtmlTooltip, BaseSnackbar, BasePopover } from "../src";
+import { imgSrc } from "./src/helpers";
 
 const SnackBar = (): ReactElement => {
   const [open, setOpen] = useState(false);
 
-    const handleClick = () => {
+  const handleClick = () => {
     setOpen(true);
   };
 
-    const handleClose = (event: SyntheticEvent | MouseEvent, reason?: string) => {
-    if (reason === 'clickaway') {
+  const handleClose = (event: SyntheticEvent | MouseEvent, reason?: string) => {
+    if (reason === "clickaway") {
       return;
     }
 
@@ -43,6 +43,22 @@ const app = (
     <h4>SnackBar</h4>
     <SnackBar />
 
+    <h4>BasePopover</h4>
+    <BasePopover
+      tooltip={{
+        name: "hello world",
+        icon: imgSrc("image-viewer"),
+      }}
+      anchorOrigin={{
+        vertical: "bottom",
+        horizontal: "left",
+      }}
+      transformOrigin={{
+        vertical: "top",
+        horizontal: "left",
+      }}
+      children={<p>hello world</p>}
+    />
   </div>
 );
 
