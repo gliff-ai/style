@@ -19,10 +19,9 @@ export interface Tooltip {
 }
 
 export interface Props
-  extends Pick<IconButtonProps, "size" | "disabled" | "type"> {
+  extends Pick<IconButtonProps, "size" | "disabled" | "type" | "onClick"> {
   tooltip: Tooltip;
   icon: string;
-  onClick?: (event: MouseEvent) => void;
   fill?: boolean;
   tooltipPlacement?: TooltipProps["placement"];
   setRefCallback?: (ref: HTMLButtonElement) => void;
