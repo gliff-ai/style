@@ -57,7 +57,7 @@ export function BasePopover(props: Props): ReactElement | null {
 }
 
 BasePopover.defaultProps = {
-  childrens: null,
+  children: null,
   anchorOrigin: {
     vertical: "top",
     horizontal: "left",
