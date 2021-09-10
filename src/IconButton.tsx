@@ -19,7 +19,7 @@ export interface Tooltip {
   shortcutSymbol?: string;
 }
 
-interface Props extends IconButtonProps {
+interface Props extends Pick<IconButtonProps, "size" | "disabled"> {
   tooltip: Tooltip;
   onClick?: (event: MouseEvent) => void;
   onMouseDown?: (event: MouseEvent) => void;
@@ -27,7 +27,6 @@ interface Props extends IconButtonProps {
   fill?: boolean;
   tooltipPlacement?: TooltipProps["placement"];
   setRefCallback?: (ref: HTMLButtonElement) => void;
-  enabled?: boolean;
   icon?: string;
 }
 
@@ -73,7 +72,8 @@ export const IconButton = (props: Props): ReactElement => {
               if (!ref || !props.setRefCallback) return;
               props.setRefCallback(ref);
             }}
-            {...props}
+            size={props.size}
+            disabled={props.disabled}
           >
               <Avatar className={props.size === "small" ? classes.small : classes.medium}>{svgIcon}</Avatar>
           </MaterialIconButton>
