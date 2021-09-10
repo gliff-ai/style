@@ -1,7 +1,11 @@
 import { useState, SyntheticEvent, MouseEvent, ReactElement } from "react";
 import ReactDOM from "react-dom";
 
-import { BaseTextButton, HtmlTooltip, BaseSnackbar } from "../src";
+import { BaseTextButton, HtmlTooltip, BaseSnackbar, IconButton } from "../src";
+
+export const imgSrc = (src: string, type = "svg"): string =>
+  new URL(`/src/assets/${src}.${type}`, import.meta.url).href;
+
 
 const SnackBar = (): ReactElement => {
   const [open, setOpen] = useState(false);
@@ -42,6 +46,18 @@ const app = (
 
     <h4>SnackBar</h4>
     <SnackBar />
+
+    <h4>Icon Button</h4>
+
+
+    <div>
+      
+    <IconButton tooltip={{name: "Small Button"}} icon={imgSrc("icon")} />
+    <IconButton tooltip={{name: "Medium Button"}} icon={imgSrc("icon")} size="medium" />
+    <IconButton tooltip={{name: "Medium Button", shortcut:"K", shortcutSymbol:"cmd"}} icon={imgSrc("icon")} size="medium" />
+    
+    </div>
+      
 
   </div>
 );

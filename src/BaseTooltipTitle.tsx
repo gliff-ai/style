@@ -10,8 +10,8 @@ import {
 import { theme } from "./theme";
 import type { Tooltip } from "./tooltips";
 
-interface Props {
-  tooltip: Tooltip;
+type Props = {
+  tooltip: Omit<Tooltip, "icon">;
 }
 
 const useStyles = makeStyles({
