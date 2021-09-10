@@ -18,7 +18,8 @@ export interface Tooltip {
   shortcutSymbol?: string;
 }
 
-export interface Props extends Pick<IconButtonProps, "size" | "disabled" | "type"> {
+export interface Props
+  extends Pick<IconButtonProps, "size" | "disabled" | "type"> {
   tooltip: Tooltip;
   icon: string;
   onClick?: (event: MouseEvent) => void;
