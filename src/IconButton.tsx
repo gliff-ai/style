@@ -6,7 +6,7 @@ import {
   ThemeProvider,
   Button,
 } from "@material-ui/core";
-import type { IconButtonProps } from "@material-ui/core/IconButton";
+import type { ButtonProps } from "@material-ui/core/Button";
 import SVG from "react-inlinesvg";
 import { BaseTooltipTitle } from "./BaseTooltipTitle";
 import { HtmlTooltip } from "./BaseHtmlTooltip";
@@ -19,7 +19,9 @@ export interface Tooltip {
 }
 
 export interface Props
-  extends Pick<IconButtonProps, "size" | "disabled" | "type" | "onClick"> {
+  extends ButtonProps {
+  component?: any;
+  to?: string;
   tooltip: Tooltip;
   icon: string;
   fill?: boolean;
@@ -87,4 +89,6 @@ IconButton.defaultProps = {
   onClick: null,
   fill: false,
   type: "button",
+  component: "button",
+  to: null
 } as Props;
