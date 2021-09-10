@@ -1,8 +1,8 @@
-import { ButtonGroup } from "@material-ui/core";
+import { ButtonGroup, ThemeProvider, StylesProvider, CssBaseline } from "@material-ui/core";
 import { useState, SyntheticEvent, MouseEvent, ReactElement } from "react";
 import ReactDOM from "react-dom";
 
-import { BaseTextButton, HtmlTooltip, BaseSnackbar, IconButton } from "../src";
+import { BaseTextButton, HtmlTooltip, BaseSnackbar, IconButton, generateClassName, theme } from "../src";
 
 export const imgSrc = (src: string, type = "svg"): string =>
   new URL(`/src/assets/${src}.${type}`, import.meta.url).href;
@@ -35,7 +35,11 @@ const SnackBar = (): ReactElement => {
 };
 
 const app = (
-  <div>
+  <StylesProvider generateClassName={generateClassName("manage")}>
+  <ThemeProvider theme={theme}>
+  
+  <CssBaseline />
+  <div style={{margin: "50px"}}>
     <h4>BaseTextButton</h4>
     <BaseTextButton text="Hello World" />
 
@@ -74,6 +78,7 @@ const app = (
       </ButtonGroup>
     </div>
   </div>
+  </ThemeProvider></StylesProvider>
 );
 
 ReactDOM.render(app, document.getElementById("react-container"));
