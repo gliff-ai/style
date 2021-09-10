@@ -4,7 +4,7 @@ import {
   makeStyles,
   TooltipProps,
   ThemeProvider,
-  Button
+  Button,
 } from "@material-ui/core";
 import type { IconButtonProps } from "@material-ui/core/IconButton";
 import SVG from "react-inlinesvg";
@@ -43,7 +43,8 @@ export const IconButton = (props: Props): ReactElement => {
     },
   })(props);
 
-  const {icon, tooltip, fill, tooltipPlacement, setRefCallback, ...rest} = props;
+  const { icon, tooltip, fill, tooltipPlacement, setRefCallback, ...rest } =
+    props;
 
   const svgIcon = (
     <SVG
@@ -57,13 +58,7 @@ export const IconButton = (props: Props): ReactElement => {
     <ThemeProvider theme={theme}>
       <HtmlTooltip
         key={tooltip.name}
-        title={
-          icon ? (
-            <BaseTooltipTitle tooltip={tooltip} />
-          ) : (
-            tooltip.name
-          )
-        }
+        title={icon ? <BaseTooltipTitle tooltip={tooltip} /> : tooltip.name}
         placement={tooltipPlacement}
       >
         <Button
@@ -71,6 +66,7 @@ export const IconButton = (props: Props): ReactElement => {
             if (!ref || !setRefCallback) return;
             setRefCallback(ref);
           }}
+          // eslint-disable-next-line react/jsx-props-no-spreading
           {...rest}
         >
           <Avatar

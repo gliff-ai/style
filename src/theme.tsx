@@ -162,8 +162,8 @@ export const theme = createTheme({
         background: lightestGrey,
       },
       groupedOutlinedVertical: {
-        border: "none"
-      }
+        border: "none",
+      },
     },
     MuiDivider: {
       root: {
