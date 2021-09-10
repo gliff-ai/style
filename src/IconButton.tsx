@@ -1,10 +1,10 @@
-import { MouseEvent, ReactElement } from "react";
+import { ReactElement } from "react";
 import {
-  IconButton as MaterialIconButton,
   Avatar,
   makeStyles,
   TooltipProps,
   ThemeProvider,
+  Button,
 } from "@material-ui/core";
 import type { IconButtonProps } from "@material-ui/core/IconButton";
 import SVG from "react-inlinesvg";
@@ -43,43 +43,37 @@ export const IconButton = (props: Props): ReactElement => {
     },
   })(props);
 
+  const { icon, tooltip, fill, tooltipPlacement, setRefCallback, ...rest } =
+    props;
+
   const svgIcon = (
     <SVG
-      src={props.icon}
+      src={icon}
       className={classes.svg}
-      fill={props.fill ? theme.palette.primary.main : null}
+      fill={fill ? theme.palette.primary.main : null}
     />
   );
 
   return (
     <ThemeProvider theme={theme}>
       <HtmlTooltip
-        key={props.tooltip.name}
-        title={
-          props.icon ? (
-            <BaseTooltipTitle tooltip={props.tooltip} />
-          ) : (
-            props.tooltip.name
-          )
-        }
-        placement={props.tooltipPlacement}
+        key={tooltip.name}
+        title={icon ? <BaseTooltipTitle tooltip={tooltip} /> : tooltip.name}
+        placement={tooltipPlacement}
       >
-        <MaterialIconButton
+        <Button
           ref={(ref) => {
-            if (!ref || !props.setRefCallback) return;
-            props.setRefCallback(ref);
+            if (!ref || !setRefCallback) return;
+            setRefCallback(ref);
           }}
-          size={props.size}
-          disabled={props.disabled}
-          type={props.type}
-          onClick={props.onClick}
+          {...rest}
         >
           <Avatar
             className={props.size === "small" ? classes.small : classes.medium}
           >
             {svgIcon}
           </Avatar>
-        </MaterialIconButton>
+        </Button>
       </HtmlTooltip>
     </ThemeProvider>
   );

@@ -1,3 +1,4 @@
+import { ButtonGroup } from "@material-ui/core";
 import { useState, SyntheticEvent, MouseEvent, ReactElement } from "react";
 import ReactDOM from "react-dom";
 
@@ -6,16 +7,15 @@ import { BaseTextButton, HtmlTooltip, BaseSnackbar, IconButton } from "../src";
 export const imgSrc = (src: string, type = "svg"): string =>
   new URL(`/src/assets/${src}.${type}`, import.meta.url).href;
 
-
 const SnackBar = (): ReactElement => {
   const [open, setOpen] = useState(false);
 
-    const handleClick = () => {
+  const handleClick = () => {
     setOpen(true);
   };
 
-    const handleClose = (event: SyntheticEvent | MouseEvent, reason?: string) => {
-    if (reason === 'clickaway') {
+  const handleClose = (event: SyntheticEvent | MouseEvent, reason?: string) => {
+    if (reason === "clickaway") {
       return;
     }
 
@@ -49,16 +49,25 @@ const app = (
 
     <h4>Icon Button</h4>
 
-
     <div>
-      
-    <IconButton tooltip={{name: "Small Button"}} icon={imgSrc("icon")} />
-    <IconButton tooltip={{name: "Medium Button"}} icon={imgSrc("icon")} size="medium" />
-    <IconButton tooltip={{name: "Medium Button", shortcut:"K", shortcutSymbol:"cmd"}} icon={imgSrc("icon")} size="medium" />
-    
+      <ButtonGroup>
+        <IconButton tooltip={{ name: "Small Button" }} icon={imgSrc("icon")} />
+        <IconButton
+          tooltip={{ name: "Medium Button" }}
+          icon={imgSrc("icon")}
+          size="medium"
+        />
+        <IconButton
+          tooltip={{
+            name: "Medium Button",
+            shortcut: "K",
+            shortcutSymbol: "cmd",
+          }}
+          icon={imgSrc("icon")}
+          size="medium"
+        />
+      </ButtonGroup>
     </div>
-      
-
   </div>
 );
 
