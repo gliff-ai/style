@@ -5,6 +5,12 @@ const path = require("path");
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  server: {
+    port: parseInt(process.env.PORT) || 3000,
+    hmr: {
+      port: process.env.PORT || process.env.CODESPACES ? 443 : 3000,
+    },
+  },
   build: {
     rollupOptions: {
       input: {
