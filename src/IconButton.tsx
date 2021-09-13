@@ -18,8 +18,7 @@ export interface Tooltip {
   shortcutSymbol?: string;
 }
 
-export interface Props
-  extends ButtonProps {
+export interface Props extends ButtonProps {
   component?: any;
   to?: string;
   tooltip: Tooltip;
@@ -90,5 +89,5 @@ IconButton.defaultProps = {
   fill: false,
   type: "button",
   component: "button",
-  to: null
+  to: null,
 } as Props;
