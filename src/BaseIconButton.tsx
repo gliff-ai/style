@@ -27,17 +27,19 @@ interface Props {
   enabled?: boolean;
   component?: "span" | "button";
   type?: "button" | "submit";
+  iconColor?: string;
 }
 
-export const BaseIconButton = (props: Props): ReactElement => {
+const BaseIconButton = (props: Props): ReactElement => {
   const classes = makeStyles({
     iconButton: {
       marginBottom: "5px",
       marginTop: "7px",
     },
     svg: {
-      width: props.buttonSize === "medium" ? "45px" : "55%",
+      width: props.buttonSize === "medium" ? "45px" : "20px",
       height: "auto",
+      color: props.iconColor,
     },
   })(props);
 
@@ -45,7 +47,7 @@ export const BaseIconButton = (props: Props): ReactElement => {
     <SVG
       src={props.tooltip.icon}
       className={classes.svg}
-      fill={props.fill ? theme.palette.primary.main : null}
+      fill={props.fill ? props.iconColor : null}
     />
   );
 
@@ -64,8 +66,8 @@ export const BaseIconButton = (props: Props): ReactElement => {
       >
         {props.component === "span" ? (
           <Button
-            component="span"
             className={classes.iconButton}
+            component="span"
             onClick={props.onClick}
           >
             {props.hasAvatar && props.enabled ? (
@@ -113,4 +115,7 @@ BaseIconButton.defaultProps = {
   fill: false,
   component: "button",
   type: "button",
+  iconColor: theme.palette.primary.main,
 };
+
+export { Props as BaseIconButtonProps, BaseIconButton };

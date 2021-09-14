@@ -22,6 +22,7 @@ export { BaseIconButton } from "./BaseIconButton";
 export { IconButton } from "./IconButton";
 export { BaseTextButton } from "./BaseTextButton";
 export { BaseTooltipTitle } from "./BaseTooltipTitle";
+export { BasePopover } from "./BasePopover";
 export type { Tooltip, Tooltips } from "./tooltips";
 
 export const generateClassName =
