@@ -13,6 +13,7 @@ import {
   BaseSnackbar,
   BasePopover,
   IconButton,
+  Logo,
   generateClassName,
   theme,
 } from "../src";
@@ -52,6 +53,10 @@ const app = (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <div style={{ margin: "50px" }}>
+        <h4>Logo</h4>
+
+        <Logo />
+
         <h4>BaseTextButton</h4>
         <BaseTextButton text="Hello World" />
 
