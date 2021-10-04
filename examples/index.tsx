@@ -16,6 +16,7 @@ import {
   Logo,
   generateClassName,
   theme,
+  icons,
 } from "../src";
 
 export const imgSrc = (src: string, type = "svg"): string =>
@@ -121,8 +122,13 @@ const app = (
           children={<p>hello world</p>}
         />
       </div>
+
+      <h2>Icons</h2>
+
+      {Object.entries(icons).map(([name, src]) => (<span key={name}><p>{name}</p><img src={src} alt={name} width="50px" height="50px"/></span>))}
+
     </ThemeProvider>
   </StylesProvider>
 );
 
-ReactDOM.render(app, document.getElementById("react-container"));
+ReactDOM.render(app, document.getElementById("react-scroll-container"));

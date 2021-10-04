@@ -27,7 +27,7 @@ export { Logo } from "./Logo";
 
 export type { Tooltip, Tooltips } from "./tooltips";
 
-export {icons} from "./icons";
+export { icons } from "./icons";
 
 export const generateClassName =
   (prefix: string) =>
