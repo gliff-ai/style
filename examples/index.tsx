@@ -13,8 +13,10 @@ import {
   BaseSnackbar,
   BasePopover,
   IconButton,
+  Logo,
   generateClassName,
   theme,
+  icons,
 } from "../src";
 
 export const imgSrc = (src: string, type = "svg"): string =>
@@ -52,6 +54,10 @@ const app = (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <div style={{ margin: "50px" }}>
+        <h4>Logo</h4>
+
+        <Logo />
+
         <h4>BaseTextButton</h4>
         <BaseTextButton text="Hello World" />
 
@@ -115,9 +121,15 @@ const app = (
           }}
           children={<p>hello world</p>}
         />
+    
+
+      <h2>Icons</h2>
+
+      {Object.entries(icons).map(([name, src]) => (<span key={name}><p>{name}</p><img src={src} alt={name} width="50px" height="50px"/></span>))}
+
       </div>
     </ThemeProvider>
   </StylesProvider>
 );
 
-ReactDOM.render(app, document.getElementById("react-container"));
+ReactDOM.render(app, document.getElementById("react-scroll-container"));
