@@ -77,7 +77,6 @@ const icons = {
   showHidePassword: imgSrc("show-hide-password"),
   smallImageGrid: imgSrc("small-image-grid"),
   spline: imgSrc("spline-icon"),
-  trustedServices: imgSrc("trusted-services-icon"),
   trustedServices: imgSrc("trusted-services"),
   undo: imgSrc("undo-icon"),
   upload: imgSrc("upload-icon"),
