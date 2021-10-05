@@ -125,7 +125,7 @@ const app = (
 
       <h2>Icons</h2>
 
-      {Object.entries(icons).map(([name, src]) => (<span key={name}><p>{name}</p><img src={src} alt={name} width="50px" height="50px"/></span>))}
+      {Object.entries(icons).map(([name, src]) => (<span style={{float: "left", padding: "20px"}} key={name}><p>{name}</p><img src={src} alt={name} width="50px" height="50px"/></span>))}
 
       </div>
     </ThemeProvider>
