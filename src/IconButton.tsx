@@ -48,11 +48,19 @@ export const IconButton = (props: Props): ReactElement => {
   const { icon, tooltip, fill, tooltipPlacement, enabled, setRefCallback, ...rest } =
     props;
 
+    let color = null;
+
+    if(!enabled) {
+      color = "#BBB"
+    } else if(fill) {
+      color = theme.palette.primary.main;
+    }
+
   const svgIcon = (
     <SVG
       src={icon}
       className={classes.svg}
-      fill={fill ? theme.palette.primary.main : null}
+      fill={color}
     />
   );
 
