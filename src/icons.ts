@@ -54,7 +54,7 @@ const icons = {
   search: imgSrc("search"),
   selectAllLabels: imgSrc("select-all-labels"),
   selectedTickbox: imgSrc("channel-select-icon"),
-  notSelectedTickbox: imgSrc("chanel-deselected-icon"),  
+  notSelectedTickbox: imgSrc("chanel-deselected-icon"),
   select: imgSrc("select-icon"),
   selectedChip: imgSrc("active-annotation-label-search-filter"),
   notSelectedChip: imgSrc("non-active-annotation-label-search-filter"),
