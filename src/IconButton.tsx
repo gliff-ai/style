@@ -24,6 +24,7 @@ export interface Props extends ButtonProps {
   tooltip: Tooltip;
   icon: string;
   fill?: boolean;
+  enabled?: boolean;
   tooltipPlacement?: TooltipProps["placement"];
   setRefCallback?: (ref: HTMLButtonElement) => void;
 }
@@ -44,7 +45,7 @@ export const IconButton = (props: Props): ReactElement => {
     },
   })(props);
 
-  const { icon, tooltip, fill, tooltipPlacement, setRefCallback, ...rest } =
+  const { icon, tooltip, fill, tooltipPlacement, enabled, setRefCallback, ...rest } =
     props;
 
   const svgIcon = (
@@ -63,6 +64,7 @@ export const IconButton = (props: Props): ReactElement => {
         placement={tooltipPlacement}
       >
         <Button
+          disabled={!enabled}
           ref={(ref) => {
             if (!ref || !setRefCallback) return;
             setRefCallback(ref);
@@ -83,6 +85,7 @@ export const IconButton = (props: Props): ReactElement => {
 
 IconButton.defaultProps = {
   size: "small",
+  enabled: true,
   tooltipPlacement: "right",
   setRefCallback: null,
   onClick: null,
