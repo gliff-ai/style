@@ -24,6 +24,7 @@ export interface Props extends ButtonProps {
   tooltip: Tooltip;
   icon: string;
   fill?: boolean;
+  enabled?: boolean;
   tooltipPlacement?: TooltipProps["placement"];
   setRefCallback?: (ref: HTMLButtonElement) => void;
 }
@@ -44,16 +45,25 @@ export const IconButton = (props: Props): ReactElement => {
     },
   })(props);
 
-  const { icon, tooltip, fill, tooltipPlacement, setRefCallback, ...rest } =
-    props;
+  const {
+    icon,
+    tooltip,
+    fill,
+    tooltipPlacement,
+    enabled,
+    setRefCallback,
+    ...rest
+  } = props;
 
-  const svgIcon = (
-    <SVG
-      src={icon}
-      className={classes.svg}
-      fill={fill ? theme.palette.primary.main : null}
-    />
-  );
+  let color = null;
+
+  if (!enabled) {
+    color = "#BBB";
+  } else if (fill) {
+    color = theme.palette.primary.main;
+  }
+
+  const svgIcon = <SVG src={icon} className={classes.svg} fill={color} />;
 
   return (
     <ThemeProvider theme={theme}>
@@ -63,6 +73,7 @@ export const IconButton = (props: Props): ReactElement => {
         placement={tooltipPlacement}
       >
         <Button
+          disabled={!enabled}
           ref={(ref) => {
             if (!ref || !setRefCallback) return;
             setRefCallback(ref);
@@ -83,6 +94,7 @@ export const IconButton = (props: Props): ReactElement => {
 
 IconButton.defaultProps = {
   size: "small",
+  enabled: true,
   tooltipPlacement: "right",
   setRefCallback: null,
   onClick: null,

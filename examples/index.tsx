@@ -6,11 +6,13 @@ import {
 } from "@material-ui/core";
 import { useState, SyntheticEvent, MouseEvent, ReactElement } from "react";
 import ReactDOM from "react-dom";
+import SVG from "react-inlinesvg";
 
 import {
   BaseTextButton,
   HtmlTooltip,
   BaseSnackbar,
+  BaseTooltipTitle,
   BasePopover,
   IconButton,
   Logo,
@@ -61,14 +63,62 @@ const app = (
         <h4>BaseTextButton</h4>
         <BaseTextButton text="Hello World" />
 
-        <h4>HtmlTooltip</h4>
-        <HtmlTooltip key="Key" title={<>Title</>} placement="right">
-          <img src="https://via.placeholder.com/50x50/aaffff" alt="Icon" />
-        </HtmlTooltip>
-
         <h4>SnackBar</h4>
         <SnackBar />
 
+        <h4>HtmlTooltip / BaseTooltipTitle</h4>
+        <HtmlTooltip
+          placement={"right"}
+          open={true}
+          title={
+            <BaseTooltipTitle
+              tooltip={{
+                name: "Really Long Tooltip Text With A Shortcut",
+                shortcut: "K",
+                shortcutSymbol: "cmd",
+              }}
+            />
+          }
+        >
+          <p></p>
+        </HtmlTooltip>
+        <br></br>
+        <br></br>
+        <br></br>
+        <HtmlTooltip
+          placement={"right"}
+          open={true}
+          title={
+            <BaseTooltipTitle
+              tooltip={{
+                name: "Tooltip With No Shortcut",
+              }}
+            />
+          }
+        >
+          <p></p>
+        </HtmlTooltip>
+        <br></br>
+        <br></br>
+        <br></br>
+        <HtmlTooltip
+          placement={"right"}
+          open={true}
+          title={
+            <BaseTooltipTitle
+              tooltip={{
+                name: "Tooltip With Big Shortcut",
+                shortcut: "space",
+                shortcutSymbol: "cmd",
+              }}
+            />
+          }
+        >
+          <p></p>
+        </HtmlTooltip>
+        <br></br>
+        <br></br>
+        <br></br>
         <h4>Icon Button</h4>
         <div>
           <ButtonGroup orientation="vertical">
@@ -77,11 +127,21 @@ const app = (
               icon={imgSrc("icon")}
             />
             <IconButton
-              tooltip={{ name: "Small Button" }}
+              tooltip={{ name: "Small Active Button" }}
               icon={imgSrc("icon")}
+              fill={true}
             />
             <IconButton
-              tooltip={{ name: "Small Button" }}
+              tooltip={{ name: "Small Disabled Button" }}
+              icon={imgSrc("icon")}
+              enabled={false}
+            />
+            <IconButton
+              tooltip={{
+                name: "Small Button",
+                shortcut: "K",
+                shortcutSymbol: "cmd",
+              }}
               icon={imgSrc("icon")}
             />
           </ButtonGroup>
@@ -121,12 +181,15 @@ const app = (
           }}
           children={<p>hello world</p>}
         />
-    
 
-      <h2>Icons</h2>
+        <h2>Icons</h2>
 
-      {Object.entries(icons).map(([name, src]) => (<span style={{float: "left", padding: "20px"}} key={name}><p>{name}</p><img src={src} alt={name} width="50px" height="50px"/></span>))}
-
+        {Object.entries(icons).map(([name, src]) => (
+          <span style={{ float: "left", padding: "20px" }} key={name}>
+            <p>{name}</p>
+            <SVG src={src} width="50px" height="50px" className="icon" />
+          </span>
+        ))}
       </div>
     </ThemeProvider>
   </StylesProvider>

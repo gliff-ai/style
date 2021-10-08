@@ -31,8 +31,14 @@ const useStyles = makeStyles({
     marginLeft: "3px",
   },
   avatarFontSize: {
-    fontSize: "11px",
+    fontSize: "13px",
+    lineHeight: "13px",
     fontWeight: 600,
+  },
+  avatarSmallFontSize: {
+    fontSize: "9px",
+    lineHeight: "9px",
+    fontWeight: 400,
   },
 });
 
@@ -42,14 +48,26 @@ export const BaseTooltipTitle = ({ tooltip }: Props): ReactElement => {
   const hasShortcutSymbol = tooltip.shortcutSymbol ? (
     <>
       <Avatar className={classes.popoverAvatar}>
-        <Typography className={classes.avatarFontSize}>
-          {tooltip.shortcut}
+        <Typography
+          className={
+            tooltip.shortcutSymbol.length > 1
+              ? classes.avatarSmallFontSize
+              : classes.avatarFontSize
+          }
+        >
+          {tooltip.shortcutSymbol.toUpperCase()}
         </Typography>
       </Avatar>
       <div className={classes.spaceBetweenAvatar}>
         <Avatar className={classes.popoverAvatar}>
-          <Typography className={classes.avatarFontSize}>
-            {tooltip.shortcutSymbol}
+          <Typography
+            className={
+              tooltip.shortcut.length > 1
+                ? classes.avatarSmallFontSize
+                : classes.avatarFontSize
+            }
+          >
+            {tooltip.shortcut.toUpperCase()}
           </Typography>
         </Avatar>
       </div>
@@ -61,7 +79,7 @@ export const BaseTooltipTitle = ({ tooltip }: Props): ReactElement => {
   return (
     <ThemeProvider theme={theme}>
       <Box className={classes.mainbox}>
-        <Box mr={3} ml={2}>
+        <Box mr={1} ml={1}>
           <Typography>{tooltip.name}</Typography>
         </Box>
         {!tooltip.shortcut ? null : hasShortcutSymbol}
