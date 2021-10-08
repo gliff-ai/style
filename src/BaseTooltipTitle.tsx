@@ -7,7 +7,7 @@ import {
   ThemeProvider,
 } from "@material-ui/core";
 
-import { theme } from "./theme";
+import { theme, darkGrey } from "./theme";
 import type { Tooltip } from "./tooltips";
 
 type Props = {
@@ -15,30 +15,37 @@ type Props = {
 };
 
 const useStyles = makeStyles({
-  popoverAvatar: {
-    backgroundColor: theme.palette.primary.main,
-    color: "#2B2F3A",
-    width: "30px",
-    height: "30px",
-  },
   mainbox: {
     display: "flex",
     alignItems: "center",
     justifyItems: "space-between",
-  },
-
-  spaceBetweenAvatar: {
-    marginLeft: "3px",
+    "& > div:first-child": {
+      // Tooltip text
+      marginLeft: "8px",
+      marginRight: "8px",
+    },
+    "& > div:not(:first-child)": {
+      // shortcut icon
+      backgroundColor: theme.palette.primary.main,
+      color: darkGrey,
+      width: "30px",
+      height: "30px",
+      marginLeft: "3px",
+    },
+    "& > div:nth-of-type(2)": {
+      // First shortcut icon
+      marginLeft: "4px",
+    },
   },
   avatarFontSize: {
-    fontSize: "13px",
-    lineHeight: "13px",
+    fontSize: "14px",
+    lineHeight: "14px",
     fontWeight: 600,
   },
   avatarSmallFontSize: {
     fontSize: "9px",
     lineHeight: "9px",
-    fontWeight: 400,
+    fontWeight: 500,
   },
 });
 
@@ -47,7 +54,7 @@ export const BaseTooltipTitle = ({ tooltip }: Props): ReactElement => {
 
   const hasShortcutSymbol = tooltip.shortcutSymbol ? (
     <>
-      <Avatar className={classes.popoverAvatar}>
+      <Avatar>
         <Typography
           className={
             tooltip.shortcutSymbol.length > 1
@@ -58,28 +65,27 @@ export const BaseTooltipTitle = ({ tooltip }: Props): ReactElement => {
           {tooltip.shortcutSymbol.toUpperCase()}
         </Typography>
       </Avatar>
-      <div className={classes.spaceBetweenAvatar}>
-        <Avatar className={classes.popoverAvatar}>
-          <Typography
-            className={
-              tooltip.shortcut.length > 1
-                ? classes.avatarSmallFontSize
-                : classes.avatarFontSize
-            }
-          >
-            {tooltip.shortcut.toUpperCase()}
-          </Typography>
-        </Avatar>
-      </div>
+
+      <Avatar>
+        <Typography
+          className={
+            tooltip.shortcut.length > 1
+              ? classes.avatarSmallFontSize
+              : classes.avatarFontSize
+          }
+        >
+          {tooltip.shortcut.toUpperCase()}
+        </Typography>
+      </Avatar>
     </>
   ) : (
-    <Avatar className={classes.popoverAvatar}>{tooltip.shortcut}</Avatar>
+    <Avatar>{tooltip.shortcut}</Avatar>
   );
 
   return (
     <ThemeProvider theme={theme}>
       <Box className={classes.mainbox}>
-        <Box mr={1} ml={1}>
+        <Box>
           <Typography>{tooltip.name}</Typography>
         </Box>
         {!tooltip.shortcut ? null : hasShortcutSymbol}
