@@ -45,24 +45,25 @@ export const IconButton = (props: Props): ReactElement => {
     },
   })(props);
 
-  const { icon, tooltip, fill, tooltipPlacement, enabled, setRefCallback, ...rest } =
-    props;
+  const {
+    icon,
+    tooltip,
+    fill,
+    tooltipPlacement,
+    enabled,
+    setRefCallback,
+    ...rest
+  } = props;
 
-    let color = null;
+  let color = null;
 
-    if(!enabled) {
-      color = "#BBB"
-    } else if(fill) {
-      color = theme.palette.primary.main;
-    }
+  if (!enabled) {
+    color = "#BBB";
+  } else if (fill) {
+    color = theme.palette.primary.main;
+  }
 
-  const svgIcon = (
-    <SVG
-      src={icon}
-      className={classes.svg}
-      fill={color}
-    />
-  );
+  const svgIcon = <SVG src={icon} className={classes.svg} fill={color} />;
 
   return (
     <ThemeProvider theme={theme}>
