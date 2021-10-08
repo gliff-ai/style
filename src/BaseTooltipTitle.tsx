@@ -7,7 +7,7 @@ import {
   ThemeProvider,
 } from "@material-ui/core";
 
-import { theme } from "./theme";
+import { theme, darkGrey } from "./theme";
 import type { Tooltip } from "./tooltips";
 
 type Props = {
@@ -19,20 +19,23 @@ const useStyles = makeStyles({
     display: "flex",
     alignItems: "center",
     justifyItems: "space-between",
-    "& > div:first-child": { // Tooltip text
+    "& > div:first-child": {
+      // Tooltip text
       marginLeft: "8px",
-      marginRight: "8px"
+      marginRight: "8px",
     },
-    "& > div:not(:first-child)": { // shortcut icon
+    "& > div:not(:first-child)": {
+      // shortcut icon
       backgroundColor: theme.palette.primary.main,
-      color: "#2B2F3A",
+      color: darkGrey,
       width: "30px",
       height: "30px",
       marginLeft: "3px",
     },
-    "& > div:nth-of-type(2)": { // First shortcut icon
+    "& > div:nth-of-type(2)": {
+      // First shortcut icon
       marginLeft: "4px",
-    }
+    },
   },
   avatarFontSize: {
     fontSize: "14px",
@@ -62,19 +65,18 @@ export const BaseTooltipTitle = ({ tooltip }: Props): ReactElement => {
           {tooltip.shortcutSymbol.toUpperCase()}
         </Typography>
       </Avatar>
-      
-        <Avatar>
-          <Typography
-            className={
-              tooltip.shortcut.length > 1
-                ? classes.avatarSmallFontSize
-                : classes.avatarFontSize
-            }
-          >
-            {tooltip.shortcut.toUpperCase()}
-          </Typography>
-        </Avatar>
-      
+
+      <Avatar>
+        <Typography
+          className={
+            tooltip.shortcut.length > 1
+              ? classes.avatarSmallFontSize
+              : classes.avatarFontSize
+          }
+        >
+          {tooltip.shortcut.toUpperCase()}
+        </Typography>
+      </Avatar>
     </>
   ) : (
     <Avatar>{tooltip.shortcut}</Avatar>

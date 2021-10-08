@@ -9,6 +9,6 @@ export const HtmlTooltip = withStyles((theme: Theme) => ({
     borderColor: veryLightBlue,
     color: theme.palette.text.primary,
     maxWidth: "100%",
-    padding: "6px"
+    padding: "6px",
   },
 }))(Tooltip);
