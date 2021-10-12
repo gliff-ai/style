@@ -11,6 +11,7 @@ const icons = {
   annotationTransparency: imgSrc("annotation-transparency-icon"),
   audit: imgSrc("audit"),
   backspace: imgSrc("backspace-icon"),
+  backgroundSettings: imgSrc("background-settings"),
   boundingBox: imgSrc("bounding-box-icon"),
   breadcrumbTrailArrow: imgSrc("breadcrumb-trail-arrow"),
   brightness: imgSrc("brightness-icon"),
