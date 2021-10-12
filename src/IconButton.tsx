@@ -43,6 +43,14 @@ export const IconButton = (props: Props): ReactElement => {
       width: theme.spacing(9),
       height: theme.spacing(9),
     },
+    noHover: {
+      "&:hover": {
+        backgroundColor: "inherit",
+      },
+      "&:hover svg": {
+        fill: "#BBB",
+      },
+    },
   })(props);
 
   const {
@@ -82,7 +90,9 @@ export const IconButton = (props: Props): ReactElement => {
           {...rest}
         >
           <Avatar
-            className={props.size === "small" ? classes.small : classes.medium}
+            className={`${
+              props.size === "small" ? classes.small : classes.medium
+            } ${props.enabled ? "" : classes.noHover}`}
           >
             {svgIcon}
           </Avatar>
