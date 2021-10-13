@@ -5,6 +5,7 @@ import { theme } from "./theme";
 interface Props {
   text: string;
   onClick?: (event: MouseEvent) => void;
+  disabled?: boolean;
 }
 
 export const BaseTextButton = (props: Props): ReactElement => {
@@ -23,6 +24,7 @@ export const BaseTextButton = (props: Props): ReactElement => {
         variant="contained"
         color="primary"
         onClick={props.onClick}
+        disabled={props.disabled}
       >
         {props.text}
       </Button>
@@ -32,4 +34,5 @@ export const BaseTextButton = (props: Props): ReactElement => {
 
 BaseTextButton.defaultProps = {
   onClick: null,
+  disabled: false,
 };

@@ -62,6 +62,9 @@ const app = (
 
         <h4>BaseTextButton</h4>
         <BaseTextButton text="Hello World" />
+        <br></br>
+        <br></br>
+        <BaseTextButton text="Hello World" disabled={true} />
 
         <h4>SnackBar</h4>
         <SnackBar />
