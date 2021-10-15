@@ -161,6 +161,10 @@ export const theme = createTheme({
         paddingBottom: "8px",
         background: lightestGrey,
       },
+      groupedVertical: {
+        paddingTop: "8px",
+        paddingBottom: "8px",
+      },
       groupedOutlinedVertical: {
         border: "none",
       },
