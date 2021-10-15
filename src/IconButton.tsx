@@ -80,6 +80,7 @@ export const IconButton = (props: Props): ReactElement => {
         title={icon ? <BaseTooltipTitle tooltip={tooltip} /> : tooltip.name}
         placement={tooltipPlacement}
       >
+        <span>
         <Button
           disabled={disabled}
           ref={(ref) => {
@@ -89,6 +90,7 @@ export const IconButton = (props: Props): ReactElement => {
           // eslint-disable-next-line react/jsx-props-no-spreading
           {...rest}
         >
+
           <Avatar
             className={`${
               props.size === "small" ? classes.small : classes.medium
@@ -97,6 +99,7 @@ export const IconButton = (props: Props): ReactElement => {
             {svgIcon}
           </Avatar>
         </Button>
+          </span>
       </HtmlTooltip>
     </ThemeProvider>
   );

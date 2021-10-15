@@ -52,7 +52,7 @@ const SnackBar = (): ReactElement => {
 };
 
 const app = (
-  <StylesProvider generateClassName={generateClassName("manage")}>
+  <StylesProvider>
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <div style={{ margin: "50px" }}>
@@ -137,7 +137,7 @@ const app = (
             <IconButton
               tooltip={{ name: "Small Disabled Button" }}
               icon={imgSrc("icon")}
-              enabled={false}
+              disabled={true}
             />
             <IconButton
               tooltip={{

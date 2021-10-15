@@ -46,7 +46,14 @@ export const theme = createTheme({
         "&:hover": {
           backgroundColor: "transparent",
         },
+        "&$disabled": {
+          "&$outlined": {
+            "border": "none"
+          }
+        }
+
       },
+
     },
 
     MuiCssBaseline: {
