@@ -48,12 +48,10 @@ export const theme = createTheme({
         },
         "&$disabled": {
           "&$outlined": {
-            "border": "none"
-          }
-        }
-
+            border: "none",
+          },
+        },
       },
-
     },
 
     MuiCssBaseline: {

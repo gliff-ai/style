@@ -81,25 +81,24 @@ export const IconButton = (props: Props): ReactElement => {
         placement={tooltipPlacement}
       >
         <span>
-        <Button
-          disabled={disabled}
-          ref={(ref) => {
-            if (!ref || !setRefCallback) return;
-            setRefCallback(ref);
-          }}
-          // eslint-disable-next-line react/jsx-props-no-spreading
-          {...rest}
-        >
-
-          <Avatar
-            className={`${
-              props.size === "small" ? classes.small : classes.medium
-            } ${props.disabled ? classes.noHover : ""}`}
+          <Button
+            disabled={disabled}
+            ref={(ref) => {
+              if (!ref || !setRefCallback) return;
+              setRefCallback(ref);
+            }}
+            // eslint-disable-next-line react/jsx-props-no-spreading
+            {...rest}
           >
-            {svgIcon}
-          </Avatar>
-        </Button>
-          </span>
+            <Avatar
+              className={`${
+                props.size === "small" ? classes.small : classes.medium
+              } ${props.disabled ? classes.noHover : ""}`}
+            >
+              {svgIcon}
+            </Avatar>
+          </Button>
+        </span>
       </HtmlTooltip>
     </ThemeProvider>
   );
