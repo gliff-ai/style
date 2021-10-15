@@ -16,7 +16,6 @@ import {
   BasePopover,
   IconButton,
   Logo,
-  generateClassName,
   theme,
   icons,
 } from "../src";
