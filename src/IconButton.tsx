@@ -24,7 +24,7 @@ export interface Props extends ButtonProps {
   tooltip: Tooltip;
   icon: string;
   fill?: boolean;
-  enabled?: boolean;
+  disabled?: boolean;
   tooltipPlacement?: TooltipProps["placement"];
   setRefCallback?: (ref: HTMLButtonElement) => void;
 }
@@ -58,14 +58,14 @@ export const IconButton = (props: Props): ReactElement => {
     tooltip,
     fill,
     tooltipPlacement,
-    enabled,
+    disabled,
     setRefCallback,
     ...rest
   } = props;
 
   let color = null;
 
-  if (!enabled) {
+  if (disabled) {
     color = "#BBB";
   } else if (fill) {
     color = theme.palette.primary.main;
@@ -80,23 +80,25 @@ export const IconButton = (props: Props): ReactElement => {
         title={icon ? <BaseTooltipTitle tooltip={tooltip} /> : tooltip.name}
         placement={tooltipPlacement}
       >
-        <Button
-          disabled={!enabled}
-          ref={(ref) => {
-            if (!ref || !setRefCallback) return;
-            setRefCallback(ref);
-          }}
-          // eslint-disable-next-line react/jsx-props-no-spreading
-          {...rest}
-        >
-          <Avatar
-            className={`${
-              props.size === "small" ? classes.small : classes.medium
-            } ${props.enabled ? "" : classes.noHover}`}
+        <span>
+          <Button
+            disabled={disabled}
+            ref={(ref) => {
+              if (!ref || !setRefCallback) return;
+              setRefCallback(ref);
+            }}
+            // eslint-disable-next-line react/jsx-props-no-spreading
+            {...rest}
           >
-            {svgIcon}
-          </Avatar>
-        </Button>
+            <Avatar
+              className={`${
+                props.size === "small" ? classes.small : classes.medium
+              } ${props.disabled ? classes.noHover : ""}`}
+            >
+              {svgIcon}
+            </Avatar>
+          </Button>
+        </span>
       </HtmlTooltip>
     </ThemeProvider>
   );
@@ -104,7 +106,7 @@ export const IconButton = (props: Props): ReactElement => {
 
 IconButton.defaultProps = {
   size: "small",
-  enabled: true,
+  disabled: false,
   tooltipPlacement: "right",
   setRefCallback: null,
   onClick: null,
