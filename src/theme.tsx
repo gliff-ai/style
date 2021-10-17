@@ -168,6 +168,10 @@ export const theme = createTheme({
         paddingTop: "8px",
         paddingBottom: "8px",
         background: lightestGrey,
+        [breakpoints.down("md")]: {
+          width: "45px",
+          padding: "0px",
+        },
       },
       groupedVertical: {
         paddingTop: "8px",
@@ -175,10 +179,6 @@ export const theme = createTheme({
       },
       groupedOutlinedVertical: {
         border: "none",
-      },
-      [breakpoints.down("md")]: {
-        width: "45px",
-        padding: "0px",
       },
     },
     MuiDivider: {
