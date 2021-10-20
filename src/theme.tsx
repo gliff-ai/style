@@ -168,14 +168,9 @@ export const theme = createTheme({
         paddingTop: "8px",
         paddingBottom: "8px",
         background: lightestGrey,
-        [breakpoints.down("md")]: {
-          width: "45px",
-          padding: "0px",
-        },
       },
       groupedVertical: {
-        paddingTop: "8px",
-        paddingBottom: "8px",
+        padding: "8px 0px 8px 0px",
       },
       groupedOutlinedVertical: {
         border: "none",
