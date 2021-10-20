@@ -1,4 +1,4 @@
-import { createTheme } from "@material-ui/core/styles";
+import { createTheme } from "@material-ui/core/styles/";
 import type {} from "@material-ui/lab/themeAugmentation"; // Required to add autocomplete to Theme until v5
 
 export const white = "#FFFFFF";
@@ -149,6 +149,12 @@ export const theme = createTheme({
       vertical: {
         height: "auto",
       },
+      mark: {
+        backgroundColor: "transparent",
+      },
+      markActive: {
+        backgroundColor: "transparent",
+      },
     },
 
     MuiPopover: {
@@ -167,8 +173,7 @@ export const theme = createTheme({
         background: lightestGrey,
       },
       groupedVertical: {
-        paddingTop: "8px",
-        paddingBottom: "8px",
+        padding: "8px 0px 8px 0px",
       },
       groupedOutlinedVertical: {
         border: "none",
