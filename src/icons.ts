@@ -69,6 +69,8 @@ const icons = {
   warning: imgSrc("warning"),
   zoomIn: imgSrc("zoom-in-icon"),
   zoomOut: imgSrc("zoom-out-icon"),
+  tick: imgSrc("tick"),
+  previousNext: imgSrc("previous-next"),
 } as const;
 
 export { icons };
