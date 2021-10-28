@@ -191,7 +191,6 @@ export const theme = createTheme({
         paddingTop: "0px",
         paddingBottom: "0px",
       },
-
     },
     MuiDivider: {
       root: {
