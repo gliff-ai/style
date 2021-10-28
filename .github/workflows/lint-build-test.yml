@@ -18,7 +18,9 @@ jobs:
         run: npm run build:example
       - name: Snapshot
         run: npx percy snapshot ./dist
-        
+        env:
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+          
   Lint:
     runs-on: ubuntu-latest
     timeout-minutes: 5
