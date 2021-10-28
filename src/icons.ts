@@ -16,6 +16,7 @@ const icons = {
   breadcrumbTrailArrow: imgSrc("breadcrumb-trail-arrow"),
   brightness: imgSrc("brightness-icon"),
   brush: imgSrc("brush-icon"),
+  brush3D: imgSrc("brush3"),
   channels: imgSrc("channels-icon"),
   closeSpline: imgSrc("close-spline-icon"),
   collaborators: imgSrc("collaborators"),
