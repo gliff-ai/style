@@ -6,10 +6,14 @@ interface Props {
   text: string;
   onClick?: (event: MouseEvent) => void;
   disabled?: boolean;
-  dataTestid?: string | null;
 }
 
-export const BaseTextButton = (props: Props): ReactElement => {
+export const BaseTextButton = ({
+  text,
+  onClick,
+  disabled,
+  ...rest
+}: Props): ReactElement => {
   const classes = makeStyles({
     makeButton: {
       "&:hover": {
@@ -21,14 +25,15 @@ export const BaseTextButton = (props: Props): ReactElement => {
   return (
     <ThemeProvider theme={theme}>
       <Button
-        data-testid={props.dataTestid}
         className={classes.makeButton}
         variant="contained"
         color="primary"
-        onClick={props.onClick}
-        disabled={props.disabled}
+        onClick={onClick}
+        disabled={disabled}
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        {...rest}
       >
-        {props.text}
+        {text}
       </Button>
     </ThemeProvider>
   );
@@ -37,5 +42,4 @@ export const BaseTextButton = (props: Props): ReactElement => {
 BaseTextButton.defaultProps = {
   onClick: null,
   disabled: false,
-  dataTestid: null,
 };

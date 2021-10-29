@@ -126,6 +126,7 @@ const app = (
           <ButtonGroup orientation="vertical">
             <IconButton
               data-testid="small-button"
+              id="small-button"
               tooltip={{ name: "Small Button" }}
               icon={imgSrc("icon")}
             />
