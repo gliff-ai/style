@@ -6,7 +6,7 @@ pull_request_rules:
       - check-success=Build
       - check-success=Lint
       - check-success=Test
-      - check-success=percy/style
+      - check-success=style
     actions:
       merge:
         method: squash
