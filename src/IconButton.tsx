@@ -27,6 +27,7 @@ export interface Props extends ButtonProps {
   disabled?: boolean;
   tooltipPlacement?: TooltipProps["placement"];
   setRefCallback?: (ref: HTMLButtonElement) => void;
+  dataTestid?: string | null;
 }
 
 export const IconButton = (props: Props): ReactElement => {
@@ -82,6 +83,7 @@ export const IconButton = (props: Props): ReactElement => {
       >
         <span>
           <Button
+            data-testid={props.dataTestid}
             disabled={disabled}
             ref={(ref) => {
               if (!ref || !setRefCallback) return;
@@ -114,4 +116,5 @@ IconButton.defaultProps = {
   type: "button",
   component: "button",
   to: null,
+  dataTestid: null,
 } as Props;

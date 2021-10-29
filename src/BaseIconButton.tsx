@@ -28,6 +28,7 @@ interface Props {
   component?: "span" | "button";
   type?: "button" | "submit";
   iconColor?: string;
+  dataTestid?: string | null;
 }
 
 const BaseIconButton = (props: Props): ReactElement => {
@@ -66,6 +67,7 @@ const BaseIconButton = (props: Props): ReactElement => {
       >
         {props.component === "span" ? (
           <Button
+            data-testid={props.dataTestid}
             className={classes.iconButton}
             component="span"
             onClick={props.onClick}
@@ -78,6 +80,7 @@ const BaseIconButton = (props: Props): ReactElement => {
           </Button>
         ) : (
           <IconButton
+            data-testid={props.dataTestid}
             type={props.type}
             ref={(ref) => {
               if (!ref || !props.setRefCallback) return;
@@ -116,6 +119,7 @@ BaseIconButton.defaultProps = {
   component: "button",
   type: "button",
   iconColor: theme.palette.primary.main,
+  dataTestid: null,
 };
 
 export { Props as BaseIconButtonProps, BaseIconButton };

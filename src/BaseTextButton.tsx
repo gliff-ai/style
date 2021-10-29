@@ -6,6 +6,7 @@ interface Props {
   text: string;
   onClick?: (event: MouseEvent) => void;
   disabled?: boolean;
+  dataTestid?: string | null;
 }
 
 export const BaseTextButton = (props: Props): ReactElement => {
@@ -20,6 +21,7 @@ export const BaseTextButton = (props: Props): ReactElement => {
   return (
     <ThemeProvider theme={theme}>
       <Button
+        data-testid={props.dataTestid}
         className={classes.makeButton}
         variant="contained"
         color="primary"
@@ -35,4 +37,5 @@ export const BaseTextButton = (props: Props): ReactElement => {
 BaseTextButton.defaultProps = {
   onClick: null,
   disabled: false,
+  dataTestid: null,
 };
