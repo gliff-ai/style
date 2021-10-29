@@ -9,7 +9,7 @@ const icons = {
   annotationLabel: imgSrc("annotation-label-icon"),
   annotationLabels: imgSrc("annotation-labels-icon"),
   annotationTransparency: imgSrc("annotation-transparency-icon"),
-  autoAssign: imgSrc("auto-assign-assignees.svg"),
+  autoAssign: imgSrc("auto-assign-assignees"),
   audit: imgSrc("audit"),
   backspace: imgSrc("backspace-icon"),
   backgroundSettings: imgSrc("background-settings"),
