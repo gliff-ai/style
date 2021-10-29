@@ -28,6 +28,7 @@ interface Props {
   component?: "span" | "button";
   type?: "button" | "submit";
   iconColor?: string;
+  id?: string;
 }
 
 const BaseIconButton = (props: Props): ReactElement => {
@@ -89,6 +90,7 @@ const BaseIconButton = (props: Props): ReactElement => {
             onClick={props.onClick}
             size={props.buttonSize}
             edge={props.buttonEdge}
+            id={props.id}
           >
             {props.hasAvatar && props.enabled ? (
               <Avatar>{svgIcon}</Avatar>
@@ -116,6 +118,7 @@ BaseIconButton.defaultProps = {
   component: "button",
   type: "button",
   iconColor: theme.palette.primary.main,
+  id: null,
 };
 
 export { Props as BaseIconButtonProps, BaseIconButton };
