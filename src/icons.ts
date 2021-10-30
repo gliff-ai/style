@@ -67,7 +67,7 @@ const icons = {
   trustedServices: imgSrc("trusted-services"),
   undo: imgSrc("undo-icon"),
   upload: imgSrc("upload-icon"),
-  user: imgSrc("user"),
+  usersPage: imgSrc("user"),
   warning: imgSrc("warning"),
   zoomIn: imgSrc("zoom-in-icon"),
   zoomOut: imgSrc("zoom-out-icon"),
