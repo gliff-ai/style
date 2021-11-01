@@ -8,7 +8,12 @@ interface Props {
   disabled?: boolean;
 }
 
-export const BaseTextButton = (props: Props): ReactElement => {
+export const BaseTextButton = ({
+  text,
+  onClick,
+  disabled,
+  ...rest
+}: Props): ReactElement => {
   const classes = makeStyles({
     makeButton: {
       "&:hover": {
@@ -23,10 +28,12 @@ export const BaseTextButton = (props: Props): ReactElement => {
         className={classes.makeButton}
         variant="contained"
         color="primary"
-        onClick={props.onClick}
-        disabled={props.disabled}
+        onClick={onClick}
+        disabled={disabled}
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        {...rest}
       >
-        {props.text}
+        {text}
       </Button>
     </ThemeProvider>
   );
