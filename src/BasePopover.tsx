@@ -19,12 +19,18 @@ interface Props extends BaseIconButtonProps {
   enabled?: boolean;
 }
 
-export function BasePopover(props: Props): ReactElement | null {
+export function BasePopover({
+  children,
+  anchorOrigin,
+  transformOrigin,
+  triggerClosing,
+  ...buttonProps
+}: Props): ReactElement | null {
   const classes = useStyle();
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
 
   const handleClick = (event: MouseEvent<HTMLButtonElement>): void => {
-    if (props.enabled) {
+    if (buttonProps.enabled) {
       setAnchorEl(event.currentTarget);
     }
   };
@@ -35,22 +41,22 @@ export function BasePopover(props: Props): ReactElement | null {
 
   useEffect(() => {
     setAnchorEl(null);
-  }, [props.triggerClosing]);
+  }, [triggerClosing]);
 
   return (
     <>
       {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-      <BaseIconButton {...props} onClick={handleClick} />
+      <BaseIconButton {...buttonProps} onClick={handleClick} />
       <Popover
-        id={`popover-${props.tooltip.name}`}
+        id={`popover-${buttonProps.tooltip.name}`}
         open={Boolean(anchorEl)}
         anchorEl={anchorEl}
         onClose={handleClose}
-        anchorOrigin={props.anchorOrigin}
-        transformOrigin={props.transformOrigin}
+        anchorOrigin={anchorOrigin}
+        transformOrigin={transformOrigin}
         classes={{ paper: classes.popoverPaper }}
       >
-        {props.children}
+        {children}
       </Popover>
     </>
   );
