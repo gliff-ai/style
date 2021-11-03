@@ -8,12 +8,13 @@ import {
   Button,
 } from "@material-ui/core";
 import SVG from "react-inlinesvg";
+import type { ButtonProps } from "@material-ui/core/Button";
 import { BaseTooltipTitle } from "./BaseTooltipTitle";
 import { HtmlTooltip } from "./BaseHtmlTooltip";
 import { theme } from "./theme";
 import { Tooltip } from "./interface";
 
-interface Props {
+interface Props extends ButtonProps {
   tooltip: Tooltip;
   onClick?: (event: MouseEvent) => void;
   onMouseDown?: (event: MouseEvent) => void;
@@ -28,7 +29,6 @@ interface Props {
   component?: "span" | "button";
   type?: "button" | "submit";
   iconColor?: string;
-  id?: string;
 }
 
 const BaseIconButton = ({
@@ -125,7 +125,6 @@ BaseIconButton.defaultProps = {
   component: "button",
   type: "button",
   iconColor: theme.palette.primary.main,
-  id: null,
 };
 
 export { Props as BaseIconButtonProps, BaseIconButton };
