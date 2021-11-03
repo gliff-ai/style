@@ -125,6 +125,34 @@ const app = (
         <div>
           <ButtonGroup orientation="vertical">
             <IconButton
+              data-testid="small-button"
+              id="small-button"
+              tooltip={{ name: "Small Button" }}
+              icon={imgSrc("icon")}
+            />
+            <IconButton
+              tooltip={{ name: "Small Active Button" }}
+              icon={imgSrc("icon")}
+              fill={true}
+            />
+            <IconButton
+              tooltip={{ name: "Small Disabled Button" }}
+              icon={imgSrc("icon")}
+              disabled={true}
+            />
+            <IconButton
+              tooltip={{
+                name: "Small Button",
+                shortcut: "K",
+                shortcutSymbol: "cmd",
+              }}
+              icon={imgSrc("icon")}
+            />
+          </ButtonGroup>
+          <br />
+          <br />
+          <ButtonGroup orientation="horizontal">
+            <IconButton
               tooltip={{ name: "Small Button" }}
               icon={imgSrc("icon")}
             />

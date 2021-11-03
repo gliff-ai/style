@@ -31,72 +31,79 @@ interface Props {
   id?: string;
 }
 
-const BaseIconButton = (props: Props): ReactElement => {
+const BaseIconButton = ({
+  tooltip,
+  onClick,
+  onMouseDown,
+  onMouseUp,
+  fill,
+  buttonSize,
+  buttonEdge,
+  tooltipPlacement,
+  setRefCallback,
+  hasAvatar,
+  enabled,
+  component,
+  type,
+  iconColor,
+  ...rest
+}: Props): ReactElement => {
   const classes = makeStyles({
     iconButton: {
       marginBottom: "5px",
       marginTop: "7px",
     },
     svg: {
-      width: props.buttonSize === "medium" ? "45px" : "20px",
+      width: buttonSize === "medium" ? "45px" : "20px",
       height: "auto",
-      color: props.iconColor,
+      color: iconColor,
     },
-  })(props);
+  })({ buttonSize, iconColor });
 
   const svgIcon = (
     <SVG
-      src={props.tooltip.icon}
+      src={tooltip.icon}
       className={classes.svg}
-      fill={props.fill ? props.iconColor : null}
+      fill={fill ? iconColor : null}
     />
   );
 
   return (
     <ThemeProvider theme={theme}>
       <HtmlTooltip
-        key={props.tooltip.name}
+        key={tooltip.name}
         title={
-          props.tooltip?.icon ? (
-            <BaseTooltipTitle tooltip={props.tooltip} />
-          ) : (
-            props.tooltip.name
-          )
+          tooltip?.icon ? <BaseTooltipTitle tooltip={tooltip} /> : tooltip.name
         }
-        placement={props.tooltipPlacement}
+        placement={tooltipPlacement}
       >
-        {props.component === "span" ? (
+        {component === "span" ? (
           <Button
             className={classes.iconButton}
             component="span"
-            onClick={props.onClick}
+            onClick={onClick}
+            // eslint-disable-next-line react/jsx-props-no-spreading
+            {...rest}
           >
-            {props.hasAvatar && props.enabled ? (
-              <Avatar>{svgIcon}</Avatar>
-            ) : (
-              <>{svgIcon}</>
-            )}
+            {hasAvatar && enabled ? <Avatar>{svgIcon}</Avatar> : <>{svgIcon}</>}
           </Button>
         ) : (
           <IconButton
-            type={props.type}
+            type={type}
             ref={(ref) => {
-              if (!ref || !props.setRefCallback) return;
-              props.setRefCallback(ref);
+              if (!ref || !setRefCallback) return;
+              setRefCallback(ref);
             }}
             className={classes.iconButton}
-            onMouseUp={props.onMouseUp}
-            onMouseDown={props.onMouseDown}
-            onClick={props.onClick}
-            size={props.buttonSize}
-            edge={props.buttonEdge}
-            id={props.id}
+            onMouseUp={onMouseUp}
+            onMouseDown={onMouseDown}
+            onClick={onClick}
+            size={buttonSize}
+            edge={buttonEdge}
+            // eslint-disable-next-line react/jsx-props-no-spreading
+            {...rest}
           >
-            {props.hasAvatar && props.enabled ? (
-              <Avatar>{svgIcon}</Avatar>
-            ) : (
-              <>{svgIcon}</>
-            )}
+            {hasAvatar && enabled ? <Avatar>{svgIcon}</Avatar> : <>{svgIcon}</>}
           </IconButton>
         )}
       </HtmlTooltip>

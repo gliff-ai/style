@@ -1,4 +1,6 @@
-import { createTheme } from "@material-ui/core/styles";
+import { createTheme } from "@material-ui/core/styles/";
+import createBreakpoints from "@material-ui/core/styles/createBreakpoints";
+
 import type {} from "@material-ui/lab/themeAugmentation"; // Required to add autocomplete to Theme until v5
 
 export const white = "#FFFFFF";
@@ -11,6 +13,8 @@ export const black = "#000000";
 export const mainGreen = "#02FFAD";
 export const purple = "#AE79FF";
 export const blue = "#00DBFF";
+
+const breakpoints = createBreakpoints({});
 
 export const theme = createTheme({
   palette: {
@@ -149,6 +153,12 @@ export const theme = createTheme({
       vertical: {
         height: "auto",
       },
+      mark: {
+        backgroundColor: "transparent",
+      },
+      markActive: {
+        backgroundColor: "transparent",
+      },
     },
 
     MuiPopover: {
@@ -167,11 +177,19 @@ export const theme = createTheme({
         background: lightestGrey,
       },
       groupedVertical: {
-        paddingTop: "8px",
-        paddingBottom: "8px",
+        paddingLeft: "8px",
+        paddingRight: "8px",
+        [breakpoints.down("md")]: {
+          paddingLeft: "0px",
+          paddingRight: "0px",
+        },
       },
-      groupedOutlinedVertical: {
+      groupedOutlined: {
         border: "none",
+      },
+      groupedHorizontal: {
+        paddingTop: "0px",
+        paddingBottom: "0px",
       },
     },
     MuiDivider: {
