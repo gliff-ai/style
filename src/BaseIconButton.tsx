@@ -8,13 +8,13 @@ import {
   Button,
 } from "@material-ui/core";
 import SVG from "react-inlinesvg";
-import type { ButtonProps } from "@material-ui/core/Button";
+import type { IconButtonProps } from "@material-ui/core/IconButton";
 import { BaseTooltipTitle } from "./BaseTooltipTitle";
 import { HtmlTooltip } from "./BaseHtmlTooltip";
 import { theme } from "./theme";
 import { Tooltip } from "./interface";
 
-interface Props extends ButtonProps {
+interface Props extends IconButtonProps {
   tooltip: Tooltip;
   onClick?: (event: MouseEvent) => void;
   onMouseDown?: (event: MouseEvent) => void;
