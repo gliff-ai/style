@@ -1,8 +1,9 @@
 import { MouseEvent, ReactElement } from "react";
 import { makeStyles, ThemeProvider, Button } from "@material-ui/core";
+import type { ButtonProps } from "@material-ui/core/Button";
 import { theme } from "./theme";
 
-interface Props {
+interface Props extends ButtonProps {
   text: string;
   onClick?: (event: MouseEvent) => void;
   disabled?: boolean;
