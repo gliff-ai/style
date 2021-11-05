@@ -109,6 +109,14 @@ export const theme = createTheme({
       },
     },
 
+    MuiMenuItem: {
+      root: {
+        "&:hover": {
+          backgroundColor: mainGreen,
+        },
+      },
+    },
+
     MuiContainer: {
       root: {
         marginTop: "25px",
