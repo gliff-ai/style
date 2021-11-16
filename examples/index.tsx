@@ -56,20 +56,20 @@ const app = (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <div style={{ margin: "50px" }}>
-        <h4>Logo</h4>
+        <h2>Logo</h2>
 
         <Logo />
 
-        <h4>BaseTextButton</h4>
+        <h2>BaseTextButton</h2>
         <BaseTextButton text="Hello World" />
         <br></br>
         <br></br>
         <BaseTextButton text="Hello World" disabled={true} />
 
-        <h4>SnackBar</h4>
+        <h2>SnackBar</h2>
         <SnackBar />
 
-        <h4>HtmlTooltip / BaseTooltipTitle</h4>
+        <h2>HtmlTooltip / BaseTooltipTitle</h2>
         <HtmlTooltip
           placement={"right"}
           open={true}
@@ -122,7 +122,7 @@ const app = (
         <br></br>
         <br></br>
         <br></br>
-        <h4>Icon Button</h4>
+        <h2>Icon Button</h2>
         <div>
           <ButtonGroup orientation="vertical">
             <IconButton
@@ -196,7 +196,7 @@ const app = (
           </ButtonGroup>
         </div>
 
-        <h4>BasePopover</h4>
+        <h2>BasePopover</h2>
         <BasePopover
           tooltip={{
             name: "hello world",
@@ -215,16 +215,20 @@ const app = (
 
         <h2>Icons</h2>
 
+        <section style={{float: "left"}}>
         {Object.entries(icons).map(([name, src]) => (
           <span style={{ float: "left", padding: "20px" }} key={name}>
             <p>{name}</p>
             <SVG src={src} width="50px" height="50px" className="icon" />
           </span>
         ))}
+        </section>
 
-        <h4>Loading Spinner</h4>
+        <h2>Loading Spinner</h2>
         <div>
+          <hr />
           <LoadingSpinner />
+          <hr />
         </div>
       </div>
     </ThemeProvider>
