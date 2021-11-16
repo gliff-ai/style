@@ -16,6 +16,7 @@ import {
   BasePopover,
   IconButton,
   Logo,
+  LoadingSpinner,
   theme,
   icons,
 } from "../src";
@@ -220,6 +221,11 @@ const app = (
             <SVG src={src} width="50px" height="50px" className="icon" />
           </span>
         ))}
+
+        <h4>Loading Spinner</h4>
+        <div>
+          <LoadingSpinner />
+        </div>
       </div>
     </ThemeProvider>
   </StylesProvider>
