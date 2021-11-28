@@ -215,13 +215,13 @@ const app = (
 
         <h2>Icons</h2>
 
-        <section style={{float: "left"}}>
-        {Object.entries(icons).map(([name, src]) => (
-          <span style={{ float: "left", padding: "20px" }} key={name}>
-            <p>{name}</p>
-            <SVG src={src} width="50px" height="50px" className="icon" />
-          </span>
-        ))}
+        <section style={{ float: "left" }}>
+          {Object.entries(icons).map(([name, src]) => (
+            <span style={{ float: "left", padding: "20px" }} key={name}>
+              <p>{name}</p>
+              <SVG src={src} width="50px" height="50px" className="icon" />
+            </span>
+          ))}
         </section>
 
         <h2>Loading Spinner</h2>
