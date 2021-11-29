@@ -12,10 +12,6 @@ export {
   darkGrey,
 } from "./theme";
 
-export { BaseSnackbar } from "./BaseSnackbar";
-
-export type { BaseSnackbarProps } from "./BaseSnackbar";
-
 export { HtmlTooltip } from "./BaseHtmlTooltip";
 
 export { BaseIconButton } from "./BaseIconButton";
