@@ -46,7 +46,7 @@ interface Props {
   messageText: string | ReactElement;
 }
 
-function MessageSnackbar({ open, onClose, messageText }: Props): ReactElement {
+function WarningSnackbar({ open, onClose, messageText }: Props): ReactElement {
   const classes = useStyle();
   return (
     <ThemeProvider theme={theme}>
@@ -81,4 +81,4 @@ function MessageSnackbar({ open, onClose, messageText }: Props): ReactElement {
   );
 }
 
-export { MessageSnackbar };
+export { WarningSnackbar };

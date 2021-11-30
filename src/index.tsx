@@ -21,7 +21,7 @@ export { BaseTooltipTitle } from "./BaseTooltipTitle";
 export { BasePopover } from "./BasePopover";
 export { Logo } from "./Logo";
 export { LoadingSpinner } from "./LoadingSpinner";
-export { MessageSnackbar } from "./MessageSnackbar";
+export { WarningSnackbar } from "./WarningSnackbar";
 
 export type { Tooltip, Tooltips } from "./tooltips";
 

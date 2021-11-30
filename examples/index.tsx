@@ -18,7 +18,7 @@ import {
   LoadingSpinner,
   theme,
   icons,
-  MessageSnackbar,
+  WarningSnackbar,
 } from "../src";
 
 export const imgSrc = (src: string, type = "svg"): string =>
@@ -42,7 +42,7 @@ const SnackBar = (): ReactElement => {
   return (
     <>
       <BaseTextButton text="Open" onClick={handleClick} />
-      <MessageSnackbar
+      <WarningSnackbar
         messageText={<>Snackbar</>}
         onClose={handleClose}
         open={open}
