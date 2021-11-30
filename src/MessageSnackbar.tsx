@@ -33,11 +33,6 @@ const useStyle = makeStyles(() => ({
   },
   svgSmallClose: {
     width: "15px",
-    height: "100%",
-    marginLeft: "11px",
-    marginRight: "0px",
-    marginTop: "-3px",
-    marginBottom: "0px",
     fill: theme.palette.primary.light,
   },
   snackbarContent: {
