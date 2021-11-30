@@ -24,6 +24,7 @@ export { BaseTextButton } from "./BaseTextButton";
 export { BaseTooltipTitle } from "./BaseTooltipTitle";
 export { BasePopover } from "./BasePopover";
 export { Logo } from "./Logo";
+export { LoadingSpinner } from "./LoadingSpinner";
 
 export type { Tooltip, Tooltips } from "./tooltips";
 

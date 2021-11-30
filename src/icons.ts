@@ -67,7 +67,7 @@ const icons = {
   showStrokeAsPixels: imgSrc("show-strokes-as-pixels"),
   smallImageGrid: imgSrc("small-image-grid"),
   spline: imgSrc("spline-icon"),
-  trustedServices: imgSrc("trusted-services"),
+  trustedServices: imgSrc("AI-in-the-loop"),
   undo: imgSrc("undo-icon"),
   upload: imgSrc("upload-icon"),
   usersPage: imgSrc("user"),
