@@ -64,19 +64,21 @@ function MessageSnackbar({ open, onClose, messageText }: Props): ReactElement {
                 <SVG src={imgSrc("warning")} className={classes.svgSmall} />
 
                 <div className={classes.message}>{messageText}</div>
-                <IconButton
-                  size="small"
-                  aria-label="close"
-                  onClick={onClose}
-                  className={classes.iconButton}
-                >
-                  <SVG
-                    src={imgSrc("remove-label-icon")}
-                    className={classes.svgSmallClose}
-                  />
-                </IconButton>
               </span>
             }
+            action={[
+              <IconButton
+                size="small"
+                aria-label="close"
+                onClick={onClose}
+                className={classes.iconButton}
+              >
+                <SVG
+                  src={imgSrc("remove-label-icon")}
+                  className={classes.svgSmallClose}
+                />
+              </IconButton>,
+            ]}
           />
         </>
       </Snackbar>
