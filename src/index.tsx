@@ -12,10 +12,6 @@ export {
   darkGrey,
 } from "./theme";
 
-export { BaseSnackbar } from "./BaseSnackbar";
-
-export type { BaseSnackbarProps } from "./BaseSnackbar";
-
 export { HtmlTooltip } from "./BaseHtmlTooltip";
 
 export { BaseIconButton } from "./BaseIconButton";
@@ -25,6 +21,7 @@ export { BaseTooltipTitle } from "./BaseTooltipTitle";
 export { BasePopover } from "./BasePopover";
 export { Logo } from "./Logo";
 export { LoadingSpinner } from "./LoadingSpinner";
+export { WarningSnackbar } from "./WarningSnackbar";
 
 export type { Tooltip, Tooltips } from "./tooltips";
 

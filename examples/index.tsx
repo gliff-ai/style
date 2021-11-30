@@ -11,7 +11,6 @@ import SVG from "react-inlinesvg";
 import {
   BaseTextButton,
   HtmlTooltip,
-  BaseSnackbar,
   BaseTooltipTitle,
   BasePopover,
   IconButton,
@@ -19,6 +18,7 @@ import {
   LoadingSpinner,
   theme,
   icons,
+  WarningSnackbar,
 } from "../src";
 
 export const imgSrc = (src: string, type = "svg"): string =>
@@ -42,9 +42,9 @@ const SnackBar = (): ReactElement => {
   return (
     <>
       <BaseTextButton text="Open" onClick={handleClick} />
-      <BaseSnackbar
-        message={<>Snackbar</>}
-        handleClose={handleClose}
+      <WarningSnackbar
+        messageText={<>Snackbar</>}
+        onClose={handleClose}
         open={open}
       />
     </>
@@ -215,13 +215,13 @@ const app = (
 
         <h2>Icons</h2>
 
-        <section style={{float: "left"}}>
-        {Object.entries(icons).map(([name, src]) => (
-          <span style={{ float: "left", padding: "20px" }} key={name}>
-            <p>{name}</p>
-            <SVG src={src} width="50px" height="50px" className="icon" />
-          </span>
-        ))}
+        <section style={{ float: "left" }}>
+          {Object.entries(icons).map(([name, src]) => (
+            <span style={{ float: "left", padding: "20px" }} key={name}>
+              <p>{name}</p>
+              <SVG src={src} width="50px" height="50px" className="icon" />
+            </span>
+          ))}
         </section>
 
         <h2>Loading Spinner</h2>
