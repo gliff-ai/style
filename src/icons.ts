@@ -64,6 +64,7 @@ const icons = {
   selectedChip: imgSrc("active-annotation-label-search-filter"),
   notSelectedChip: imgSrc("non-active-annotation-label-search-filter"),
   showHidePassword: imgSrc("show-hide-password"),
+  showStrokeAsPixels: imgSrc("show-strokes-as-pixels"),
   smallImageGrid: imgSrc("small-image-grid"),
   spline: imgSrc("spline-icon"),
   trustedServices: imgSrc("trusted-services"),
