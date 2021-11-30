@@ -40,13 +40,15 @@ const useStyle = makeStyles(() => ({
     marginBottom: "0px",
     fill: theme.palette.primary.light,
   },
-  snackbarContent: { backgroundColor: theme.palette.info.light },
+  snackbarContent: {
+    backgroundColor: theme.palette.info.light,
+  },
 }));
 
 interface Props {
   open: boolean;
   onClose: () => void;
-  messageText: string;
+  messageText: string | ReactElement;
 }
 
 function MessageSnackbar({ open, onClose, messageText }: Props): ReactElement {
@@ -54,27 +56,29 @@ function MessageSnackbar({ open, onClose, messageText }: Props): ReactElement {
   return (
     <ThemeProvider theme={theme}>
       <Snackbar open={open} onClose={onClose}>
-        <SnackbarContent
-          className={classes.snackbarContent}
-          message={
-            <span>
-              <SVG src={imgSrc("warning")} className={classes.svgSmall} />
+        <>
+          <SnackbarContent
+            className={classes.snackbarContent}
+            message={
+              <span>
+                <SVG src={imgSrc("warning")} className={classes.svgSmall} />
 
-              <div className={classes.message}>{messageText}</div>
-              <IconButton
-                size="small"
-                aria-label="close"
-                onClick={onClose}
-                className={classes.iconButton}
-              >
-                <SVG
-                  src={imgSrc("remove-label-icon")}
-                  className={classes.svgSmallClose}
-                />
-              </IconButton>
-            </span>
-          }
-        />
+                <div className={classes.message}>{messageText}</div>
+                <IconButton
+                  size="small"
+                  aria-label="close"
+                  onClick={onClose}
+                  className={classes.iconButton}
+                >
+                  <SVG
+                    src={imgSrc("remove-label-icon")}
+                    className={classes.svgSmallClose}
+                  />
+                </IconButton>
+              </span>
+            }
+          />
+        </>
       </Snackbar>
     </ThemeProvider>
   );

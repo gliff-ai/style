@@ -11,7 +11,6 @@ import SVG from "react-inlinesvg";
 import {
   BaseTextButton,
   HtmlTooltip,
-  BaseSnackbar,
   BaseTooltipTitle,
   BasePopover,
   IconButton,
@@ -19,6 +18,7 @@ import {
   LoadingSpinner,
   theme,
   icons,
+  MessageSnackbar,
 } from "../src";
 
 export const imgSrc = (src: string, type = "svg"): string =>
@@ -42,9 +42,9 @@ const SnackBar = (): ReactElement => {
   return (
     <>
       <BaseTextButton text="Open" onClick={handleClick} />
-      <BaseSnackbar
-        message={<>Snackbar</>}
-        handleClose={handleClose}
+      <MessageSnackbar
+        messageText={<>Snackbar</>}
+        onClose={handleClose}
         open={open}
       />
     </>
