@@ -1,8 +1,7 @@
 import { createTheme } from "@mui/material/styles/";
-// import { adaptV4Theme, createBreakpoints } from '@mui/material/styles';
+import createBreakpoints from "@mui/system/createTheme/createBreakpoints";
 
 import type {} from "@mui/lab/themeAugmentation"; // Required to add autocomplete to Theme until v5
-import { adaptV4Theme } from "@mui/material";
 
 export const white = "#FFFFFF";
 export const lightestGrey = "#FAFAFA";
@@ -15,38 +14,38 @@ export const mainGreen = "#02FFAD";
 export const purple = "#AE79FF";
 export const blue = "#00DBFF";
 
-// const breakpoints = createBreakpoints({});
+const breakpoints = createBreakpoints({});
 
-export const theme = createTheme(
-  adaptV4Theme({
-    palette: {
-      primary: {
-        main: mainGreen,
-        light: white,
-      },
-      secondary: {
-        main: purple,
-        light: lightestGrey,
-      },
-      text: {
-        primary: darkGrey,
-        secondary: middleGrey,
-      },
-      info: {
-        main: blue,
-        light: purple,
-      },
+export const theme = createTheme({
+  palette: {
+    primary: {
+      main: mainGreen,
+      light: white,
     },
-    typography: {
-      fontFamily: "Roboto",
+    secondary: {
+      main: purple,
+      light: lightestGrey,
     },
+    text: {
+      primary: darkGrey,
+      secondary: middleGrey,
+    },
+    info: {
+      main: blue,
+      light: purple,
+    },
+  },
+  typography: {
+    fontFamily: "Roboto",
+  },
 
-    shape: {
-      borderRadius: 6,
-    },
+  shape: {
+    borderRadius: 6,
+  },
 
-    overrides: {
-      MuiButton: {
+  components: {
+    MuiButton: {
+      styleOverrides: {
         root: {
           color: black,
           "&:hover": {
@@ -59,8 +58,9 @@ export const theme = createTheme(
           },
         },
       },
-
-      MuiCssBaseline: {
+    },
+    MuiCssBaseline: {
+      styleOverrides: {
         "@global": {
           html: {
             height: "100%",
@@ -75,87 +75,116 @@ export const theme = createTheme(
           },
         },
       },
+    },
 
-      MuiInputBase: {
+    MuiInputBase: {
+      styleOverrides: {
         root: {
           backgroundColor: white,
           borderRadius: "6px",
         },
       },
-      MuiOutlinedInput: {
+    },
+
+    MuiOutlinedInput: {
+      styleOverrides: {
         root: {
           height: "50px",
         },
       },
-      MuiAccordionSummary: {
+    },
+
+    MuiAccordionSummary: {
+      styleOverrides: {
         root: {
           "&$expanded": {
             minHeight: "4px",
           },
         },
       },
+    },
 
-      MuiCardContent: {
+    MuiCardContent: {
+      styleOverrides: {
         root: {
           "&:last-child": {
             paddingBottom: "18px",
           },
         },
       },
+    },
 
-      MuiAutocomplete: {
+    MuiAutocomplete: {
+      styleOverrides: {
         option: {
           '&[data-focus="true"]': {
             backgroundColor: mainGreen,
           },
         },
       },
+    },
 
-      MuiMenuItem: {
+    MuiMenuItem: {
+      styleOverrides: {
         root: {
           "&:hover": {
             backgroundColor: mainGreen,
           },
         },
       },
+    },
 
-      MuiContainer: {
+    MuiContainer: {
+      styleOverrides: {
         root: {
           marginTop: "25px",
         },
       },
+    },
 
-      MuiFormControl: {
+    MuiFormControl: {
+      styleOverrides: {
         root: {
           display: "flex",
         },
       },
+    },
 
-      MuiIconButton: {
+    MuiIconButton: {
+      styleOverrides: {
         root: {
           "&:hover": {
             backgroundColor: "transparent",
           },
         },
       },
+      defaultProps: {
+        disableRipple: true,
+      },
+    },
 
-      MuiListItem: {
+    MuiListItem: {
+      styleOverrides: {
         button: {
           "&:hover": {
             backgroundColor: "transparent",
           },
         },
       },
+    },
 
-      MuiList: {
+    MuiList: {
+      styleOverrides: {
         root: {
           "&:hover": {
             backgroundColor: white,
           },
         },
       },
+    },
 
-      MuiSlider: {
+    MuiSlider: {
+      styleOverrides: {
         root: {
           color: black,
           textAlign: "center",
@@ -170,14 +199,28 @@ export const theme = createTheme(
           backgroundColor: "transparent",
         },
       },
+    },
 
-      MuiPopover: {
+    MuiPopover: {
+      styleOverrides: {
         root: {
           marginLeft: "20px",
         },
       },
+      defaultProps: {
+        anchorOrigin: {
+          vertical: "top",
+          horizontal: "right",
+        },
+        transformOrigin: {
+          vertical: "top",
+          horizontal: "left",
+        },
+      },
+    },
 
-      MuiButtonGroup: {
+    MuiButtonGroup: {
+      styleOverrides: {
         root: {
           border: "1px solid",
           borderColor: veryLightBlue,
@@ -189,10 +232,10 @@ export const theme = createTheme(
         groupedVertical: {
           paddingLeft: "8px",
           paddingRight: "8px",
-          // [breakpoints.down("md")]: {
-          //   paddingLeft: "0px",
-          //   paddingRight: "0px",
-          // },
+          [breakpoints.down("md")]: {
+            paddingLeft: "0px",
+            paddingRight: "0px",
+          },
         },
         groupedOutlined: {
           border: "none",
@@ -202,7 +245,14 @@ export const theme = createTheme(
           paddingBottom: "0px",
         },
       },
-      MuiDivider: {
+      defaultProps: {
+        orientation: "vertical",
+        variant: "outlined",
+        disableRipple: true,
+      },
+    },
+    MuiDivider: {
+      styleOverrides: {
         root: {
           marginTop: "-15px",
           width: "90%",
@@ -210,8 +260,10 @@ export const theme = createTheme(
           marginBottom: "17px",
         },
       },
+    },
 
-      MuiAvatar: {
+    MuiAvatar: {
+      styleOverrides: {
         rounded: {
           "&:hover": {
             backgroundColor: "transparent",
@@ -241,32 +293,10 @@ export const theme = createTheme(
         },
       },
     },
-
-    props: {
-      MuiIconButton: {
+    MuiButtonBase: {
+      defaultProps: {
         disableRipple: true,
-      },
-
-      MuiButtonGroup: {
-        orientation: "vertical",
-        variant: "outlined",
-        disableRipple: true,
-      },
-
-      MuiButtonBase: {
-        disableRipple: true,
-      },
-
-      MuiPopover: {
-        anchorOrigin: {
-          vertical: "top",
-          horizontal: "right",
-        },
-        transformOrigin: {
-          vertical: "top",
-          horizontal: "left",
-        },
       },
     },
-  })
-);
+  },
+});

@@ -1,5 +1,11 @@
-import { ButtonGroup, ThemeProvider, Theme, StyledEngineProvider, CssBaseline } from "@mui/material";
-import StylesProvider from '@mui/styles/StylesProvider';
+import {
+  ButtonGroup,
+  ThemeProvider,
+  Theme,
+  StyledEngineProvider,
+  CssBaseline,
+} from "@mui/material";
+import StylesProvider from "@mui/styles/StylesProvider";
 import { useState, SyntheticEvent, MouseEvent, ReactElement } from "react";
 import ReactDOM from "react-dom";
 import SVG from "react-inlinesvg";
@@ -17,12 +23,10 @@ import {
   WarningSnackbar,
 } from "../src";
 
-
-declare module '@mui/styles/defaultTheme' {
+declare module "@mui/styles/defaultTheme" {
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
   interface DefaultTheme extends Theme {}
 }
-
 
 export const imgSrc = (src: string, type = "svg"): string =>
   new URL(`/src/assets/${src}.${type}`, import.meta.url).href;
@@ -134,17 +138,20 @@ const app = (
                 id="small-button"
                 tooltip={{ name: "Small Button" }}
                 icon={imgSrc("icon")}
-                size="large" />
+                size="large"
+              />
               <IconButton
                 tooltip={{ name: "Small Active Button" }}
                 icon={imgSrc("icon")}
                 fill={true}
-                size="large" />
+                size="large"
+              />
               <IconButton
                 tooltip={{ name: "Small Disabled Button" }}
                 icon={imgSrc("icon")}
                 disabled={true}
-                size="large" />
+                size="large"
+              />
               <IconButton
                 tooltip={{
                   name: "Small Button",
@@ -152,22 +159,29 @@ const app = (
                   shortcutSymbol: "cmd",
                 }}
                 icon={imgSrc("icon")}
-                size="large" />
+                size="large"
+              />
             </ButtonGroup>
             <br />
             <br />
             <ButtonGroup orientation="horizontal">
-              <IconButton tooltip={{ name: "Small Button" }} icon={imgSrc("icon")} size="large" />
+              <IconButton
+                tooltip={{ name: "Small Button" }}
+                icon={imgSrc("icon")}
+                size="large"
+              />
               <IconButton
                 tooltip={{ name: "Small Active Button" }}
                 icon={imgSrc("icon")}
                 fill={true}
-                size="large" />
+                size="large"
+              />
               <IconButton
                 tooltip={{ name: "Small Disabled Button" }}
                 icon={imgSrc("icon")}
                 disabled={true}
-                size="large" />
+                size="large"
+              />
               <IconButton
                 tooltip={{
                   name: "Small Button",
@@ -175,7 +189,8 @@ const app = (
                   shortcutSymbol: "cmd",
                 }}
                 icon={imgSrc("icon")}
-                size="large" />
+                size="large"
+              />
             </ButtonGroup>
             <br />
             <br />

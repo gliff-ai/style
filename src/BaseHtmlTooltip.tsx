@@ -1,5 +1,5 @@
 import { Tooltip, Theme } from "@mui/material";
-import withStyles from '@mui/styles/withStyles';
+import withStyles from "@mui/styles/withStyles";
 import { veryLightBlue, white } from "./theme";
 
 export const HtmlTooltip = withStyles((theme: Theme) => ({
@@ -7,7 +7,6 @@ export const HtmlTooltip = withStyles((theme: Theme) => ({
     backgroundColor: white,
     fontSize: theme.typography.pxToRem(12),
     border: "1px solid",
-
     borderColor: veryLightBlue,
     color: theme.palette.text.primary,
     maxWidth: "100%",
