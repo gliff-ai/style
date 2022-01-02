@@ -8,15 +8,13 @@ import {
   Theme,
   StyledEngineProvider,
 } from "@mui/material";
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from "@mui/styles/makeStyles";
 import { theme } from "./theme";
 
-
-declare module '@mui/styles/defaultTheme' {
+declare module "@mui/styles/defaultTheme" {
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
   interface DefaultTheme extends Theme {}
 }
-
 
 export const imgSrc = (src: string, type = "svg"): string =>
   new URL(`/src/assets/icons/${src}.${type}`, import.meta.url).href;
@@ -61,7 +59,7 @@ function WarningSnackbar({ open, onClose, messageText }: Props): ReactElement {
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme}>
         <Snackbar open={open} onClose={onClose}>
-          <>
+          <div>
             <SnackbarContent
               className={classes.snackbarContent}
               message={
@@ -77,15 +75,17 @@ function WarningSnackbar({ open, onClose, messageText }: Props): ReactElement {
                   aria-label="close"
                   onClick={onClose}
                   className={classes.iconButton}
+                  key="1"
                 >
                   <SVG
                     src={imgSrc("remove-label-icon")}
                     className={classes.svgSmallClose}
+                    key="2"
                   />
                 </IconButton>,
               ]}
             />
-          </>
+          </div>
         </Snackbar>
       </ThemeProvider>
     </StyledEngineProvider>

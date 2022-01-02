@@ -8,7 +8,7 @@ import {
   StyledEngineProvider,
   Button,
 } from "@mui/material";
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from "@mui/styles/makeStyles";
 import SVG from "react-inlinesvg";
 import type { IconButtonProps } from "@mui/material/IconButton";
 import { BaseTooltipTitle } from "./BaseTooltipTitle";
@@ -16,12 +16,10 @@ import { HtmlTooltip } from "./BaseHtmlTooltip";
 import { theme } from "./theme";
 import { Tooltip } from "./interface";
 
-
-declare module '@mui/styles/defaultTheme' {
+declare module "@mui/styles/defaultTheme" {
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
   interface DefaultTheme extends Theme {}
 }
-
 
 interface Props extends IconButtonProps {
   tooltip: Tooltip;
@@ -29,7 +27,7 @@ interface Props extends IconButtonProps {
   onMouseDown?: (event: MouseEvent) => void;
   onMouseUp?: (event: MouseEvent) => void;
   fill?: boolean;
-  buttonSize?: "small" | "medium";
+  buttonSize?: "small" | "medium" | "large";
   buttonEdge?: "start" | "end";
   tooltipPlacement?: TooltipProps["placement"];
   setRefCallback?: (ref: HTMLButtonElement) => void;
@@ -61,6 +59,12 @@ const BaseIconButton = ({
     iconButton: {
       marginBottom: "5px",
       marginTop: "7px",
+      padding: (size) => {
+        if (size === "small") return "4px";
+        if (size === "large") return "5px 11px";
+
+        return "2px";
+      },
     },
     svg: {
       width: buttonSize === "medium" ? "45px" : "20px",
@@ -83,19 +87,27 @@ const BaseIconButton = ({
         <HtmlTooltip
           key={tooltip.name}
           title={
-            tooltip?.icon ? <BaseTooltipTitle tooltip={tooltip} /> : tooltip.name
+            tooltip?.icon ? (
+              <BaseTooltipTitle tooltip={tooltip} />
+            ) : (
+              tooltip.name
+            )
           }
           placement={tooltipPlacement}
         >
           {component === "span" ? (
             <Button
               className={classes.iconButton}
-              component="span"
+              // component="span"
               onClick={onClick}
               // eslint-disable-next-line react/jsx-props-no-spreading
               {...rest}
             >
-              {hasAvatar && enabled ? <Avatar>{svgIcon}</Avatar> : <>{svgIcon}</>}
+              {hasAvatar && enabled ? (
+                <Avatar>{svgIcon}</Avatar>
+              ) : (
+                <>{svgIcon}</>
+              )}
             </Button>
           ) : (
             <IconButton
@@ -113,7 +125,11 @@ const BaseIconButton = ({
               // eslint-disable-next-line react/jsx-props-no-spreading
               {...rest}
             >
-              {hasAvatar && enabled ? <Avatar>{svgIcon}</Avatar> : <>{svgIcon}</>}
+              {hasAvatar && enabled ? (
+                <Avatar>{svgIcon}</Avatar>
+              ) : (
+                <>{svgIcon}</>
+              )}
             </IconButton>
           )}
         </HtmlTooltip>
