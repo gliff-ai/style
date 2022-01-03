@@ -58,7 +58,14 @@ function WarningSnackbar({ open, onClose, messageText }: Props): ReactElement {
   return (
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme}>
-        <Snackbar open={open} onClose={onClose}>
+        <Snackbar
+          open={open}
+          onClose={onClose}
+          anchorOrigin={{
+            vertical: "bottom",
+            horizontal: "center",
+          }}
+        >
           <div>
             <SnackbarContent
               className={classes.snackbarContent}
