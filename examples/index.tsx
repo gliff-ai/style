@@ -78,8 +78,11 @@ const app = (
           <SnackBar />
 
           <h2>HtmlTooltip / BaseTooltipTitle</h2>
+          <br></br>
+          <br></br>
+          <br></br>
           <HtmlTooltip
-            placement={"right"}
+            placement={"top-start"}
             open={true}
             title={
               <BaseTooltipTitle
@@ -97,7 +100,7 @@ const app = (
           <br></br>
           <br></br>
           <HtmlTooltip
-            placement={"right"}
+            placement={"top-start"}
             open={true}
             title={
               <BaseTooltipTitle
@@ -113,7 +116,7 @@ const app = (
           <br></br>
           <br></br>
           <HtmlTooltip
-            placement={"right"}
+            placement={"top-start"}
             open={true}
             title={
               <BaseTooltipTitle
@@ -132,7 +135,7 @@ const app = (
           <br></br>
           <h2>Icon Button</h2>
           <div>
-            <ButtonGroup orientation="horizontal" variant="outlined">
+            <ButtonGroup orientation="vertical">
               <IconButton
                 data-testid="small-button"
                 id="small-button"
