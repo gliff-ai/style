@@ -1,6 +1,6 @@
 import { ReactElement, useState, MouseEvent, useEffect } from "react";
 import { Popover, PopoverOrigin } from "@mui/material";
-import makeStyles from '@mui/styles/makeStyles';
+import makeStyles from "@mui/styles/makeStyles";
 import { BaseIconButton, BaseIconButtonProps } from "./BaseIconButton";
 
 const useStyle = makeStyles(() => ({
