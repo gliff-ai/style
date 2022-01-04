@@ -47,9 +47,8 @@ export const theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          color: black,
           "&:hover": {
-            backgroundColor: "transparent",
+            borderColor: "transparent",
           },
           "&$disabled": {
             "&$outlined": {
@@ -238,7 +237,7 @@ export const theme = createTheme({
           },
         },
         groupedOutlined: {
-          border: "none",
+          border: "transparent",
         },
         groupedHorizontal: {
           paddingTop: "0px",

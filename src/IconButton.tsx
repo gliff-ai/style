@@ -1,18 +1,23 @@
 import { ReactElement } from "react";
-import { Avatar, TooltipProps, ThemeProvider, Theme, StyledEngineProvider, Button } from "@mui/material";
-import makeStyles from '@mui/styles/makeStyles';
+import {
+  Avatar,
+  TooltipProps,
+  ThemeProvider,
+  Theme,
+  StyledEngineProvider,
+  Button,
+} from "@mui/material";
+import makeStyles from "@mui/styles/makeStyles";
 import type { ButtonProps } from "@mui/material/Button";
 import SVG from "react-inlinesvg";
 import { BaseTooltipTitle } from "./BaseTooltipTitle";
 import { HtmlTooltip } from "./BaseHtmlTooltip";
 import { theme } from "./theme";
 
-
-declare module '@mui/styles/defaultTheme' {
+declare module "@mui/styles/defaultTheme" {
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
   interface DefaultTheme extends Theme {}
 }
-
 
 export interface Tooltip {
   name: string;

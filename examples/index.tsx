@@ -132,7 +132,7 @@ const app = (
           <br></br>
           <h2>Icon Button</h2>
           <div>
-            <ButtonGroup orientation="vertical">
+            <ButtonGroup orientation="horizontal" variant="outlined">
               <IconButton
                 data-testid="small-button"
                 id="small-button"
