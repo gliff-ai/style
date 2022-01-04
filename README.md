@@ -10,7 +10,7 @@ STYLE documents themes and base components of gliff.ai products with a focus est
 
 A preview build of the current `main` branch is [here](https://style.staging.gliff.app/).
 
-✅ **We welcome contributions on this repository!** ✅
+❌ **This repository does not accept most contributions unfortunately! However, an issue can still be raised if you recognise a problem you wish to bring to the gliff.ai teams attention.** ❌
 
 ## Demo-Preview
 
@@ -23,58 +23,18 @@ Looking for something specific? 🔍
 - [Repository Introduction](#gliffai-style)
 - [Demo-Preview](#demo-preview)
 - [Table of Contents](#table-of-contents)
-- [Installation](#installation)
-- [Development](#development)
-- [Linting and Formatting](#linting-and-formatting)
-- [Testing](#testing)
 - [Contribute](#contribute)
 - [Contact](#contact)
-
-## Installation
-
-[{{back to navigation}}](#table-of-contents)
-
-Run `npm install @gliff-ai/style` in your command line to install the package from the npm registry.
-
-## Development
-
-[{{back to navigation}}](#table-of-contents)
-
-Frontend code should always be written in [Typescript](https://www.typescriptlang.org/) and transpiled using the options in `tsconfig.json` in this repository. npm should always be used for package management.
-
-`npm run serve` will run a local webpack developer server for quick access.
-
-## Linting and Formatting
-
-[{{back to navigation}}](#table-of-contents)
-
-As a standard, all code contributions should be linted with [ESLint](https://eslint.org/) using `.eslintrc.js` and formatted with [Prettier](https://prettier.io/). **Note:** HTML + CSS, mark-up and mark-down code are exemptions and should be formatted using [Prettier](https://prettier.io/) but do not need to be linted.
-
-`npm run lint` will lint the codebase.
-
-Our GitHub Actions will also lint any pull requests before they're merged.
-
-## Testing
-
-[{{back to navigation}}](#table-of-contents)
-
-All code contributions should be tested using both the [Jest](https://jestjs.io/) and [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/).
-
-`npm run test` will run any existing tests in our codebase.
-
-Our GitHub Actions will also test any pull requests before they're merged! These all must pass and have 2 reviewers approval before a pull request can merge. If one or a few fail and your troubleshooting is not giving an answer, please check out the [gliff.ai Contribution Guide](https://github.com/gliff-ai/.github/blob/main/CONTRIBUTING.md) 👋 for further guidance.
 
 ## Contribute
 
 [{{back to navigation}}](#table-of-contents)
 
-We welcome all contributors and any contributions on this project through the likes of feedback on or suggesting features and enhancements, raising bug problems, reporting on security vulnerabilities, reviewing code, requesting or creating tests, user testing etc. to ensure gliff.ai can help enable the best and biggest positive impact possible. 
+This repository **does not accept contributions** unfortunately as content has been developed with specific gliff.ai team practises and preferences in mind. _However_, an issue can still be raised if you recognise a problem you wish to bring to the gliff.ai teams attention.
 
-Sounds good and want to contribute to the project? 🧑‍💻 \
-Please check the [gliff.ai Contribution Guide]((https://github.com/gliff-ai/.github/blob/main/CONTRIBUTING.md)) 👋 before you get started. Don’t forget the [gliff.ai Code of Conduct]((https://github.com/gliff-ai/.github/blob/main/CODE_OF_CONDUCT.md)) ⚠️ and  [gliff.ai Security Policy]((https://github.com/gliff-ai/.github/blob/main/SECURITY.md)) 🔒 too!
+We do have several repositories within the gliff.ai github space that  welcome all contributions and contributors on. These will be marked with the topic tag **contributions-welcome** meaning we welcome contributions on this repository! Search for them [here](https://github.com/search?q=topic%3Acontributors-welcome+org%3Agliff-ai&type=Repositories)!
 
-A big thank you from the entire gliff.ai team to these fellow contributors ([emoji key](https://allcontributors.org/docs/en/emoji-key)): \
-[{{Contributor List - _coming soon_}}](https://github.com/all-contributors/all-contributors)
+Check out the [gliff.ai Contribution Guide](https://github.com/gliff-ai/.github/blob/main/CONTRIBUTING.md) 👋 to learn more!
 
 ## Contact
 
