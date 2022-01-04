@@ -55,6 +55,9 @@ export const theme = createTheme({
               border: "none",
             },
           },
+          "&.Mui-disabled": {
+            border: "none",
+          },
         },
       },
     },

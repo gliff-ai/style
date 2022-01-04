@@ -141,19 +141,19 @@ const app = (
                 id="small-button"
                 tooltip={{ name: "Small Button" }}
                 icon={imgSrc("icon")}
-                size="large"
+                size="small"
               />
               <IconButton
                 tooltip={{ name: "Small Active Button" }}
                 icon={imgSrc("icon")}
                 fill={true}
-                size="large"
+                size="small"
               />
               <IconButton
                 tooltip={{ name: "Small Disabled Button" }}
                 icon={imgSrc("icon")}
                 disabled={true}
-                size="large"
+                size="small"
               />
               <IconButton
                 tooltip={{
@@ -162,7 +162,7 @@ const app = (
                   shortcutSymbol: "cmd",
                 }}
                 icon={imgSrc("icon")}
-                size="large"
+                size="small"
               />
             </ButtonGroup>
             <br />
@@ -171,19 +171,19 @@ const app = (
               <IconButton
                 tooltip={{ name: "Small Button" }}
                 icon={imgSrc("icon")}
-                size="large"
+                size="small"
               />
               <IconButton
                 tooltip={{ name: "Small Active Button" }}
                 icon={imgSrc("icon")}
                 fill={true}
-                size="large"
+                size="small"
               />
               <IconButton
                 tooltip={{ name: "Small Disabled Button" }}
                 icon={imgSrc("icon")}
                 disabled={true}
-                size="large"
+                size="small"
               />
               <IconButton
                 tooltip={{
@@ -192,7 +192,7 @@ const app = (
                   shortcutSymbol: "cmd",
                 }}
                 icon={imgSrc("icon")}
-                size="large"
+                size="small"
               />
             </ButtonGroup>
             <br />
