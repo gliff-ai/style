@@ -20,6 +20,9 @@ export const theme = createTheme({
       main: mainGreen,
       light: white,
     },
+    background: {
+      default: lightGrey,
+    },
     secondary: {
       main: purple,
       light: lightestGrey,
@@ -67,7 +70,6 @@ export const theme = createTheme({
           },
           body: {
             height: "100%",
-            backgroundColor: lightGrey,
           },
           "#react-container": {
             overflow: "hidden",
