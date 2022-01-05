@@ -96,19 +96,19 @@ const BaseIconButton = ({
           placement={tooltipPlacement}
         >
           {component === "span" ? (
-            <Button
-              className={classes.iconButton}
-              // component="span"
-              onClick={onClick}
-              // eslint-disable-next-line react/jsx-props-no-spreading
-              {...rest}
-            >
-              {hasAvatar && enabled ? (
-                <Avatar>{svgIcon}</Avatar>
-              ) : (
-                <>{svgIcon}</>
-              )}
-            </Button>
+            <span>
+              <Button
+                className={classes.iconButton}
+                component="span"
+                onClick={onClick}
+              >
+                {hasAvatar && enabled ? (
+                  <Avatar>{svgIcon}</Avatar>
+                ) : (
+                  <>{svgIcon}</>
+                )}
+              </Button>
+            </span>
           ) : (
             <IconButton
               type={type}
