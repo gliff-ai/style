@@ -1,5 +1,5 @@
 import { createTheme } from "@mui/material/styles/";
-import createBreakpoints from "@mui/system/createTheme/createBreakpoints";
+import { createBreakpoints } from "@mui/system";
 
 export const white = "#FFFFFF";
 export const lightestGrey = "#FAFAFA";
