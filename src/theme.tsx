@@ -40,10 +40,6 @@ export const theme = createTheme({
     fontFamily: "Roboto",
   },
 
-  shape: {
-    borderRadius: 6,
-  },
-
   components: {
     MuiButton: {
       styleOverrides: {
@@ -62,19 +58,22 @@ export const theme = createTheme({
         },
       },
     },
+
     MuiCssBaseline: {
       styleOverrides: {
-        "@global": {
-          html: {
-            height: "100%",
-          },
-          body: {
-            height: "100%",
-          },
-          "#react-container": {
-            overflow: "hidden",
-            height: "100%",
-          },
+        html: {
+          height: "100%",
+        },
+
+        "#react-container": {
+          overflow: "hidden",
+          height: "100%",
+        },
+
+        body: {
+          fontSize: "0.875rem",
+          lineHeight: 1.43,
+          letterSpacing: "0.01071em",
         },
       },
     },
@@ -253,6 +252,7 @@ export const theme = createTheme({
         disableRipple: true,
       },
     },
+
     MuiDivider: {
       styleOverrides: {
         root: {
@@ -285,7 +285,6 @@ export const theme = createTheme({
         //   },
         // },
         colorDefault: {
-          backgroundColor: white,
           "&:hover": {
             backgroundColor: mainGreen,
           },
