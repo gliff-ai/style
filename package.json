@@ -29,9 +29,6 @@
   },
   "homepage": "https://github.com/gliff-ai/style#readme",
   "devDependencies": {
-    "@material-ui/core": "^4.11.3",
-    "@material-ui/icons": "^4.11.2",
-    "@material-ui/lab": "^4.0.0-alpha.60",
     "@percy/cli": "^1.0.0-beta.70",
     "@types/jest": "^26.0.21",
     "@types/react": "=17.0.2",
@@ -58,13 +55,16 @@
     "vite-aliases": "^0.8.6"
   },
   "peerDependencies": {
-    "@material-ui/core": "^4.11.3",
-    "@material-ui/icons": "^4.11.2",
-    "@material-ui/lab": "^4.0.0-alpha.58",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
   "dependencies": {
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@mui/icons-material": "^5.2.4",
+    "@mui/material": "^5.2.4",
+    "@mui/styles": "^5.2.3",
+    "@mui/system": "^5.2.6",
     "react-inlinesvg": "^2.3.0"
   }
 }

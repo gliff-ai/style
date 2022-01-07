@@ -1,7 +1,5 @@
-import { createTheme } from "@material-ui/core/styles/";
-import createBreakpoints from "@material-ui/core/styles/createBreakpoints";
-
-import type {} from "@material-ui/lab/themeAugmentation"; // Required to add autocomplete to Theme until v5
+import { createTheme } from "@mui/material/styles/";
+import { createBreakpoints } from "@mui/system";
 
 export const white = "#FFFFFF";
 export const lightestGrey = "#FAFAFA";
@@ -22,6 +20,9 @@ export const theme = createTheme({
       main: mainGreen,
       light: white,
     },
+    background: {
+      default: lightGrey,
+    },
     secondary: {
       main: purple,
       light: lightestGrey,
@@ -39,19 +40,19 @@ export const theme = createTheme({
     fontFamily: "Roboto",
   },
 
-  shape: {
-    borderRadius: 6,
-  },
-
-  overrides: {
+  components: {
     MuiButton: {
-      root: {
-        color: black,
-        "&:hover": {
-          backgroundColor: "transparent",
-        },
-        "&$disabled": {
-          "&$outlined": {
+      styleOverrides: {
+        root: {
+          "&:hover": {
+            borderColor: "transparent",
+          },
+          "&$disabled": {
+            "&$outlined": {
+              border: "none",
+            },
+          },
+          "&.Mui-disabled": {
             border: "none",
           },
         },
@@ -59,210 +60,243 @@ export const theme = createTheme({
     },
 
     MuiCssBaseline: {
-      "@global": {
+      styleOverrides: {
         html: {
           height: "100%",
         },
-        body: {
-          height: "100%",
-          backgroundColor: lightGrey,
-        },
+
         "#react-container": {
           overflow: "hidden",
           height: "100%",
+        },
+
+        body: {
+          fontSize: "0.875rem",
+          lineHeight: 1.43,
+          letterSpacing: "0.01071em",
         },
       },
     },
 
     MuiInputBase: {
-      root: {
-        backgroundColor: white,
-        borderRadius: "6px",
+      styleOverrides: {
+        root: {
+          backgroundColor: white,
+          borderRadius: "6px",
+        },
       },
     },
+
     MuiOutlinedInput: {
-      root: {
-        height: "50px",
+      styleOverrides: {
+        root: {
+          height: "50px",
+        },
       },
     },
+
     MuiAccordionSummary: {
-      root: {
-        "&$expanded": {
-          minHeight: "4px",
+      styleOverrides: {
+        root: {
+          "&$expanded": {
+            minHeight: "4px",
+          },
         },
       },
     },
 
     MuiCardContent: {
-      root: {
-        "&:last-child": {
-          paddingBottom: "18px",
+      styleOverrides: {
+        root: {
+          "&:last-child": {
+            paddingBottom: "18px",
+          },
         },
       },
     },
 
     MuiAutocomplete: {
-      option: {
-        '&[data-focus="true"]': {
-          backgroundColor: mainGreen,
+      styleOverrides: {
+        option: {
+          '&[data-focus="true"]': {
+            backgroundColor: mainGreen,
+          },
         },
       },
     },
 
     MuiMenuItem: {
-      root: {
-        "&:hover": {
-          backgroundColor: mainGreen,
+      styleOverrides: {
+        root: {
+          "&:hover": {
+            backgroundColor: mainGreen,
+          },
         },
       },
     },
 
     MuiContainer: {
-      root: {
-        marginTop: "25px",
-      },
-    },
-
-    MuiFormControl: {
-      root: {
-        display: "flex",
-      },
-    },
-
-    MuiIconButton: {
-      root: {
-        "&:hover": {
-          backgroundColor: "transparent",
+      styleOverrides: {
+        root: {
+          marginTop: "25px",
         },
       },
     },
 
+    MuiFormControl: {
+      styleOverrides: {
+        root: {
+          display: "flex",
+        },
+      },
+    },
+
+    MuiIconButton: {
+      styleOverrides: {
+        root: {
+          "&:hover": {
+            backgroundColor: "transparent",
+          },
+        },
+      },
+      defaultProps: {
+        disableRipple: true,
+      },
+    },
+
     MuiListItem: {
-      button: {
-        "&:hover": {
-          backgroundColor: "transparent",
+      styleOverrides: {
+        button: {
+          "&:hover": {
+            backgroundColor: "transparent",
+          },
         },
       },
     },
 
     MuiList: {
-      root: {
-        "&:hover": {
-          backgroundColor: white,
+      styleOverrides: {
+        root: {
+          "&:hover": {
+            backgroundColor: white,
+          },
         },
       },
     },
 
     MuiSlider: {
-      root: {
-        color: black,
-        textAlign: "center",
-      },
-      vertical: {
-        height: "auto",
-      },
-      mark: {
-        backgroundColor: "transparent",
-      },
-      markActive: {
-        backgroundColor: "transparent",
+      styleOverrides: {
+        root: {
+          color: black,
+          textAlign: "center",
+        },
+        vertical: {
+          height: "auto",
+        },
+        mark: {
+          backgroundColor: "transparent",
+        },
+        markActive: {
+          backgroundColor: "transparent",
+        },
       },
     },
 
     MuiPopover: {
-      root: {
-        marginLeft: "20px",
+      styleOverrides: {
+        root: {
+          marginLeft: "20px",
+        },
+      },
+      defaultProps: {
+        anchorOrigin: {
+          vertical: "top",
+          horizontal: "right",
+        },
+        transformOrigin: {
+          vertical: "top",
+          horizontal: "left",
+        },
       },
     },
 
     MuiButtonGroup: {
-      root: {
-        border: "1px solid",
-        borderColor: veryLightBlue,
-        borderRadius: "9px",
-        paddingTop: "8px",
-        paddingBottom: "8px",
-        background: lightestGrey,
-      },
-      groupedVertical: {
-        paddingLeft: "8px",
-        paddingRight: "8px",
-        [breakpoints.down("md")]: {
-          paddingLeft: "0px",
-          paddingRight: "0px",
+      styleOverrides: {
+        root: {
+          border: "1px solid",
+          borderColor: veryLightBlue,
+          borderRadius: "9px",
+          paddingTop: "8px",
+          paddingBottom: "8px",
+          background: lightestGrey,
+        },
+        groupedVertical: {
+          paddingLeft: "8px",
+          paddingRight: "8px",
+          [breakpoints.down("md")]: {
+            paddingLeft: "0px",
+            paddingRight: "0px",
+          },
+        },
+        groupedOutlined: {
+          border: "transparent",
+        },
+        groupedHorizontal: {
+          paddingTop: "0px",
+          paddingBottom: "0px",
         },
       },
-      groupedOutlined: {
-        border: "none",
-      },
-      groupedHorizontal: {
-        paddingTop: "0px",
-        paddingBottom: "0px",
+      defaultProps: {
+        orientation: "vertical",
+        variant: "outlined",
+        disableRipple: true,
       },
     },
+
     MuiDivider: {
-      root: {
-        marginTop: "-15px",
-        width: "90%",
-        marginLeft: "12px",
-        marginBottom: "17px",
+      styleOverrides: {
+        root: {
+          marginTop: "-15px",
+          width: "90%",
+          marginLeft: "12px",
+          marginBottom: "17px",
+        },
       },
     },
 
     MuiAvatar: {
-      rounded: {
-        "&:hover": {
+      styleOverrides: {
+        rounded: {
+          "&:hover": {
+            backgroundColor: "transparent",
+          },
+          display: "contents",
+        },
+        circular: {
           backgroundColor: "transparent",
+          "&:hover": {
+            backgroundColor: mainGreen,
+          },
         },
-        display: "contents",
-      },
-      circular: {
-        backgroundColor: "transparent",
-        "&:hover": {
-          backgroundColor: mainGreen,
-        },
-      },
-      circle: {
-        backgroundColor: mainGreen,
-        "&:hover": {
-          backgroundColor: white,
-        },
-      },
-      colorDefault: {
-        backgroundColor: white,
-        "&:hover": {
-          backgroundColor: mainGreen,
-        },
-        "&:hover svg": {
-          fill: black,
+        // circular: {
+        //   backgroundColor: mainGreen,
+        //   "&:hover": {
+        //     backgroundColor: white,
+        //   },
+        // },
+        colorDefault: {
+          "&:hover": {
+            backgroundColor: mainGreen,
+          },
+          "&:hover svg": {
+            fill: black,
+          },
         },
       },
     },
-  },
-
-  props: {
-    MuiIconButton: {
-      disableRipple: true,
-    },
-
-    MuiButtonGroup: {
-      orientation: "vertical",
-      variant: "outlined",
-      disableRipple: true,
-    },
-
     MuiButtonBase: {
-      disableRipple: true,
-    },
-
-    MuiPopover: {
-      anchorOrigin: {
-        vertical: "top",
-        horizontal: "right",
-      },
-      transformOrigin: {
-        vertical: "top",
-        horizontal: "left",
+      defaultProps: {
+        disableRipple: true,
       },
     },
   },

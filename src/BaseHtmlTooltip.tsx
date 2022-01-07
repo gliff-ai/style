@@ -1,4 +1,5 @@
-import { Tooltip, Theme, withStyles } from "@material-ui/core";
+import { Tooltip, Theme } from "@mui/material";
+import withStyles from "@mui/styles/withStyles";
 import { veryLightBlue, white } from "./theme";
 
 export const HtmlTooltip = withStyles((theme: Theme) => ({
