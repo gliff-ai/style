@@ -44,8 +44,10 @@ export const theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
+          color: black,
           "&:hover": {
             borderColor: "transparent",
+            backgroundColor: "transparent",
           },
           "&$disabled": {
             "&$outlined": {
