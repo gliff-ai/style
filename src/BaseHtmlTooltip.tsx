@@ -11,5 +11,6 @@ export const HtmlTooltip = withStyles(() => ({
     color: darkGrey,
     maxWidth: "100%",
     padding: "6px",
+    width: "auto",
   },
 }))(Tooltip);
