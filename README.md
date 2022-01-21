@@ -12,16 +12,11 @@ A preview build of the current `main` branch is [here](https://style.staging.gli
 
 ❌ **This repository does not accept most contributions unfortunately! However, an issue can still be raised if you recognise a problem you wish to bring to the gliff.ai teams attention.** ❌
 
-## Demo-Preview
-
-_Coming soon._
-
 ## Table of Contents
 
 Looking for something specific? 🔍
 
 - [Repository Introduction](#gliffai-style)
-- [Demo-Preview](#demo-preview)
 - [Table of Contents](#table-of-contents)
 - [Contribute](#contribute)
 - [Contact](#contact)
@@ -41,4 +36,4 @@ Check out the [gliff.ai Contribution Guide](https://github.com/gliff-ai/.github/
 [{{back to navigation}}](#table-of-contents)
 
 Need some help? 🤔 Have a question? 🧠 \
-Reach out to the gliff.ai team at [community@gliff.ai](mailto:community@gliff.ai?subject=[GitHub]) or on GitHub.
+Reach out to the gliff.ai team at [community@gliff.ai](mailto:community@gliff.ai?subject=[GitHub]) or on our [GitHub discussions](https://github.com/gliff-ai/roadmap/discussions/landing).
