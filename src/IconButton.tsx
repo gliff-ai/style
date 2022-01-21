@@ -1,16 +1,23 @@
 import { ReactElement } from "react";
 import {
   Avatar,
-  makeStyles,
   TooltipProps,
   ThemeProvider,
+  Theme,
+  StyledEngineProvider,
   Button,
-} from "@material-ui/core";
-import type { ButtonProps } from "@material-ui/core/Button";
+} from "@mui/material";
+import makeStyles from "@mui/styles/makeStyles";
+import type { ButtonProps } from "@mui/material/Button";
 import SVG from "react-inlinesvg";
 import { BaseTooltipTitle } from "./BaseTooltipTitle";
 import { HtmlTooltip } from "./BaseHtmlTooltip";
 import { theme } from "./theme";
+
+declare module "@mui/styles/defaultTheme" {
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface
+  interface DefaultTheme extends Theme {}
+}
 
 export interface Tooltip {
   name: string;
@@ -74,33 +81,35 @@ export const IconButton = (props: Props): ReactElement => {
   const svgIcon = <SVG src={icon} className={classes.svg} fill={color} />;
 
   return (
-    <ThemeProvider theme={theme}>
-      <HtmlTooltip
-        key={tooltip.name}
-        title={icon ? <BaseTooltipTitle tooltip={tooltip} /> : tooltip.name}
-        placement={tooltipPlacement}
-      >
-        <span>
-          <Button
-            disabled={disabled}
-            ref={(ref) => {
-              if (!ref || !setRefCallback) return;
-              setRefCallback(ref);
-            }}
-            // eslint-disable-next-line react/jsx-props-no-spreading
-            {...rest}
-          >
-            <Avatar
-              className={`${
-                props.size === "small" ? classes.small : classes.medium
-              } ${props.disabled ? classes.noHover : ""}`}
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider theme={theme}>
+        <HtmlTooltip
+          key={tooltip.name}
+          title={icon ? <BaseTooltipTitle tooltip={tooltip} /> : tooltip.name}
+          placement={tooltipPlacement}
+        >
+          <span>
+            <Button
+              disabled={disabled}
+              ref={(ref) => {
+                if (!ref || !setRefCallback) return;
+                setRefCallback(ref);
+              }}
+              // eslint-disable-next-line react/jsx-props-no-spreading
+              {...rest}
             >
-              {svgIcon}
-            </Avatar>
-          </Button>
-        </span>
-      </HtmlTooltip>
-    </ThemeProvider>
+              <Avatar
+                className={`${
+                  props.size === "small" ? classes.small : classes.medium
+                } ${props.disabled ? classes.noHover : ""}`}
+              >
+                {svgIcon}
+              </Avatar>
+            </Button>
+          </span>
+        </HtmlTooltip>
+      </ThemeProvider>
+    </StyledEngineProvider>
   );
 };
 

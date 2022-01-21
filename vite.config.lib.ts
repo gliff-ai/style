@@ -18,9 +18,9 @@ export default defineConfig({
       external: [
         "react",
         "react-router-dom",
-        "@material-ui/core",
-        "@material-ui/icons",
-        "@material-ui/lab"
+        "@mui/material",
+        "@mui/icons-material",
+        "@mui/lab"
       ],
       output: {
         // Provide global variables to use in the UMD build

@@ -2,12 +2,19 @@ import { ReactElement } from "react";
 import SVG from "react-inlinesvg";
 import {
   IconButton,
-  makeStyles,
   Snackbar,
   SnackbarContent,
   ThemeProvider,
-} from "@material-ui/core";
+  Theme,
+  StyledEngineProvider,
+} from "@mui/material";
+import makeStyles from "@mui/styles/makeStyles";
 import { theme } from "./theme";
+
+declare module "@mui/styles/defaultTheme" {
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface
+  interface DefaultTheme extends Theme {}
+}
 
 export const imgSrc = (src: string, type = "svg"): string =>
   new URL(`/src/assets/icons/${src}.${type}`, import.meta.url).href;
@@ -49,35 +56,46 @@ interface Props {
 function WarningSnackbar({ open, onClose, messageText }: Props): ReactElement {
   const classes = useStyle();
   return (
-    <ThemeProvider theme={theme}>
-      <Snackbar open={open} onClose={onClose}>
-        <>
-          <SnackbarContent
-            className={classes.snackbarContent}
-            message={
-              <span>
-                <SVG src={imgSrc("warning")} className={classes.svgSmall} />
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider theme={theme}>
+        <Snackbar
+          open={open}
+          onClose={onClose}
+          anchorOrigin={{
+            vertical: "bottom",
+            horizontal: "center",
+          }}
+        >
+          <div>
+            <SnackbarContent
+              className={classes.snackbarContent}
+              message={
+                <span>
+                  <SVG src={imgSrc("warning")} className={classes.svgSmall} />
 
-                <div className={classes.message}>{messageText}</div>
-              </span>
-            }
-            action={[
-              <IconButton
-                size="small"
-                aria-label="close"
-                onClick={onClose}
-                className={classes.iconButton}
-              >
-                <SVG
-                  src={imgSrc("remove-label-icon")}
-                  className={classes.svgSmallClose}
-                />
-              </IconButton>,
-            ]}
-          />
-        </>
-      </Snackbar>
-    </ThemeProvider>
+                  <div className={classes.message}>{messageText}</div>
+                </span>
+              }
+              action={[
+                <IconButton
+                  size="small"
+                  aria-label="close"
+                  onClick={onClose}
+                  className={classes.iconButton}
+                  key="1"
+                >
+                  <SVG
+                    src={imgSrc("remove-label-icon")}
+                    className={classes.svgSmallClose}
+                    key="2"
+                  />
+                </IconButton>,
+              ]}
+            />
+          </div>
+        </Snackbar>
+      </ThemeProvider>
+    </StyledEngineProvider>
   );
 }
 

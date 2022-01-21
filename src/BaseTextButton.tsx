@@ -1,7 +1,18 @@
 import { MouseEvent, ReactElement } from "react";
-import { makeStyles, ThemeProvider, Button } from "@material-ui/core";
-import type { ButtonProps } from "@material-ui/core/Button";
+import {
+  ThemeProvider,
+  Theme,
+  StyledEngineProvider,
+  Button,
+} from "@mui/material";
+import makeStyles from "@mui/styles/makeStyles";
+import type { ButtonProps } from "@mui/material/Button";
 import { theme } from "./theme";
+
+declare module "@mui/styles/defaultTheme" {
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface
+  interface DefaultTheme extends Theme {}
+}
 
 interface Props extends ButtonProps {
   text: string;
@@ -24,19 +35,21 @@ export const BaseTextButton = ({
   })();
 
   return (
-    <ThemeProvider theme={theme}>
-      <Button
-        className={classes.makeButton}
-        variant="contained"
-        color="primary"
-        onClick={onClick}
-        disabled={disabled}
-        // eslint-disable-next-line react/jsx-props-no-spreading
-        {...rest}
-      >
-        {text}
-      </Button>
-    </ThemeProvider>
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider theme={theme}>
+        <Button
+          className={classes.makeButton}
+          variant="contained"
+          color="primary"
+          onClick={onClick}
+          disabled={disabled}
+          // eslint-disable-next-line react/jsx-props-no-spreading
+          {...rest}
+        >
+          {text}
+        </Button>
+      </ThemeProvider>
+    </StyledEngineProvider>
   );
 };
 
