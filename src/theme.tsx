@@ -120,8 +120,8 @@ export const theme = createTheme({
     MuiAutocomplete: {
       styleOverrides: {
         option: {
-          '&[data-focus="true"]': {
-            backgroundColor: mainGreen,
+          "&.Mui-focused": {
+            backgroundColor: `${mainGreen} !important`,
           },
         },
       },
