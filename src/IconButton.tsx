@@ -47,8 +47,8 @@ export const IconButton = (props: Props): ReactElement => {
       height: theme.spacing(5),
     },
     medium: {
-      width: theme.spacing(9),
-      height: theme.spacing(9),
+      width: `${theme.spacing(9)} !important`,
+      height: `${theme.spacing(9)} !important`,
     },
     noHover: {
       "&:hover": {
