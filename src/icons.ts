@@ -13,6 +13,7 @@ const icons = {
   audit: imgSrc("audit"),
   backspace: imgSrc("backspace-icon"),
   backgroundSettings: imgSrc("background-settings"),
+  betaStatus: imgSrc("beta-status"),
   boundingBox: imgSrc("bounding-box-icon"),
   breadcrumbTrailArrow: imgSrc("breadcrumb-trail-arrow"),
   brightness: imgSrc("brightness-icon"),
@@ -20,6 +21,7 @@ const icons = {
   brush3D: imgSrc("brush3"),
   channels: imgSrc("channels-icon"),
   closeSpline: imgSrc("close-spline-icon"),
+  cog: imgSrc("cog"),
   collaborators: imgSrc("collaborators"),
   collectionsViewerToggle: imgSrc("collections-viewer-toggle"),
   contrast: imgSrc("contrast-icon"),
@@ -80,7 +82,6 @@ const icons = {
   zoomOut: imgSrc("zoom-out-icon"),
   tick: imgSrc("tick"),
   previousNext: imgSrc("previous-next"),
-  cog: imgSrc("cog"),
 } as const;
 
 export { icons };
