@@ -80,6 +80,7 @@ const icons = {
   zoomOut: imgSrc("zoom-out-icon"),
   tick: imgSrc("tick"),
   previousNext: imgSrc("previous-next"),
+  cog: imgSrc("cog"),
 } as const;
 
 export { icons };
