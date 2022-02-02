@@ -89,6 +89,14 @@ export const theme = createTheme({
       },
     },
 
+    MuiAppBar: {
+      styleOverrides: {
+        root: {
+          backgroundColor: `${lightestGrey} !important`,
+        },
+      },
+    },
+
     MuiOutlinedInput: {
       styleOverrides: {
         root: {
