@@ -88,6 +88,19 @@ export const theme = createTheme({
         },
       },
     },
+    MuiTableCell: {
+      styleOverrides: {
+        root: {
+          padding: "0 20px",
+          fontSize: "16px",
+          maxWidth: "250px",
+          lineHeight: "32px",
+        },
+        head: {
+          padding: "16px",
+        },
+      },
+    },
 
     MuiAppBar: {
       styleOverrides: {
