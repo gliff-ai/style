@@ -20,7 +20,10 @@ export default defineConfig({
         "react-router-dom",
         "@mui/material",
         "@mui/icons-material",
-        "@mui/lab"
+        "@mui/styles",
+        "@mui/system",
+        "@emotion/react",
+        "@emotion/styled"
       ],
       output: {
         // Provide global variables to use in the UMD build
