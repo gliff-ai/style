@@ -4,12 +4,12 @@ import { veryLightBlue, white, darkGrey, theme } from "./theme";
 
 export const HtmlTooltip = withStyles(() => ({
   tooltip: {
-    backgroundColor: white,
+    backgroundColor: `${white} !important`,
     fontSize: theme.typography.pxToRem(12),
     border: "1px solid",
     borderColor: veryLightBlue,
-    color: darkGrey,
-    maxWidth: "100%",
+    color: `${darkGrey} !important`,
+    maxWidth: "100% !important",
     padding: "6px",
     width: "auto",
   },

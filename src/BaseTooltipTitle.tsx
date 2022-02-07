@@ -46,13 +46,13 @@ const useStyles = makeStyles({
     },
   },
   avatarFontSize: {
-    fontSize: "14px",
-    lineHeight: "14px",
+    fontSize: "14px !important",
+    lineHeight: "14px !important",
     fontWeight: 600,
   },
   avatarSmallFontSize: {
-    fontSize: "9px",
-    lineHeight: "9px",
+    fontSize: "9px !important",
+    lineHeight: "9px !important",
     fontWeight: 500,
   },
 });
