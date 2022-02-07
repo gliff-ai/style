@@ -9,7 +9,7 @@ export const HtmlTooltip = withStyles(() => ({
     border: "1px solid",
     borderColor: veryLightBlue,
     color: `${darkGrey} !important`,
-    maxWidth: "100%",
+    maxWidth: "100% !important",
     padding: "6px",
     width: "auto",
   },
