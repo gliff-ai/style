@@ -1,6 +1,6 @@
 # gliff.ai STYLE
 
-![Latest Tag](https://img.shields.io/github/v/tag/gliff-ai/style?&label=latest_tag&style=flat-square&color=f2f2f2) ![Number of Open Issues](https://img.shields.io/github/issues/gliff-ai/style?style=flat-square&color=yellow) ![Number of Open Pull Requests](https://img.shields.io/github/issues-pr/gliff-ai/style?style=flat-square&color=yellow) ![Number of Contributors](https://img.shields.io/github/contributors/gliff-ai/style?style=flat-square&color=yellow) ![Repository Size](https://img.shields.io/github/repo-size/gliff-ai/style?style=flat-square&color=red) ![Repo License](https://img.shields.io/github/license/gliff-ai/style?color=0078FF&style=flat-square)
+![Repo License](https://img.shields.io/github/license/gliff-ai/style?color=0078FF&style=flat-square) ![Repository Size](https://img.shields.io/github/repo-size/gliff-ai/style?style=flat-square&color=f2f2f2) ![Latest Tag](https://img.shields.io/github/v/tag/gliff-ai/style?&label=latest%20tag&style=flat-square&color=f2f2f2) ![Number of Open Issues](https://img.shields.io/github/issues/gliff-ai/style?style=flat-square&color=yellow) ![Number of Open Pull Requests](https://img.shields.io/github/issues-pr/gliff-ai/style?style=flat-square&color=yellow)
 
 👋 **Welcome in!** 👋
 
