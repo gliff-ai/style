@@ -10,25 +10,13 @@ import {
   StyledEngineProvider,
   Theme,
 } from "@mui/material";
-import makeStyles from "@mui/styles/makeStyles";
+// import makeStyles from "@mui/styles/makeStyles";
 import { theme } from "./theme";
 
 declare module "@mui/styles/defaultTheme" {
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
   interface DefaultTheme extends Theme {}
 }
-
-const useStyle = makeStyles({
-  messageContainer: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    fontSize: "16px",
-    fontWright: 500,
-  },
-  progress: { marginLeft: "5px", color: "#ffffff" },
-  snackbarContent: { backgroundColor: theme.palette.info.light },
-});
 
 type Task = { isLoading: boolean; description: string; progress?: number };
 
@@ -38,8 +26,6 @@ interface Props {
 }
 
 function ProgressSnackbar({ task, setTask }: Props): ReactElement {
-  const classes = useStyle();
-
   const handleClose = () => {
     setTask({ isLoading: false, description: "" } as Task);
   };
@@ -56,11 +42,16 @@ function ProgressSnackbar({ task, setTask }: Props): ReactElement {
           }}
         >
           <SnackbarContent
-            className={classes.snackbarContent}
             message={
-              <div className={classes.messageContainer}>
+              <div style={{ display: "contents" }}>
                 {`${task.description} in progress, please wait...`}
-                <Box style={{ position: "relative", display: "inline-flex" }}>
+                <Box
+                  style={{
+                    position: "relative",
+                    display: "inline-flex",
+                    marginLeft: "10px",
+                  }}
+                >
                   <CircularProgress
                     variant={
                       task.progress !== undefined
@@ -69,7 +60,6 @@ function ProgressSnackbar({ task, setTask }: Props): ReactElement {
                     }
                     value={task.progress}
                     size={task.progress === undefined ? "2rem" : "3rem"}
-                    className={classes.progress}
                   />
                   {task.progress !== undefined && (
                     <Box
