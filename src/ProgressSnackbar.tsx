@@ -1,4 +1,5 @@
-import { ReactElement } from "react";
+import { ReactElement, SyntheticEvent } from "react";
+import SVG from "react-inlinesvg";
 
 import {
   CircularProgress,
@@ -13,6 +14,9 @@ import {
 // import makeStyles from "@mui/styles/makeStyles";
 import { theme } from "./theme";
 
+export const imgSrc = (src: string, type = "svg"): string =>
+  new URL(`/src/assets/icons/${src}.${type}`, import.meta.url).href;
+
 declare module "@mui/styles/defaultTheme" {
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
   interface DefaultTheme extends Theme {}
@@ -26,7 +30,10 @@ interface Props {
 }
 
 function ProgressSnackbar({ task, setTask }: Props): ReactElement {
-  const handleClose = () => {
+  const handleClose = (event: SyntheticEvent | MouseEvent, reason?: string) => {
+    if (reason === "clickaway") {
+      return;
+    }
     setTask({ isLoading: false, description: "" } as Task);
   };
 
@@ -40,45 +47,63 @@ function ProgressSnackbar({ task, setTask }: Props): ReactElement {
             vertical: "bottom",
             horizontal: "center",
           }}
+          autoHideDuration={5000}
+          //   resumeHideDuration={20000}
         >
           <SnackbarContent
             message={
-              <div style={{ display: "contents" }}>
-                {`${task.description} in progress, please wait...`}
-                <Box
-                  style={{
-                    position: "relative",
-                    display: "inline-flex",
-                    marginLeft: "10px",
-                  }}
-                >
-                  <CircularProgress
-                    variant={
-                      task.progress !== undefined
-                        ? "determinate"
-                        : "indeterminate"
-                    }
-                    value={task.progress}
-                    size={task.progress === undefined ? "2rem" : "3rem"}
-                  />
-                  {task.progress !== undefined && (
-                    <Box
-                      style={{
-                        position: "absolute",
-                        top: 0,
-                        left: 0,
-                        bottom: 0,
-                        right: 0,
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                      }}
-                    >
-                      <Typography component="div">{`${task.progress}%`}</Typography>
-                    </Box>
+              task.progress === 100 ? (
+                <div>{console.log("hello")} Helloo</div>
+              ) : (
+                <div style={{ display: "contents" }}>
+                  <Box
+                    style={{
+                      position: "relative",
+                      display: "inline-flex",
+                      marginRight: "10px",
+                    }}
+                  >
+                    {task.progress === 100 ? (
+                      <SVG
+                        src={imgSrc("warning")}
+                        // className={classes.svgSmall}
+                      />
+                    ) : (
+                      <CircularProgress
+                        variant="determinate"
+                        value={task.progress}
+                        size={task.progress === undefined ? "2rem" : "3rem"}
+                      />
+                    )}
+
+                    {task.progress !== undefined && (
+                      <Box
+                        style={{
+                          position: "absolute",
+                          top: 0,
+                          left: 0,
+                          bottom: 0,
+                          right: 0,
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                        }}
+                      >
+                        <Typography component="div">{`${task.progress}%`}</Typography>
+                      </Box>
+                    )}
+                  </Box>
+                  {task.progress === 100 ? (
+                    <Typography component="div">
+                      Saving annotation complete!
+                    </Typography>
+                  ) : (
+                    <Typography>
+                      Saving annotation in progress, please wait
+                    </Typography>
                   )}
-                </Box>
-              </div>
+                </div>
+              )
             }
           />
         </Snackbar>
