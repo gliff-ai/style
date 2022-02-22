@@ -77,6 +77,7 @@ function ProgressSnackbar({ task, setTask }: Props): ReactElement {
                       }
                       value={task.progress}
                       size="3rem"
+                      color="secondary"
                     />
                   )}
 

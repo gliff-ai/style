@@ -78,7 +78,7 @@ export const theme = createTheme({
 
     MuiCircularProgress: {
       styleOverrides: {
-        root: {
+        colorSecondary: {
           color: white,
         },
       },
