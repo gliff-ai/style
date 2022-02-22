@@ -60,7 +60,7 @@ function ProgressSnackbar({ task, setTask }: Props): ReactElement {
                 >
                   {task.progress === 100 ? (
                     <SVG
-                      src={imgSrc("tick")}
+                      src={imgSrc("complete")}
                       style={{
                         width: "22px",
                         height: "100%",
