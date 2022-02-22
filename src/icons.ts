@@ -29,6 +29,7 @@ const icons = {
   cog: imgSrc("cog"),
   collaborators: imgSrc("collaborators"),
   collectionsViewerToggle: imgSrc("collections-viewer-toggle"),
+  complete: imgSrc("complete");
   contrast: imgSrc("contrast-icon"),
   convert: imgSrc("convert-icon"),
   copy: imgSrc("copy"),
