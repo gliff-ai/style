@@ -9,6 +9,7 @@ const useStyle = makeStyles(() => ({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "transparent",
+    borderRadius: "9px",
   },
 }));
 
