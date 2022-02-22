@@ -9,18 +9,12 @@ import {
   SnackbarContent,
   ThemeProvider,
   StyledEngineProvider,
-  Theme,
 } from "@mui/material";
 // import makeStyles from "@mui/styles/makeStyles";
 import { theme } from "./theme";
 
 export const imgSrc = (src: string, type = "svg"): string =>
   new URL(`/src/assets/icons/${src}.${type}`, import.meta.url).href;
-
-declare module "@mui/styles/defaultTheme" {
-  // eslint-disable-next-line @typescript-eslint/no-empty-interface
-  interface DefaultTheme extends Theme {}
-}
 
 type Task = { isLoading: boolean; description: string; progress?: number };
 
