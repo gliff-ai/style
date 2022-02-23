@@ -22,6 +22,8 @@ export { BasePopover } from "./BasePopover";
 export { Logo } from "./Logo";
 export { LoadingSpinner } from "./LoadingSpinner";
 export { WarningSnackbar } from "./WarningSnackbar";
+export { ProgressSnackbar } from "./ProgressSnackbar";
+export type { Task } from "./ProgressSnackbar";
 
 export type { Tooltip, Tooltips } from "./tooltips";
 

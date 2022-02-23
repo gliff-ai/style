@@ -61,6 +61,29 @@ export const theme = createTheme({
       },
     },
 
+    MuiSnackbarContent: {
+      styleOverrides: {
+        root: {
+          backgroundColor: purple,
+        },
+        message: {
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          fontSize: "16px",
+          fontWright: 500,
+        },
+      },
+    },
+
+    MuiCircularProgress: {
+      styleOverrides: {
+        colorSecondary: {
+          color: white,
+        },
+      },
+    },
+
     MuiCssBaseline: {
       styleOverrides: {
         html: {
