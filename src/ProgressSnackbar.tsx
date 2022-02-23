@@ -43,6 +43,7 @@ function ProgressSnackbar({ task, setTask }: Props): ReactElement {
           }}
         >
           <SnackbarContent
+            style={{ width: "410px" }}
             message={
               <div style={{ display: "contents" }}>
                 <Box
@@ -56,7 +57,7 @@ function ProgressSnackbar({ task, setTask }: Props): ReactElement {
                     <SVG
                       src={imgSrc("complete")}
                       style={{
-                        width: "22px",
+                        width: "48px",
                         height: "100%",
                         fill: theme.palette.primary.light,
                         marginRight: "10px",
