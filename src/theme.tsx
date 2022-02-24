@@ -290,7 +290,6 @@ export const theme = createTheme({
         groupedHorizontal: {
           paddingTop: "0px",
           paddingBottom: "0px",
-
           "& > *": {
             backgroundColor: "white",
           },
