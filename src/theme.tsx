@@ -109,6 +109,12 @@ export const theme = createTheme({
           backgroundColor: white,
           borderRadius: "6px",
         },
+        input: {
+          fontSize: 14,
+          width: "325px",
+          marginBottom: "20px",
+          borderBottom: "solid 1px #dadde9",
+        },
       },
     },
     MuiTableCell: {
