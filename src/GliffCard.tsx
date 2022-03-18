@@ -8,7 +8,6 @@ import { icons } from "./icons";
 interface Props {
   title: string;
   el: JSX.Element;
-  cardStyle?: CSSProperties;
   action?: {
     icon?: string;
     tooltip?: string;
@@ -77,6 +76,5 @@ export function GliffCard(props: Props): JSX.Element {
 }
 
 GliffCard.defaultProps = {
-  cardStyle: {},
   action: null,
 };
