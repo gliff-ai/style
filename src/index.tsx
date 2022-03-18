@@ -26,7 +26,6 @@ export { ProgressSnackbar } from "./ProgressSnackbar";
 export {
   RadioGroup,
   Typography,
-  Card,
   MenuItem,
   FormControl,
   FormControlLabel,
@@ -45,7 +44,7 @@ export {
   Select,
 } from "./Misc";
 
-export { GliffCard } from "./GliffCard";
+export { Card } from "./Card";
 export type { Task } from "./ProgressSnackbar";
 
 export type { Tooltip, Tooltips } from "./tooltips";

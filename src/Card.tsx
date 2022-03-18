@@ -1,5 +1,4 @@
-import { CSSProperties } from "react";
-import { Card, IconButton, Paper, Typography } from "@mui/material";
+import { IconButton, Paper, Typography } from "@mui/material";
 import SVG from "react-inlinesvg";
 import makeStyles from "@mui/styles/makeStyles";
 import { theme } from "./theme";
@@ -38,7 +37,7 @@ const useStyles = makeStyles({
   },
 });
 
-export function GliffCard(props: Props): JSX.Element {
+export function Card(props: Props): JSX.Element {
   const classes = useStyles();
 
   const action = !props.action ? null : (
@@ -53,7 +52,7 @@ export function GliffCard(props: Props): JSX.Element {
 
   return (
     <>
-      <Card style={{ borderRadius: "9px" }}>
+      <Paper style={{ borderRadius: "9px" }}>
         <Paper
           elevation={0}
           variant="outlined"
@@ -70,11 +69,11 @@ export function GliffCard(props: Props): JSX.Element {
         <Paper elevation={0} square style={{ padding: "20px" }}>
           {props.el}
         </Paper>
-      </Card>
+      </Paper>
     </>
   );
 }
 
-GliffCard.defaultProps = {
+Card.defaultProps = {
   action: null,
 };
