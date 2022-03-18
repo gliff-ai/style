@@ -46,8 +46,6 @@ export {
 } from "./Misc";
 
 export { GliffCard } from "./GliffCard";
-export { AddButton } from "./AddButton";
-
 export type { Task } from "./ProgressSnackbar";
 
 export type { Tooltip, Tooltips } from "./tooltips";
