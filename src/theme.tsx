@@ -61,6 +61,24 @@ export const theme = createTheme({
       },
     },
 
+    MuiDialog: {
+      styleOverrides: {
+        paper: {
+          borderRadius: "9px",
+        },
+      },
+    },
+
+    MuiChip: {
+      styleOverrides: {
+        outlined: {
+          margin: "5px 5px 0 0 ",
+          borderRadius: "9px",
+          color: middleGrey,
+        },
+      },
+    },
+
     MuiSnackbarContent: {
       styleOverrides: {
         root: {
@@ -103,17 +121,26 @@ export const theme = createTheme({
       },
     },
 
+    MuiFormControlLabel: {
+      styleOverrides: {
+        label: {
+          fontSize: "17px",
+        },
+      },
+    },
+
     MuiInputBase: {
       styleOverrides: {
         root: {
           backgroundColor: white,
           borderRadius: "6px",
         },
-        input: {
+        sizeSmall: {
           fontSize: 14,
           width: "325px",
           marginBottom: "20px",
           borderBottom: "solid 1px #dadde9",
+          borderRadius: 0,
         },
       },
     },

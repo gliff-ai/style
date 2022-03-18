@@ -28,7 +28,7 @@ export interface Tooltip {
 export interface Props extends ButtonProps {
   component?: any;
   to?: string;
-  tooltip: Tooltip;
+  tooltip?: Tooltip;
   icon: string;
   fill?: boolean;
   disabled?: boolean;
