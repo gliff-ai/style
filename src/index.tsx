@@ -44,7 +44,7 @@ export {
   Select,
 } from "./Misc";
 
-export { Card } from "./Card";
+export { BaseCard } from "./BaseCard";
 export type { Task } from "./ProgressSnackbar";
 
 export type { Tooltip, Tooltips } from "./tooltips";

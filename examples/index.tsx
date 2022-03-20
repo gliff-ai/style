@@ -4,6 +4,9 @@ import {
   Theme,
   StyledEngineProvider,
   CssBaseline,
+  dividerClasses,
+  Paper,
+  Typography,
 } from "@mui/material";
 import StylesProvider from "@mui/styles/StylesProvider";
 import { useState, SyntheticEvent, MouseEvent, ReactElement } from "react";
@@ -21,13 +24,13 @@ import {
   theme,
   icons,
   WarningSnackbar,
+  BaseCard,
 } from "../src";
 
 declare module "@mui/styles/defaultTheme" {
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
   interface DefaultTheme extends Theme {}
 }
-
 
 export const imgSrc = (src: string, type = "svg"): string =>
   new URL(`/src/assets/${src}.${type}`, import.meta.url).href;
@@ -231,6 +234,15 @@ const app = (
               horizontal: "left",
             }}
             children={<p>hello world</p>}
+          />
+
+          <BaseCard
+            title="Hello"
+            el={
+              <div style={{ display: "absolute", width: "300px" }}>
+                <Typography>An example of a card</Typography>
+              </div>
+            }
           />
 
           <h2>Icons</h2>
