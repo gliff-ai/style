@@ -220,29 +220,30 @@ const app = (
           </div>
 
           <h2>BasePopover</h2>
+
           <BasePopover
-            tooltip={{
-              name: "hello world",
-              icon: imgSrc("icon"),
-            }}
+            title="example"
+            TriggerButton={
+              <IconButton
+                tooltip={{
+                  name: "Medium Button",
+                  shortcut: "K",
+                  shortcutSymbol: "cmd",
+                }}
+                icon={imgSrc("icon")}
+                size="medium"
+              />
+            }
             anchorOrigin={{
               vertical: "bottom",
-              horizontal: "left",
+              horizontal: "center",
             }}
             transformOrigin={{
               vertical: "top",
-              horizontal: "left",
+              horizontal: "right",
             }}
-            children={<p>hello world</p>}
-          />
-
-          <BaseCard
-            title="Hello"
-            el={
-              <div style={{ display: "absolute", width: "300px" }}>
-                <Typography>An example of a card</Typography>
-              </div>
-            }
+            children={<Typography>Hello</Typography>}
+            // triggerClosing={close}
           />
 
           <h2>Icons</h2>
