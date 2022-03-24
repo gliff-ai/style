@@ -4,8 +4,6 @@ import {
   Theme,
   StyledEngineProvider,
   CssBaseline,
-  dividerClasses,
-  Paper,
   Typography,
 } from "@mui/material";
 import StylesProvider from "@mui/styles/StylesProvider";
