@@ -18,11 +18,32 @@ export { BaseIconButton } from "./BaseIconButton";
 export { IconButton } from "./IconButton";
 export { BaseTextButton } from "./BaseTextButton";
 export { BaseTooltipTitle } from "./BaseTooltipTitle";
-export { BasePopover } from "./BasePopover";
+export { Dialog } from "./Dialog";
 export { Logo } from "./Logo";
 export { LoadingSpinner } from "./LoadingSpinner";
 export { WarningSnackbar } from "./WarningSnackbar";
 export { ProgressSnackbar } from "./ProgressSnackbar";
+export {
+  RadioGroup,
+  Typography,
+  MenuItem,
+  FormControl,
+  FormControlLabel,
+  Radio,
+  Checkbox,
+  InputBase,
+  TextField,
+  Paper,
+  Chip,
+  Autocomplete,
+  Avatar,
+  InputLabel,
+  Alert,
+  Button,
+  Select,
+  IconButton as MuiIconbutton,
+} from "@mui/material";
+
 export type { Task } from "./ProgressSnackbar";
 
 export type { Tooltip, Tooltips } from "./tooltips";

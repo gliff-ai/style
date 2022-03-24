@@ -4,6 +4,7 @@ import {
   Theme,
   StyledEngineProvider,
   CssBaseline,
+  Typography,
 } from "@mui/material";
 import StylesProvider from "@mui/styles/StylesProvider";
 import { useState, SyntheticEvent, MouseEvent, ReactElement } from "react";
@@ -14,7 +15,7 @@ import {
   BaseTextButton,
   HtmlTooltip,
   BaseTooltipTitle,
-  BasePopover,
+  Dialog,
   IconButton,
   Logo,
   LoadingSpinner,
@@ -27,7 +28,6 @@ declare module "@mui/styles/defaultTheme" {
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
   interface DefaultTheme extends Theme {}
 }
-
 
 export const imgSrc = (src: string, type = "svg"): string =>
   new URL(`/src/assets/${src}.${type}`, import.meta.url).href;
@@ -216,21 +216,29 @@ const app = (
             </ButtonGroup>
           </div>
 
-          <h2>BasePopover</h2>
-          <BasePopover
-            tooltip={{
-              name: "hello world",
-              icon: imgSrc("icon"),
-            }}
+          <h2>Dialog</h2>
+
+          <Dialog
+            title="Example Dialog"
+            TriggerButton={
+              <IconButton
+                tooltip={{
+                  name: "Open Dialog",
+                }}
+                icon={imgSrc("icon")}
+                size="medium"
+              />
+            }
             anchorOrigin={{
               vertical: "bottom",
-              horizontal: "left",
+              horizontal: "center",
             }}
             transformOrigin={{
               vertical: "top",
-              horizontal: "left",
+              horizontal: "right",
             }}
-            children={<p>hello world</p>}
+            children={<Typography>Hello World</Typography>}
+            // triggerClosing={close}
           />
 
           <h2>Icons</h2>
