@@ -219,13 +219,11 @@ const app = (
           <h2>Dialog</h2>
 
           <Dialog
-            title="example"
+            title="Example Dialog"
             TriggerButton={
               <IconButton
                 tooltip={{
-                  name: "Medium Button",
-                  shortcut: "K",
-                  shortcutSymbol: "cmd",
+                  name: "Open Dialog",
                 }}
                 icon={imgSrc("icon")}
                 size="medium"
@@ -239,7 +237,7 @@ const app = (
               vertical: "top",
               horizontal: "right",
             }}
-            children={<Typography>Hello</Typography>}
+            children={<Typography>Hello World</Typography>}
             // triggerClosing={close}
           />
 
