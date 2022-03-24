@@ -8,7 +8,7 @@ import {
 import {
   Card,
   Paper,
-  Popover,
+  Popover as MaterialPopover,
   PopoverOrigin,
   Typography,
   IconButton as MaterialIconButton,
@@ -29,7 +29,7 @@ interface Props {
   title: string;
 }
 
-export function Dialog({
+export function Popover({
   children,
   anchorOrigin,
   transformOrigin,
@@ -93,7 +93,7 @@ export function Dialog({
       {cloneElement(TriggerButton as any, {
         onClick: handleClick,
       })}
-      <Popover
+      <MaterialPopover
         open={Boolean(anchorEl)}
         anchorEl={anchorEl}
         onClose={handleClose}
@@ -101,12 +101,12 @@ export function Dialog({
         transformOrigin={transformOrigin}
       >
         {popoverContent}
-      </Popover>
+      </MaterialPopover>
     </>
   );
 }
 
-Dialog.defaultProps = {
+Popover.defaultProps = {
   children: null,
   anchorOrigin: {
     vertical: "top",
