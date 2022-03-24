@@ -18,7 +18,7 @@ export { BaseIconButton } from "./BaseIconButton";
 export { IconButton } from "./IconButton";
 export { BaseTextButton } from "./BaseTextButton";
 export { BaseTooltipTitle } from "./BaseTooltipTitle";
-export { BasePopover } from "./BasePopover";
+export { Dialog } from "./Dialog";
 export { Logo } from "./Logo";
 export { LoadingSpinner } from "./LoadingSpinner";
 export { WarningSnackbar } from "./WarningSnackbar";
@@ -38,13 +38,12 @@ export {
   Autocomplete,
   Avatar,
   InputLabel,
-  Dialog,
   Alert,
   Button,
   Select,
+  MuiIconbutton,
 } from "./Misc";
 
-export { BaseCard } from "./BaseCard";
 export type { Task } from "./ProgressSnackbar";
 
 export type { Tooltip, Tooltips } from "./tooltips";

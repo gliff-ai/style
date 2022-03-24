@@ -18,6 +18,9 @@ import SVG from "react-inlinesvg";
 import { theme } from "./theme";
 import { icons } from "./icons";
 
+export const imgSrc = (src: string, type = "svg"): string =>
+  new URL(`/src/assets/${src}.${type}`, import.meta.url).href;
+
 const useStyle = makeStyles(() => ({
   popoverPaper: {
     display: "flex",
@@ -37,7 +40,7 @@ interface Props {
   title: string;
 }
 
-export function BasePopover({
+export function Dialog({
   children,
   anchorOrigin,
   transformOrigin,
@@ -116,7 +119,7 @@ export function BasePopover({
   );
 }
 
-BasePopover.defaultProps = {
+Dialog.defaultProps = {
   children: null,
   anchorOrigin: {
     vertical: "top",

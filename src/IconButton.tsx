@@ -32,6 +32,7 @@ export interface Props extends ButtonProps {
   icon: string;
   fill?: boolean;
   disabled?: boolean;
+  iconColor?: string;
   tooltipPlacement?: TooltipProps["placement"];
   setRefCallback?: (ref: HTMLButtonElement) => void;
 }
@@ -66,6 +67,7 @@ export const IconButton = (props: Props): ReactElement => {
     fill,
     tooltipPlacement,
     disabled,
+    iconColor,
     setRefCallback,
     ...rest
   } = props;
@@ -78,8 +80,9 @@ export const IconButton = (props: Props): ReactElement => {
     color = theme.palette.primary.main;
   }
 
-  const svgIcon = <SVG src={icon} className={classes.svg} fill={color} />;
-
+  const svgIcon = (
+    <SVG src={icon} className={classes.svg} fill={fill ? iconColor : color} />
+  );
   return (
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme}>
@@ -123,4 +126,5 @@ IconButton.defaultProps = {
   type: "button",
   component: "button",
   to: null,
+  iconColor: theme.palette.primary.main,
 } as Props;

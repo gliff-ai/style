@@ -18,6 +18,7 @@ import {
   Select,
   Alert,
   Button,
+  IconButton as MuiIconbutton,
 } from "@mui/material";
 
 export {
@@ -40,4 +41,5 @@ export {
   Select,
   Alert,
   Button,
+  MuiIconbutton,
 };

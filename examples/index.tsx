@@ -17,14 +17,13 @@ import {
   BaseTextButton,
   HtmlTooltip,
   BaseTooltipTitle,
-  BasePopover,
+  Dialog,
   IconButton,
   Logo,
   LoadingSpinner,
   theme,
   icons,
   WarningSnackbar,
-  BaseCard,
 } from "../src";
 
 declare module "@mui/styles/defaultTheme" {
@@ -219,9 +218,9 @@ const app = (
             </ButtonGroup>
           </div>
 
-          <h2>BasePopover</h2>
+          <h2>Dialog</h2>
 
-          <BasePopover
+          <Dialog
             title="example"
             TriggerButton={
               <IconButton
