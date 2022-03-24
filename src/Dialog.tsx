@@ -13,23 +13,12 @@ import {
   Typography,
   IconButton as MaterialIconButton,
 } from "@mui/material";
-import makeStyles from "@mui/styles/makeStyles";
 import SVG from "react-inlinesvg";
 import { theme } from "./theme";
 import { icons } from "./icons";
 
 export const imgSrc = (src: string, type = "svg"): string =>
   new URL(`/src/assets/${src}.${type}`, import.meta.url).href;
-
-const useStyle = makeStyles(() => ({
-  popoverPaper: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "transparent",
-    borderRadius: "9px",
-  },
-}));
 
 interface Props {
   children?: JSX.Element[] | JSX.Element | null;
@@ -48,7 +37,6 @@ export function Dialog({
   title,
   TriggerButton,
 }: Props): ReactElement | null {
-  const classes = useStyle();
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
 
   const handleClick = (event: MouseEvent<HTMLButtonElement>): void => {
@@ -111,7 +99,6 @@ export function Dialog({
         onClose={handleClose}
         anchorOrigin={anchorOrigin}
         transformOrigin={transformOrigin}
-        classes={{ paper: classes.popoverPaper }}
       >
         {popoverContent}
       </Popover>

@@ -41,8 +41,8 @@ export {
   Alert,
   Button,
   Select,
-  MuiIconbutton,
-} from "./Misc";
+  IconButton as MuiIconbutton,
+} from "@mui/material";
 
 export type { Task } from "./ProgressSnackbar";
 

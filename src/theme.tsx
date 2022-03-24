@@ -286,6 +286,9 @@ export const theme = createTheme({
         root: {
           marginLeft: "20px",
         },
+        paper: {
+          borderRadius: "9px",
+        },
       },
       defaultProps: {
         anchorOrigin: {
