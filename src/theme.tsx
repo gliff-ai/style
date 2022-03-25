@@ -363,12 +363,7 @@ export const theme = createTheme({
             backgroundColor: mainGreen,
           },
         },
-        // circular: {
-        //   backgroundColor: mainGreen,
-        //   "&:hover": {
-        //     backgroundColor: white,
-        //   },
-        // },
+
         colorDefault: {
           "&:hover": {
             backgroundColor: mainGreen,
