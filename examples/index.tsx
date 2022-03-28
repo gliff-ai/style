@@ -22,6 +22,7 @@ import {
   theme,
   icons,
   WarningSnackbar,
+  Popper,
 } from "../src";
 
 declare module "@mui/styles/defaultTheme" {
@@ -54,6 +55,43 @@ const SnackBar = (): ReactElement => {
         messageText={<>Snackbar</>}
         onClose={handleClose}
         open={open}
+      />
+    </>
+  );
+};
+
+const ExamplePopper = (): ReactElement => {
+  const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
+
+  const handleClick = (event: MouseEvent<HTMLButtonElement>): void => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClickAway = () => {
+    return;
+  };
+
+  return (
+    <>
+      <BaseTextButton text="Open Popper" onClick={handleClick} />
+
+      <Popper
+        open={Boolean(anchorEl)}
+        anchorEl={anchorEl}
+        placement="right-start"
+        offset={[5, 10]}
+        handleClickAway={handleClickAway}
+        el={
+          <>
+            <IconButton
+              data-testid="small-button"
+              id="small-button"
+              tooltip={{ name: "Small Button" }}
+              icon={imgSrc("icon")}
+              size="small"
+            />
+          </>
+        }
       />
     </>
   );
@@ -216,7 +254,7 @@ const app = (
             </ButtonGroup>
           </div>
 
-          <h2>Dialog</h2>
+          <h2>Popover</h2>
 
           <Popover
             title="Example Popover"
@@ -240,6 +278,10 @@ const app = (
             children={<Typography>Hello World</Typography>}
             // triggerClosing={close}
           />
+
+          <h2>Popper</h2>
+
+          <ExamplePopper />
 
           <h2>Icons</h2>
 
