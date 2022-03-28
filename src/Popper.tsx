@@ -8,10 +8,10 @@ import {
 interface Props extends PopperProps {
   open: boolean;
   anchorEl: HTMLButtonElement | null;
-  placement: PopperPlacementType;
   el: JSX.Element;
   handleClickAway?: () => void;
-  offset: [number, number];
+  offset?: [number, number];
+  popperPlacement?: PopperPlacementType;
 }
 
 export function Popper(props: Props): JSX.Element {
@@ -21,7 +21,7 @@ export function Popper(props: Props): JSX.Element {
         open={props.open}
         anchorEl={props.anchorEl}
         style={{ display: "flex" }}
-        placement={props.placement}
+        placement={props.popperPlacement}
         modifiers={[
           {
             name: "offset",
@@ -39,4 +39,6 @@ export function Popper(props: Props): JSX.Element {
 
 Popper.defaultProps = {
   handleClickAway: null,
+  popperPlacement: "right",
+  offset: [10, 10],
 };
