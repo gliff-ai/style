@@ -45,6 +45,8 @@ export {
   Select,
   IconButton as MuiIconbutton,
   ButtonGroup,
+  Divider,
+  Card,
 } from "@mui/material";
 
 export type { Task } from "./ProgressSnackbar";
