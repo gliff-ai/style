@@ -15,7 +15,7 @@ import {
   BaseTextButton,
   HtmlTooltip,
   BaseTooltipTitle,
-  Dialog,
+  Popover,
   IconButton,
   Logo,
   LoadingSpinner,
@@ -218,12 +218,12 @@ const app = (
 
           <h2>Dialog</h2>
 
-          <Dialog
-            title="Example Dialog"
+          <Popover
+            title="Example Popover"
             TriggerButton={
               <IconButton
                 tooltip={{
-                  name: "Open Dialog",
+                  name: "Open Popover",
                 }}
                 icon={imgSrc("icon")}
                 size="medium"

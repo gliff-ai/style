@@ -18,7 +18,7 @@ export { BaseIconButton } from "./BaseIconButton";
 export { IconButton } from "./IconButton";
 export { BaseTextButton } from "./BaseTextButton";
 export { BaseTooltipTitle } from "./BaseTooltipTitle";
-export { Dialog } from "./Dialog";
+export { Popover } from "./Popover";
 export { Logo } from "./Logo";
 export { LoadingSpinner } from "./LoadingSpinner";
 export { WarningSnackbar } from "./WarningSnackbar";
