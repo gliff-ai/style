@@ -107,14 +107,6 @@ const ExamplePopper = (): ReactElement => {
                 size="small"
                 onClick={handleOpenSubmenu}
               />
-              <IconButton
-                data-testid="small-button"
-                id="small-button"
-                tooltip={{ name: "Submenu" }}
-                icon={imgSrc("icon")}
-                size="small"
-                onClick={handleOpenSubmenu}
-              />
             </ButtonGroup>
             {openSubmenu && (
               <Card
