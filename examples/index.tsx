@@ -83,13 +83,29 @@ const ExamplePopper = (): ReactElement => {
         handleClickAway={handleClickAway}
         el={
           <>
-            <IconButton
-              data-testid="small-button"
-              id="small-button"
-              tooltip={{ name: "Small Button" }}
-              icon={imgSrc("icon")}
-              size="small"
-            />
+            <ButtonGroup orientation="vertical" variant="text">
+              <IconButton
+                data-testid="small-button"
+                id="small-button"
+                tooltip={{ name: "Small Button" }}
+                icon={imgSrc("icon")}
+                size="small"
+              />
+              <IconButton
+                data-testid="small-button"
+                id="small-button"
+                tooltip={{ name: "Small Button" }}
+                icon={imgSrc("icon")}
+                size="small"
+              />
+              <IconButton
+                data-testid="small-button"
+                id="small-button"
+                tooltip={{ name: "Small Button" }}
+                icon={imgSrc("icon")}
+                size="small"
+              />
+            </ButtonGroup>
           </>
         }
       />
