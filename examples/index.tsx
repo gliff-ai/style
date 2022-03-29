@@ -22,6 +22,9 @@ import {
   theme,
   icons,
   WarningSnackbar,
+  Popper,
+  Card,
+  Paper,
 } from "../src";
 
 declare module "@mui/styles/defaultTheme" {
@@ -54,6 +57,95 @@ const SnackBar = (): ReactElement => {
         messageText={<>Snackbar</>}
         onClose={handleClose}
         open={open}
+      />
+    </>
+  );
+};
+
+const ExamplePopper = (): ReactElement => {
+  const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
+  const [openSubmenu, setOpenSubMenu] = useState<boolean>(false);
+
+  const handleClick = (event: MouseEvent<HTMLButtonElement>): void => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClickAway = () => {
+    setOpenSubMenu(false);
+  };
+
+  const handleOpenSubmenu = (): void => {
+    setOpenSubMenu(true);
+  };
+
+  return (
+    <>
+      <BaseTextButton text="Open Popper" onClick={handleClick} />
+
+      <Popper
+        open={Boolean(anchorEl)}
+        anchorEl={anchorEl}
+        placement="right-start"
+        offset={[5, 10]}
+        handleClickAway={handleClickAway}
+        el={
+          <>
+            <ButtonGroup orientation="vertical" variant="text">
+              <IconButton
+                data-testid="small-button"
+                id="small-button"
+                tooltip={{ name: "Submenu" }}
+                icon={imgSrc("icon")}
+                size="small"
+                onClick={handleOpenSubmenu}
+              />
+              <IconButton
+                data-testid="small-button"
+                id="small-button"
+                tooltip={{ name: "Submenu" }}
+                icon={imgSrc("icon")}
+                size="small"
+                onClick={handleOpenSubmenu}
+              />
+            </ButtonGroup>
+            {openSubmenu && (
+              <Card
+                sx={{
+                  width: "285px",
+                  height: "fit-content",
+                  marginLeft: "18px",
+                }}
+              >
+                <Paper
+                  elevation={0}
+                  variant="outlined"
+                  square
+                  sx={{
+                    p: "10px",
+                    backgroundColor: theme.palette.primary.main,
+                    position: "relative",
+                  }}
+                >
+                  <Typography
+                    sx={{
+                      fontSize: "21px",
+                      width: "240px",
+                      whiteSpace: "nowrap",
+                      overflow: "hidden",
+                      textOverflow: "ellipsis",
+                    }}
+                  >
+                    An Example Submenu
+                  </Typography>
+                </Paper>
+
+                <Paper elevation={0} sx={{ p: "20px" }}>
+                  Hello
+                </Paper>
+              </Card>
+            )}
+          </>
+        }
       />
     </>
   );
@@ -216,7 +308,7 @@ const app = (
             </ButtonGroup>
           </div>
 
-          <h2>Dialog</h2>
+          <h2>Popover</h2>
 
           <Popover
             title="Example Popover"
@@ -240,6 +332,10 @@ const app = (
             children={<Typography>Hello World</Typography>}
             // triggerClosing={close}
           />
+
+          <h2>Popper</h2>
+
+          <ExamplePopper />
 
           <h2>Icons</h2>
 
