@@ -23,6 +23,8 @@ import {
   icons,
   WarningSnackbar,
   Popper,
+  Card,
+  Paper,
 } from "../src";
 
 declare module "@mui/styles/defaultTheme" {
@@ -62,13 +64,18 @@ const SnackBar = (): ReactElement => {
 
 const ExamplePopper = (): ReactElement => {
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
+  const [openSubmenu, setOpenSubMenu] = useState<boolean>(false);
 
   const handleClick = (event: MouseEvent<HTMLButtonElement>): void => {
     setAnchorEl(event.currentTarget);
   };
 
   const handleClickAway = () => {
-    return;
+    setOpenSubMenu(false);
+  };
+
+  const handleOpenSubmenu = (): void => {
+    setOpenSubMenu(true);
   };
 
   return (
@@ -87,25 +94,64 @@ const ExamplePopper = (): ReactElement => {
               <IconButton
                 data-testid="small-button"
                 id="small-button"
-                tooltip={{ name: "Small Button" }}
+                tooltip={{ name: "Submenu" }}
                 icon={imgSrc("icon")}
                 size="small"
+                onClick={handleOpenSubmenu}
               />
               <IconButton
                 data-testid="small-button"
                 id="small-button"
-                tooltip={{ name: "Small Button" }}
+                tooltip={{ name: "Submenu" }}
                 icon={imgSrc("icon")}
                 size="small"
+                onClick={handleOpenSubmenu}
               />
               <IconButton
                 data-testid="small-button"
                 id="small-button"
-                tooltip={{ name: "Small Button" }}
+                tooltip={{ name: "Submenu" }}
                 icon={imgSrc("icon")}
                 size="small"
+                onClick={handleOpenSubmenu}
               />
             </ButtonGroup>
+            {openSubmenu && (
+              <Card
+                sx={{
+                  width: "285px",
+                  height: "fit-content",
+                  marginLeft: "18px",
+                }}
+              >
+                <Paper
+                  elevation={0}
+                  variant="outlined"
+                  square
+                  sx={{
+                    p: "10px",
+                    backgroundColor: theme.palette.primary.main,
+                    position: "relative",
+                  }}
+                >
+                  <Typography
+                    sx={{
+                      fontSize: "21px",
+                      width: "240px",
+                      whiteSpace: "nowrap",
+                      overflow: "hidden",
+                      textOverflow: "ellipsis",
+                    }}
+                  >
+                    An Example Submenu
+                  </Typography>
+                </Paper>
+
+                <Paper elevation={0} sx={{ p: "20px" }}>
+                  Hello
+                </Paper>
+              </Card>
+            )}
           </>
         }
       />
