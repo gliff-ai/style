@@ -1,7 +1,6 @@
 import {
   ButtonGroup,
   ThemeProvider,
-  Theme,
   StyledEngineProvider,
   CssBaseline,
   Typography,
@@ -23,15 +22,10 @@ import {
   icons,
   WarningSnackbar,
   Popper,
-  Card,
+  MuiCard,
   Paper,
   Dialog,
 } from "../src";
-
-declare module "@mui/styles/defaultTheme" {
-  // eslint-disable-next-line @typescript-eslint/no-empty-interface
-  interface DefaultTheme extends Theme {}
-}
 
 export const imgSrc = (src: string, type = "svg"): string =>
   new URL(`/src/assets/${src}.${type}`, import.meta.url).href;
@@ -110,7 +104,7 @@ const ExamplePopper = (): ReactElement => {
               />
             </ButtonGroup>
             {openSubmenu && (
-              <Card
+              <MuiCard
                 sx={{
                   width: "285px",
                   height: "fit-content",
@@ -143,7 +137,7 @@ const ExamplePopper = (): ReactElement => {
                 <Paper elevation={0} sx={{ p: "20px" }}>
                   Hello
                 </Paper>
-              </Card>
+              </MuiCard>
             )}
           </>
         }

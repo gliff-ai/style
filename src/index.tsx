@@ -25,6 +25,7 @@ export { LoadingSpinner } from "./LoadingSpinner";
 export { WarningSnackbar } from "./WarningSnackbar";
 export { ProgressSnackbar } from "./ProgressSnackbar";
 export { Popper } from "./Popper";
+export { Card } from "./Card";
 
 export {
   RadioGroup,
@@ -47,7 +48,8 @@ export {
   IconButton as MuiIconbutton,
   ButtonGroup,
   Divider,
-  Card,
+  Card as MuiCard,
+  Popover as MuiPopover,
 } from "@mui/material";
 
 export type { Task } from "./ProgressSnackbar";

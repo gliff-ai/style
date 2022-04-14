@@ -1,30 +1,14 @@
-import {
-  ReactElement,
-  useState,
-  MouseEvent,
-  useEffect,
-  cloneElement,
-} from "react";
-import {
-  Card,
-  Paper,
-  Popover as MaterialPopover,
-  PopoverOrigin,
-  Typography,
-  IconButton as MaterialIconButton,
-} from "@mui/material";
-import SVG from "react-inlinesvg";
-import { theme } from "./theme";
-import { icons } from "./icons";
+import { ReactElement, useState, MouseEvent, cloneElement } from "react";
+import { Popover as MaterialPopover, PopoverOrigin } from "@mui/material";
+import { Card } from "./Card";
 
 export const imgSrc = (src: string, type = "svg"): string =>
   new URL(`/src/assets/${src}.${type}`, import.meta.url).href;
 
 interface Props {
-  children?: JSX.Element[] | JSX.Element | null;
+  children?: ReactElement | null;
   anchorOrigin?: PopoverOrigin;
   transformOrigin?: PopoverOrigin;
-  triggerClosing?: number | null;
   TriggerButton: JSX.Element;
   title: string;
 }
@@ -33,7 +17,6 @@ export function Popover({
   children,
   anchorOrigin,
   transformOrigin,
-  triggerClosing,
   title,
   TriggerButton,
 }: Props): ReactElement | null {
@@ -47,46 +30,14 @@ export function Popover({
     setAnchorEl(null);
   };
 
-  useEffect(() => {
-    setAnchorEl(null);
-  }, [triggerClosing]);
-
   const popoverContent = (
-    <Card sx={{ borderRadius: "9px" }}>
-      <Paper
-        elevation={0}
-        variant="outlined"
-        square
-        sx={{
-          p: "10px",
-          backgroundColor: theme.palette.primary.main,
-          position: "relative",
-        }}
-      >
-        <Typography
-          sx={{
-            fontSize: "21px",
-            width: "240px",
-            whiteSpace: "nowrap",
-            overflow: "hidden",
-            textOverflow: "ellipsis",
-          }}
-        >
-          {title}
-        </Typography>
-        <MaterialIconButton
-          onClick={handleClose}
-          size="small"
-          sx={{ position: "absolute", top: "7px", right: "5px" }}
-        >
-          <SVG src={icons.removeLabel} width="15px" />
-        </MaterialIconButton>
-      </Paper>
-
-      <Paper elevation={0} sx={{ p: "20px" }}>
-        {children}
-      </Paper>
-    </Card>
+    <Card
+      title={title}
+      handleClose={handleClose}
+      // eslint-disable-next-line react/no-children-prop
+      children={children}
+      closeButton
+    />
   );
   return (
     <>
@@ -116,5 +67,4 @@ Popover.defaultProps = {
     vertical: "top",
     horizontal: "left",
   },
-  triggerClosing: null,
 };
