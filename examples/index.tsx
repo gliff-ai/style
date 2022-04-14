@@ -23,7 +23,7 @@ import {
   icons,
   WarningSnackbar,
   Popper,
-  Card,
+  MuiCard,
   Paper,
 } from "../src";
 
@@ -109,7 +109,7 @@ const ExamplePopper = (): ReactElement => {
               />
             </ButtonGroup>
             {openSubmenu && (
-              <Card
+              <MuiCard
                 sx={{
                   width: "285px",
                   height: "fit-content",
@@ -142,7 +142,7 @@ const ExamplePopper = (): ReactElement => {
                 <Paper elevation={0} sx={{ p: "20px" }}>
                   Hello
                 </Paper>
-              </Card>
+              </MuiCard>
             )}
           </>
         }
@@ -330,7 +330,6 @@ const app = (
               horizontal: "right",
             }}
             children={<Typography>Hello World</Typography>}
-            // triggerClosing={close}
           />
 
           <h2>Popper</h2>
