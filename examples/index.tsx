@@ -27,11 +27,6 @@ import {
   Paper,
 } from "../src";
 
-declare module "@mui/styles/defaultTheme" {
-  // eslint-disable-next-line @typescript-eslint/no-empty-interface
-  interface DefaultTheme extends Theme {}
-}
-
 export const imgSrc = (src: string, type = "svg"): string =>
   new URL(`/src/assets/${src}.${type}`, import.meta.url).href;
 
