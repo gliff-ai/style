@@ -25,6 +25,7 @@ import {
   Popper,
   Card,
   Paper,
+  Dialog,
 } from "../src";
 
 declare module "@mui/styles/defaultTheme" {
@@ -308,7 +309,21 @@ const app = (
             </ButtonGroup>
           </div>
 
-          <h2>Popover</h2>
+          <h2>Popover And Dialog</h2>
+
+          <Dialog
+            title="Example Dialog"
+            TriggerButton={
+              <IconButton
+                tooltip={{
+                  name: "Open Dialog",
+                }}
+                icon={imgSrc("icon")}
+                size="medium"
+              />
+            }
+            children={<Typography>Hello World</Typography>}
+          />
 
           <Popover
             title="Example Popover"
@@ -321,16 +336,7 @@ const app = (
                 size="medium"
               />
             }
-            anchorOrigin={{
-              vertical: "bottom",
-              horizontal: "center",
-            }}
-            transformOrigin={{
-              vertical: "top",
-              horizontal: "right",
-            }}
             children={<Typography>Hello World</Typography>}
-            // triggerClosing={close}
           />
 
           <h2>Popper</h2>
