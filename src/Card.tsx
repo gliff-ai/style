@@ -14,6 +14,7 @@ interface Props {
   title: string;
   children: ReactElement;
   handleClose: () => void;
+  closeButton?: boolean;
 }
 
 export function Card(props: Props): JSX.Element {
@@ -40,13 +41,16 @@ export function Card(props: Props): JSX.Element {
         >
           {props.title}
         </Typography>
-        <MaterialIconButton
-          onClick={props.handleClose}
-          size="small"
-          sx={{ position: "absolute", top: "7px", right: "5px" }}
-        >
-          <SVG src={icons.removeLabel} width="15px" />
-        </MaterialIconButton>
+
+        {props.closeButton && (
+          <MaterialIconButton
+            onClick={props.handleClose}
+            size="small"
+            sx={{ position: "absolute", top: "7px", right: "5px" }}
+          >
+            <SVG src={icons.removeLabel} width="15px" />
+          </MaterialIconButton>
+        )}
       </Paper>
 
       <Paper elevation={0} sx={{ p: "20px" }}>
@@ -55,3 +59,6 @@ export function Card(props: Props): JSX.Element {
     </MaterialCard>
   );
 }
+Card.defaultProps = {
+  closeButton: false,
+};
