@@ -1,7 +1,6 @@
 import {
   ButtonGroup,
   ThemeProvider,
-  Theme,
   StyledEngineProvider,
   CssBaseline,
   Typography,

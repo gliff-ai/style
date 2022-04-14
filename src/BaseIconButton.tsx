@@ -4,7 +4,6 @@ import {
   Avatar,
   TooltipProps,
   ThemeProvider,
-  Theme,
   StyledEngineProvider,
   Button,
 } from "@mui/material";
