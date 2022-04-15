@@ -49,6 +49,7 @@ export {
   Divider,
   Card as MuiCard,
   Popover as MuiPopover,
+  Box,
 } from "@mui/material";
 
 export type { Task } from "./ProgressSnackbar";

@@ -24,6 +24,8 @@ import {
   Popper,
   MuiCard,
   Paper,
+  Card,
+  Box,
 } from "../src";
 
 export const imgSrc = (src: string, type = "svg"): string =>
@@ -218,8 +220,14 @@ const app = (
             <p></p>
           </HtmlTooltip>
           <br></br>
+
+          <Box sx={{ width: "300px" }}>
+            <Card title={"Example Card"}>
+              <Typography>This is a card</Typography>
+            </Card>
+          </Box>
           <br></br>
-          <br></br>
+
           <h2>Icon Button</h2>
           <div>
             <ButtonGroup orientation="vertical" variant="text">
