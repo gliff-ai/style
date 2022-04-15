@@ -1,7 +1,5 @@
 import { ReactElement, useState, cloneElement } from "react";
-
 import { Dialog as MaterialDialog } from "@mui/material";
-
 import { Card } from "./Card";
 
 interface Props {
