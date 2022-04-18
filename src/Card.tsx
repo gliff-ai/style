@@ -37,11 +37,12 @@ export function Card(props: Props): JSX.Element {
       >
         <Typography
           sx={{
-            fontSize: "21px",
+            fontSize: "18px",
             width: "240px",
             whiteSpace: "nowrap",
             overflow: "hidden",
             textOverflow: "ellipsis",
+            fontWeight: 500,
           }}
         >
           {props.title}
