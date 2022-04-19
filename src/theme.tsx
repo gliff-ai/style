@@ -269,14 +269,6 @@ export const theme = createTheme({
       },
     },
 
-    MuiPaper: {
-      styleOverrides: {
-        root: {
-          borderRadius: "9px 9px 0 0",
-        },
-      },
-    },
-
     MuiSlider: {
       styleOverrides: {
         root: {

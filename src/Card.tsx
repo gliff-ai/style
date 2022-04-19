@@ -22,7 +22,7 @@ export function Card(props: Props): JSX.Element {
   return (
     <MaterialCard
       sx={{
-        borderRadius: "9px",
+        borderRadius: "6px",
       }}
     >
       <Paper
@@ -30,9 +30,10 @@ export function Card(props: Props): JSX.Element {
         variant="outlined"
         square
         sx={{
-          p: "10px",
+          p: "8px 16px",
           backgroundColor: theme.palette.primary.main,
           position: "relative",
+          borderRadius: "6px 6px 0 0",
         }}
       >
         <Typography
@@ -59,7 +60,7 @@ export function Card(props: Props): JSX.Element {
         )}
       </Paper>
 
-      <Paper elevation={0} sx={{ p: "20px" }}>
+      <Paper elevation={0} sx={{ p: "12px 16px 14px" }}>
         {props.children}
       </Paper>
     </MaterialCard>
