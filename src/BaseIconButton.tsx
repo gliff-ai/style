@@ -4,7 +4,6 @@ import {
   Avatar,
   TooltipProps,
   ThemeProvider,
-  Theme,
   StyledEngineProvider,
   Button,
 } from "@mui/material";
@@ -15,11 +14,6 @@ import { BaseTooltipTitle } from "./BaseTooltipTitle";
 import { HtmlTooltip } from "./BaseHtmlTooltip";
 import { theme } from "./theme";
 import { Tooltip } from "./interface";
-
-declare module "@mui/styles/defaultTheme" {
-  // eslint-disable-next-line @typescript-eslint/no-empty-interface
-  interface DefaultTheme extends Theme {}
-}
 
 interface Props extends IconButtonProps {
   tooltip: Tooltip;

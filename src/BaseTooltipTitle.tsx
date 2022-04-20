@@ -4,7 +4,6 @@ import {
   Box,
   Typography,
   ThemeProvider,
-  Theme,
   StyledEngineProvider,
 } from "@mui/material";
 
@@ -12,11 +11,6 @@ import makeStyles from "@mui/styles/makeStyles";
 
 import { theme, darkGrey } from "./theme";
 import type { Tooltip } from "./tooltips";
-
-declare module "@mui/styles/defaultTheme" {
-  // eslint-disable-next-line @typescript-eslint/no-empty-interface
-  interface DefaultTheme extends Theme {}
-}
 
 type Props = {
   tooltip: Omit<Tooltip, "icon">;

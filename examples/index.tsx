@@ -1,7 +1,6 @@
 import {
   ButtonGroup,
   ThemeProvider,
-  Theme,
   StyledEngineProvider,
   CssBaseline,
   Typography,
@@ -23,14 +22,11 @@ import {
   icons,
   WarningSnackbar,
   Popper,
-  Card,
+  MuiCard,
   Paper,
+  Card,
+  Box,
 } from "../src";
-
-declare module "@mui/styles/defaultTheme" {
-  // eslint-disable-next-line @typescript-eslint/no-empty-interface
-  interface DefaultTheme extends Theme {}
-}
 
 export const imgSrc = (src: string, type = "svg"): string =>
   new URL(`/src/assets/${src}.${type}`, import.meta.url).href;
@@ -109,7 +105,7 @@ const ExamplePopper = (): ReactElement => {
               />
             </ButtonGroup>
             {openSubmenu && (
-              <Card
+              <MuiCard
                 sx={{
                   width: "285px",
                   height: "fit-content",
@@ -142,7 +138,7 @@ const ExamplePopper = (): ReactElement => {
                 <Paper elevation={0} sx={{ p: "20px" }}>
                   Hello
                 </Paper>
-              </Card>
+              </MuiCard>
             )}
           </>
         }
@@ -224,8 +220,14 @@ const app = (
             <p></p>
           </HtmlTooltip>
           <br></br>
+
+          <Box sx={{ width: "300px" }}>
+            <Card title={"Example Card"}>
+              <Typography>This is a card</Typography>
+            </Card>
+          </Box>
           <br></br>
-          <br></br>
+
           <h2>Icon Button</h2>
           <div>
             <ButtonGroup orientation="vertical" variant="text">
@@ -330,7 +332,6 @@ const app = (
               horizontal: "right",
             }}
             children={<Typography>Hello World</Typography>}
-            // triggerClosing={close}
           />
 
           <h2>Popper</h2>
