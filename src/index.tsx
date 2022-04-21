@@ -63,8 +63,6 @@ export {
   StyledEngineProvider,
   Select,
   Input,
-  SelectChangeEvent,
-  Theme,
   IconButton as MuiIconbutton,
   Card as MuiCard,
   Popover as MuiPopover,
