@@ -1,3 +1,4 @@
+import { grey } from "@mui/material/colors";
 import { createTheme } from "@mui/material/styles/";
 import { createBreakpoints } from "@mui/system";
 
@@ -209,6 +210,11 @@ export const theme = createTheme({
         root: {
           "&:hover": {
             backgroundColor: mainGreen,
+          },
+        },
+        dense: {
+          "&:hover": {
+            backgroundColor: grey[300],
           },
         },
       },
