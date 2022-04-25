@@ -5,38 +5,45 @@ import {
   Paper,
   Typography,
   IconButton as MaterialIconButton,
+  CardProps,
 } from "@mui/material";
 import SVG from "react-inlinesvg";
 import { theme } from "./theme";
 import { icons } from "./icons";
 
-interface Props {
+interface Props extends CardProps {
   title: string;
   children: ReactElement;
-  handleClose: () => void;
+  handleClose?: () => void;
   closeButton?: boolean;
 }
 
 export function Card(props: Props): JSX.Element {
   return (
-    <MaterialCard sx={{ borderRadius: "9px" }}>
+    <MaterialCard
+      sx={{
+        borderRadius: "6px",
+      }}
+    >
       <Paper
         elevation={0}
         variant="outlined"
         square
         sx={{
-          p: "10px",
+          p: "8px 16px",
           backgroundColor: theme.palette.primary.main,
           position: "relative",
+          borderRadius: "6px 6px 0 0",
         }}
       >
         <Typography
           sx={{
-            fontSize: "21px",
+            fontSize: "18px",
             width: "240px",
             whiteSpace: "nowrap",
             overflow: "hidden",
             textOverflow: "ellipsis",
+            fontWeight: 500,
           }}
         >
           {props.title}
@@ -53,7 +60,7 @@ export function Card(props: Props): JSX.Element {
         )}
       </Paper>
 
-      <Paper elevation={0} sx={{ p: "20px" }}>
+      <Paper elevation={0} sx={{ p: "12px 16px 14px" }}>
         {props.children}
       </Paper>
     </MaterialCard>
@@ -61,4 +68,5 @@ export function Card(props: Props): JSX.Element {
 }
 Card.defaultProps = {
   closeButton: false,
+  handleClose: null,
 };
