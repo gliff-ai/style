@@ -6,7 +6,8 @@ interface Props {
   children?: ReactElement | null;
   TriggerButton: JSX.Element;
   title: string;
-  close: boolean;
+  close?: boolean;
+  resetDefaults?: () => void;
 }
 
 export function Dialog({
@@ -14,6 +15,7 @@ export function Dialog({
   title,
   TriggerButton,
   close,
+  resetDefaults,
 }: Props): ReactElement | null {
   const [open, setOpen] = useState<boolean>(false);
 
@@ -23,23 +25,20 @@ export function Dialog({
 
   const handleClose = (): void => {
     setOpen(false);
+    resetDefaults();
   };
 
   // externally close the Dialog
   useEffect(() => {
-    if (close !== undefined) {
+    if (close) {
       setOpen(false);
     }
   }, [close]);
 
   const dialogContent = (
-    <Card
-      title={title}
-      handleClose={handleClose}
-      // eslint-disable-next-line react/no-children-prop
-      children={children}
-      closeButton
-    />
+    <Card title={title} handleClose={handleClose} closeButton>
+      {children}
+    </Card>
   );
   return (
     <>
@@ -55,4 +54,6 @@ export function Dialog({
 
 Dialog.defaultProps = {
   children: null,
+  close: null,
+  resetDefaults: null,
 };
