@@ -26,6 +26,7 @@ import {
   Paper,
   Card,
   Box,
+  Table,
 } from "../src";
 
 export const imgSrc = (src: string, type = "svg"): string =>
@@ -154,18 +155,15 @@ const app = (
         <CssBaseline />
         <div style={{ margin: "50px" }}>
           <h2>Logo</h2>
-
           <Logo />
-
           <h2>BaseTextButton</h2>
           <BaseTextButton text="Hello World" />
+          <Table />
           <br></br>
           <br></br>
           <BaseTextButton text="Hello World" disabled={true} />
-
           <h2>SnackBar</h2>
           <SnackBar />
-
           <h2>HtmlTooltip / BaseTooltipTitle</h2>
           <br></br>
           <br></br>
@@ -220,14 +218,12 @@ const app = (
             <p></p>
           </HtmlTooltip>
           <br></br>
-
           <Box sx={{ width: "300px" }}>
             <Card title={"Example Card"}>
               <Typography>This is a card</Typography>
             </Card>
           </Box>
           <br></br>
-
           <h2>Icon Button</h2>
           <div>
             <ButtonGroup orientation="vertical" variant="text">
@@ -309,9 +305,7 @@ const app = (
               />
             </ButtonGroup>
           </div>
-
           <h2>Popover</h2>
-
           <Popover
             title="Example Popover"
             TriggerButton={
@@ -333,13 +327,9 @@ const app = (
             }}
             children={<Typography>Hello World</Typography>}
           />
-
           <h2>Popper</h2>
-
           <ExamplePopper />
-
           <h2>Icons</h2>
-
           <section style={{ float: "left" }}>
             {Object.entries(icons).map(([name, src]) => (
               <span style={{ float: "left", padding: "20px" }} key={name}>
@@ -348,7 +338,6 @@ const app = (
               </span>
             ))}
           </section>
-
           <h2>Loading Spinner</h2>
           <div>
             <hr />
