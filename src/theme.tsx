@@ -65,7 +65,7 @@ export const theme = createTheme({
     MuiDialog: {
       styleOverrides: {
         paper: {
-          borderRadius: "9px",
+          borderRadius: "6px",
         },
       },
     },
@@ -293,7 +293,7 @@ export const theme = createTheme({
           marginLeft: "20px",
         },
         paper: {
-          borderRadius: "9px",
+          borderRadius: "6px",
         },
       },
       defaultProps: {

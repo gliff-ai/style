@@ -16,6 +16,7 @@ interface Props extends CardProps {
   children: ReactElement;
   handleClose?: () => void;
   closeButton?: boolean;
+  noPadding?: boolean;
 }
 
 export function Card(props: Props): JSX.Element {
@@ -53,14 +54,17 @@ export function Card(props: Props): JSX.Element {
           <MaterialIconButton
             onClick={props.handleClose}
             size="small"
-            sx={{ position: "absolute", top: "7px", right: "5px" }}
+            sx={{ position: "absolute", top: "8px", right: "7px" }}
           >
             <SVG src={icons.removeLabel} width="15px" />
           </MaterialIconButton>
         )}
       </Paper>
 
-      <Paper elevation={0} sx={{ p: "12px 16px 14px" }}>
+      <Paper
+        elevation={0}
+        sx={{ p: props.noPadding ? null : "12px 16px 14px" }}
+      >
         {props.children}
       </Paper>
     </MaterialCard>
@@ -69,4 +73,5 @@ export function Card(props: Props): JSX.Element {
 Card.defaultProps = {
   closeButton: false,
   handleClose: null,
+  noPadding: null,
 };
