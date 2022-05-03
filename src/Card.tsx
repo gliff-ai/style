@@ -54,7 +54,7 @@ export function Card(props: Props): JSX.Element {
           <MaterialIconButton
             onClick={props.handleClose}
             size="small"
-            sx={{ position: "absolute", top: "10px", right: "7px" }}
+            sx={{ position: "absolute", top: "8px", right: "7px" }}
           >
             <SVG src={icons.removeLabel} width="15px" />
           </MaterialIconButton>
