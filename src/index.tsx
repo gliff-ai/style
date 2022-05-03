@@ -18,6 +18,7 @@ export { BaseIconButton } from "./BaseIconButton";
 export { IconButton } from "./IconButton";
 export { BaseTextButton } from "./BaseTextButton";
 export { BaseTooltipTitle } from "./BaseTooltipTitle";
+export { Dialog } from "./Dialog";
 export { Popover } from "./Popover";
 export { Logo } from "./Logo";
 export { LoadingSpinner } from "./LoadingSpinner";
@@ -27,9 +28,12 @@ export { Popper } from "./Popper";
 export { Card } from "./Card";
 
 export {
+  CardContent,
+  Box,
   RadioGroup,
   Typography,
   MenuItem,
+  Grid,
   FormControl,
   FormControlLabel,
   Radio,
@@ -43,13 +47,10 @@ export {
   InputLabel,
   Alert,
   Button,
-  Select,
-  IconButton as MuiIconbutton,
   ButtonGroup,
   Divider,
   Card as MuiCard,
   Popover as MuiPopover,
-  Box,
 } from "@mui/material";
 
 export type { Task } from "./ProgressSnackbar";
