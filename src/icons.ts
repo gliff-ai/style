@@ -61,7 +61,6 @@ const icons = {
   navigationMANAGE: imgSrc("navigationMANAGE"),
   openInAudit: imgSrc("open-in-audit"),
   paste: imgSrc("paste"),
-  pinOLD: imgSrc("pin-icon"),
   pin: imgSrc("pin"),
   plugins: imgSrc("plugins"),
   projectsPage: imgSrc("projects-page"),
