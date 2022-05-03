@@ -19,6 +19,7 @@ const icons = {
   backspaceKey: imgSrc("backspace-key"),
   backgroundSettings: imgSrc("background-settings"),
   betaStatus: imgSrc("beta-status"),
+  bezierSpline: imgSrc("bezier-spline"),
   boundingBox: imgSrc("bounding-box-icon"),
   breadcrumbTrailArrow: imgSrc("breadcrumb-trail-arrow"),
   brightness: imgSrc("brightness-icon"),
