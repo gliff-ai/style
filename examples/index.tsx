@@ -24,6 +24,7 @@ import {
   Popper,
   MuiCard,
   Paper,
+  Dialog,
   Card,
   Box,
   Table,
@@ -307,7 +308,23 @@ const app = (
               />
             </ButtonGroup>
           </div>
-          <h2>Popover</h2>
+
+          <h2>Popover And Dialog</h2>
+
+          <Dialog
+            title="Example Dialog"
+            TriggerButton={
+              <IconButton
+                tooltip={{
+                  name: "Open Dialog",
+                }}
+                icon={imgSrc("icon")}
+                size="medium"
+              />
+            }
+            children={<Typography>Hello World</Typography>}
+          />
+
           <Popover
             title="Example Popover"
             TriggerButton={
@@ -319,14 +336,6 @@ const app = (
                 size="medium"
               />
             }
-            anchorOrigin={{
-              vertical: "bottom",
-              horizontal: "center",
-            }}
-            transformOrigin={{
-              vertical: "top",
-              horizontal: "right",
-            }}
             children={<Typography>Hello World</Typography>}
           />
           <h2>Popper</h2>
