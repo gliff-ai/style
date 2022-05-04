@@ -62,7 +62,7 @@ const icons = {
   navigationMANAGE: imgSrc("navigationMANAGE"),
   openInAudit: imgSrc("open-in-audit"),
   paste: imgSrc("paste"),
-  pin: imgSrc("pin-icon"),
+  pin: imgSrc("pin"),
   plugins: imgSrc("plugins"),
   projectsPage: imgSrc("projects-page"),
   rectangleBoundaryBox: imgSrc("rectangle-boundary-box-icon"),
