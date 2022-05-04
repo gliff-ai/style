@@ -158,6 +158,8 @@ const app = (
           <Logo />
           <h2>BaseTextButton</h2>
           <BaseTextButton text="Hello World" />
+          <br></br>
+          <br></br>
           <Table />
           <br></br>
           <br></br>

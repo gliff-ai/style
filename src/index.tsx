@@ -51,6 +51,16 @@ export {
   Card as MuiCard,
   Popover as MuiPopover,
   Box,
+  CssBaseline,
+  Toolbar,
+  Grid,
+  List,
+  ListItem,
+  Container,
+  ThemeProvider,
+  Dialog,
+  AppBar,
+  Input,
 } from "@mui/material";
 
 export type { Task } from "./ProgressSnackbar";
