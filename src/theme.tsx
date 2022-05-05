@@ -163,6 +163,8 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           backgroundColor: `${lightestGrey} !important`,
+          height: "90px",
+          paddingTop: "9px",
         },
       },
     },

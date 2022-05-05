@@ -98,7 +98,11 @@ export function Table(): React.ReactElement {
   };
 
   return (
-    <Card title="Example Table" sx={{ width: "100%", overflow: "hidden" }}>
+    <Card
+      noPadding
+      title="Example Table"
+      sx={{ width: "100%", overflow: "hidden" }}
+    >
       <>
         <TableContainer sx={{ maxHeight: "440px" }}>
           <MuiTable stickyHeader aria-label="sticky table">
