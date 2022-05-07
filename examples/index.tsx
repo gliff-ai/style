@@ -28,6 +28,7 @@ import {
   Card,
   Box,
   Table,
+  DataGridDemo,
 } from "../src";
 
 export const imgSrc = (src: string, type = "svg"): string =>
@@ -159,6 +160,9 @@ const app = (
           <Logo />
           <h2>BaseTextButton</h2>
           <BaseTextButton text="Hello World" />
+          <br></br>
+          <br></br>
+          <DataGridDemo />
           <br></br>
           <br></br>
           <Table />
