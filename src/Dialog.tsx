@@ -6,6 +6,7 @@ interface Props {
   children?: ReactElement | null;
   TriggerButton: JSX.Element;
   title: string;
+  warningDialog?: boolean;
   close?: boolean;
   resetDefaults?: () => void;
 }
@@ -15,6 +16,7 @@ export function Dialog({
   title,
   TriggerButton,
   close,
+  warningDialog,
   resetDefaults,
 }: Props): ReactElement | null {
   const [open, setOpen] = useState<boolean>(false);
@@ -25,7 +27,10 @@ export function Dialog({
 
   const handleClose = (): void => {
     setOpen(false);
-    resetDefaults();
+    // Reset defaults when Dialog is closed
+    if (resetDefaults) {
+      resetDefaults();
+    }
   };
 
   // externally close the Dialog
@@ -36,7 +41,12 @@ export function Dialog({
   }, [close]);
 
   const dialogContent = (
-    <Card title={title} handleClose={handleClose} closeButton>
+    <Card
+      title={title}
+      handleClose={handleClose}
+      closeButton
+      warningDialog={warningDialog}
+    >
       {children}
     </Card>
   );
