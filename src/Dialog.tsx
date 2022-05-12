@@ -8,7 +8,7 @@ interface Props {
   title: string;
   warningDialog?: boolean;
   close?: boolean;
-  resetDefaults?: () => void;
+  afterClose?: () => void;
 }
 
 export function Dialog({
@@ -17,7 +17,7 @@ export function Dialog({
   TriggerButton,
   close,
   warningDialog,
-  resetDefaults,
+  afterClose,
 }: Props): ReactElement | null {
   const [open, setOpen] = useState<boolean>(false);
 
@@ -28,8 +28,8 @@ export function Dialog({
   const handleClose = (): void => {
     setOpen(false);
     // Reset defaults when Dialog is closed
-    if (resetDefaults) {
-      resetDefaults();
+    if (afterClose) {
+      afterClose();
     }
   };
 
