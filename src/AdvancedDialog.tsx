@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import { Dialog, DialogProps } from "@mui/material";
 import { ReactElement } from "react";
 import { Card } from "./Card";

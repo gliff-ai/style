@@ -66,4 +66,5 @@ Dialog.defaultProps = {
   children: null,
   close: null,
   resetDefaults: null,
+  warningDialog: null,
 };
