@@ -65,6 +65,6 @@ export function Dialog({
 Dialog.defaultProps = {
   children: null,
   close: null,
-  resetDefaults: null,
+  afterClose: null,
   warningDialog: null,
 };
