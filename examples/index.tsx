@@ -6,7 +6,13 @@ import {
   Typography,
 } from "@mui/material";
 import StylesProvider from "@mui/styles/StylesProvider";
-import { useState, SyntheticEvent, MouseEvent, ReactElement } from "react";
+import {
+  useState,
+  SyntheticEvent,
+  MouseEvent,
+  ReactElement,
+  useCallback,
+} from "react";
 import ReactDOM from "react-dom";
 import SVG from "react-inlinesvg";
 
@@ -55,6 +61,41 @@ const SnackBar = (): ReactElement => {
         messageText={<>Snackbar</>}
         onClose={handleClose}
         open={open}
+      />
+    </>
+  );
+};
+
+const AdvancedDialogExample = (): ReactElement => {
+  const [open, setOpen] = useState(false);
+
+  const onClose = useCallback(() => {
+    setOpen(false);
+  }, [setOpen]);
+  return (
+    <>
+      <IconButton
+        data-testid="small-button"
+        id="small-button"
+        tooltip={{ name: "Advanced Dialog" }}
+        icon={imgSrc("icon")}
+        size="medium"
+        onClick={() => {
+          setOpen(true);
+        }}
+      />
+      ;
+      <AdvancedDialog
+        title="Advanced Dialog"
+        open={open}
+        warningDialog
+        onClose={onClose}
+        children={
+          <Typography>
+            I am an Advanced Dialog. My state is controlled from the parent
+            component
+          </Typography>
+        }
       />
     </>
   );
@@ -158,7 +199,6 @@ const app = (
           <h2>Logo</h2>
 
           <Logo />
-          <AdvancedDialog title="Hello" open={true} warningDialog />
           <h2>BaseTextButton</h2>
           <BaseTextButton text="Hello World" />
           <br></br>
@@ -327,6 +367,8 @@ const app = (
             }
             children={<Typography>Hello World</Typography>}
           />
+
+          <AdvancedDialogExample />
 
           <Popover
             title="Example Popover"
