@@ -27,6 +27,7 @@ import {
   Dialog,
   Card,
   Box,
+  AdvancedDialog,
 } from "../src";
 
 export const imgSrc = (src: string, type = "svg"): string =>
@@ -157,7 +158,7 @@ const app = (
           <h2>Logo</h2>
 
           <Logo />
-
+          <AdvancedDialog title="Hello" open={true} warningDialog />
           <h2>BaseTextButton</h2>
           <BaseTextButton text="Hello World" />
           <br></br>
