@@ -12,6 +12,8 @@ interface Props extends DialogProps {
 
 export function AdvancedDialog({
   onClose: handleClose,
+  closeButton,
+  warningDialog,
   ...props
 }: Props): ReactElement {
   return (
@@ -19,7 +21,7 @@ export function AdvancedDialog({
       <Dialog {...props} onClose={handleClose}>
         <Card
           title={props.title}
-          warningDialog={props.warningDialog}
+          warningDialog={warningDialog}
           closeButton
           handleClose={handleClose}
         >
