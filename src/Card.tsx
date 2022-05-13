@@ -17,6 +17,7 @@ interface Props extends CardProps {
   handleClose?: () => void;
   closeButton?: boolean;
   noPadding?: boolean;
+  warningDialog?: boolean;
 }
 
 export function Card(props: Props): JSX.Element {
@@ -32,11 +33,17 @@ export function Card(props: Props): JSX.Element {
         square
         sx={{
           p: "8px 16px",
-          backgroundColor: theme.palette.primary.main,
+          backgroundColor: props.warningDialog
+            ? theme.palette.info.light
+            : theme.palette.primary.main,
           position: "relative",
           borderRadius: "6px 6px 0 0",
+          display: "flex",
         }}
       >
+        {props.warningDialog && (
+          <SVG src={icons.warning} width="25px" fill="#FFFFFF" />
+        )}
         <Typography
           sx={{
             fontSize: "18px",
@@ -45,6 +52,8 @@ export function Card(props: Props): JSX.Element {
             overflow: "hidden",
             textOverflow: "ellipsis",
             fontWeight: 500,
+            color: props.warningDialog ? "#FFFFFF" : "none",
+            marginLeft: props.warningDialog ? "10px" : "none",
           }}
         >
           {props.title}
@@ -56,7 +65,11 @@ export function Card(props: Props): JSX.Element {
             size="small"
             sx={{ position: "absolute", top: "8px", right: "7px" }}
           >
-            <SVG src={icons.removeLabel} width="15px" />
+            <SVG
+              src={icons.removeLabel}
+              width="15px"
+              fill={props.warningDialog ? "#FFFFFF" : "#000000"}
+            />
           </MaterialIconButton>
         )}
       </Paper>
@@ -74,4 +87,5 @@ Card.defaultProps = {
   closeButton: false,
   handleClose: null,
   noPadding: null,
+  warningDialog: null,
 };

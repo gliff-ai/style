@@ -26,6 +26,7 @@ export { WarningSnackbar } from "./WarningSnackbar";
 export { ProgressSnackbar } from "./ProgressSnackbar";
 export { Popper } from "./Popper";
 export { Card } from "./Card";
+export { AdvancedDialog } from "./AdvancedDialog";
 
 export {
   CardContent,
