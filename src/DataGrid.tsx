@@ -1,26 +1,25 @@
-import { Box } from "@mui/system";
-import { DataGrid, GridColDef } from "@mui/x-data-grid";
+import { DataGrid as MaterialDataGrid, DataGridProps } from "@mui/x-data-grid";
 import { Card } from "./Card";
 
-interface Props {
-  columns: GridColDef[];
-  rows: { [x: string]: any }[];
-}
+// interface Props extends DataGridProps {
+
+// }
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-export function DataGridDemo({ columns, rows }: Props) {
+export function DataGrid(props: DataGridProps) {
   return (
-    <Card title="Example DataGrid" noPadding>
-      <Box style={{ height: 400, width: "100%" }}>
-        <DataGrid
-          rows={rows}
-          columns={columns}
-          pageSize={15}
-          rowsPerPageOptions={[15]}
-          checkboxSelection
-          disableSelectionOnClick
-        />
-      </Box>
+    <Card sx={{ width: "100%" }} title="Example DataGrid" noPadding>
+      <MaterialDataGrid
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        {...props}
+      />
     </Card>
   );
 }
+
+DataGrid.defaultProps = {
+  pageSize: 15,
+  rowsPerPageOptions: [15],
+  checkboxSelection: true,
+  disableSelectionOnClick: true,
+};

@@ -34,7 +34,7 @@ import {
   Card,
   Box,
   Table,
-  DataGridDemo,
+  DataGrid,
   AdvancedDialog,
 } from "../src";
 
@@ -194,7 +194,6 @@ const ExamplePopper = (): ReactElement => {
 
 const columns = [
   { field: "id", headerName: "ID", width: 90 },
-
   {
     field: "lastName",
     headerName: "Last name",
@@ -240,7 +239,7 @@ const app = (
           <BaseTextButton text="Hello World" />
           <br></br>
           <br></br>
-          <DataGridDemo columns={columns} rows={rows} />
+          <DataGrid columns={columns} rows={rows} />
           <br></br>
           <br></br>
           <Table />
