@@ -26,7 +26,6 @@ export { WarningSnackbar } from "./WarningSnackbar";
 export { ProgressSnackbar } from "./ProgressSnackbar";
 export { Popper } from "./Popper";
 export { Card } from "./Card";
-export { Table } from "./Table";
 export { DataGrid } from "./DataGrid";
 export { AdvancedDialog } from "./AdvancedDialog";
 
