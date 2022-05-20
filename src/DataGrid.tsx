@@ -1,15 +1,20 @@
 import { DataGrid as MaterialDataGrid, DataGridProps } from "@mui/x-data-grid";
+import { ReactElement } from "react";
 import { Card } from "./Card";
 
-// interface Props extends DataGridProps {
+interface Props extends DataGridProps {
+  title: string;
+  pageSize?: number;
+  rowsPerPageOptions?: number[];
+  checkboxSelection?: boolean;
+  disableSelectionOnClick?: boolean;
+}
 
-// }
-
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-export function DataGrid(props: DataGridProps) {
+export function DataGrid(props: Props): ReactElement {
   return (
-    <Card sx={{ width: "100%" }} title="Example DataGrid" noPadding>
+    <Card title={props.title} noPadding>
       <MaterialDataGrid
+        sx={{ height: "700px" }}
         // eslint-disable-next-line react/jsx-props-no-spreading
         {...props}
       />
