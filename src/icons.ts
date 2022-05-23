@@ -35,8 +35,8 @@ const icons = {
   convert: imgSrc("convert-icon"),
   copy: imgSrc("copy"),
   curate: imgSrc("curate"),
-  deleteAnnotation: imgSrc("delete-annotation-icon"),
   delete: imgSrc("delete"),
+  deleteAnnotation: imgSrc("delete-annotation-icon"),
   deselectAllLabels: imgSrc("deselect-all-labels"),
   displayUnlabelledImages: imgSrc("display-unlabelled-images"),
   documentHelp: imgSrc("document-help"),
@@ -65,6 +65,7 @@ const icons = {
   paste: imgSrc("paste"),
   pin: imgSrc("pin"),
   plugins: imgSrc("plugins"),
+  previousNext: imgSrc("previous-next"),
   projectsPage: imgSrc("projects-page"),
   rectangleBoundaryBox: imgSrc("rectangle-boundary-box-icon"),
   redo: imgSrc("redo-icon"),
@@ -86,6 +87,7 @@ const icons = {
   smallImageGrid: imgSrc("small-image-grid"),
   spline: imgSrc("spline-icon"),
   tableViewer: imgSrc("table"),
+  tick: imgSrc("tick"),
   trustedServices: imgSrc("AI-in-the-loop"),
   undo: imgSrc("undo-icon"),
   upload: imgSrc("upload-icon"),
@@ -96,8 +98,6 @@ const icons = {
   warning: imgSrc("warning"),
   zoomIn: imgSrc("zoom-in-icon"),
   zoomOut: imgSrc("zoom-out-icon"),
-  tick: imgSrc("tick"),
-  previousNext: imgSrc("previous-next"),
 } as const;
 
 export { icons };
