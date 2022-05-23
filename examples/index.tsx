@@ -241,7 +241,12 @@ const app = (
           <BaseTextButton text="Hello World" />
           <br></br>
           <br></br>
-          <DataGrid title="Example Datagrid" columns={columns} rows={rows} />
+          <DataGrid
+            title="Example Datagrid"
+            columns={columns}
+            rows={rows}
+            sx={{ height: "400px" }}
+          />
           <br></br>
           <br></br>
           <br></br>
