@@ -1,6 +1,7 @@
 import { grey } from "@mui/material/colors";
 import { createTheme } from "@mui/material/styles/";
 import { createBreakpoints } from "@mui/system";
+import type {} from "@mui/x-data-grid/themeAugmentation";
 
 export const white = "#FFFFFF";
 export const lightestGrey = "#FAFAFA";
@@ -163,6 +164,37 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           backgroundColor: `${lightestGrey} !important`,
+        },
+      },
+    },
+
+    MuiTablePagination: {
+      styleOverrides: {
+        actions: {
+          "& > *": {
+            "&.Mui-disabled": {
+              display: "none",
+            },
+          },
+        },
+      },
+    },
+
+    MuiDataGrid: {
+      styleOverrides: {
+        iconSeparator: {
+          display: "none",
+        },
+        root: {
+          borderRadius: 0,
+        },
+        row: {
+          "&.Mui-selected, &.Mui-selected:hover": {
+            backgroundColor: lightGrey,
+          },
+        },
+        columnHeaders: {
+          borderBottom: `2px solid ${grey[400]}`,
         },
       },
     },
