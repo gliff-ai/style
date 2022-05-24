@@ -198,6 +198,7 @@ const columns = [
     headerName: "Last name",
     width: 150,
     editable: false,
+    hide: false,
   },
   {
     field: "firstName",
