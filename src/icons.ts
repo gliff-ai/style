@@ -5,6 +5,7 @@ const icons = {
   accountSettings: imgSrc("account-settings"),
   addAnnotation: imgSrc("add-annotation-icon"),
   add: imgSrc("add-icon"),
+  alphaStatus: imgSrc("alpha-status"),
   annotate: imgSrc("annotate"),
   annotationLabel: imgSrc("annotation-label-icon"),
   annotationLabels: imgSrc("annotation-labels-icon"),
