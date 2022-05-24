@@ -192,25 +192,25 @@ const ExamplePopper = (): ReactElement => {
 };
 
 const columns = [
-  { field: "id", headerName: "ID", width: 90 },
+  { field: "id", headerName: "ID", width: 90, editable: false },
   {
     field: "lastName",
     headerName: "Last name",
     width: 150,
-    editable: true,
+    editable: false,
   },
   {
     field: "firstName",
     headerName: "First name",
     width: 150,
-    editable: true,
+    editable: false,
   },
   {
     field: "age",
     headerName: "Age",
     type: "number",
     width: 110,
-    editable: true,
+    editable: false,
   },
 ];
 

@@ -168,6 +168,16 @@ export const theme = createTheme({
       },
     },
 
+    MuiInputLabel: {
+      styleOverrides: {
+        root: {
+          "&.Mui-focused": {
+            color: darkGrey,
+          },
+        },
+      },
+    },
+
     MuiTablePagination: {
       styleOverrides: {
         actions: {
