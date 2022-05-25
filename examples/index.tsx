@@ -198,7 +198,7 @@ const columns = [
     headerName: "Last name",
     width: 150,
     editable: false,
-    hide: false,
+    hideable: false, // Used to make column unhideable even when you select hide all columns. Meaning you can reshow the all the columns when you click the three dots.
   },
   {
     field: "firstName",
