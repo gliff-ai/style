@@ -33,30 +33,36 @@ export interface Props extends ButtonProps {
   fill?: boolean;
   disabled?: boolean;
   iconColor?: string;
+  backgroundColor?: string;
   tooltipPlacement?: TooltipProps["placement"];
   setRefCallback?: (ref: HTMLButtonElement) => void;
 }
 
 export const IconButton = (props: Props): ReactElement => {
+  const avatarSpacing = props.size === "small" ? 5 : 9;
+  let fillColor = props.iconColor;
+  if (props.disabled) {
+    fillColor = "#BBB";
+  } else if (props.fill) {
+    fillColor = theme.palette.primary.main;
+  }
+
   const classes = makeStyles({
     svg: {
       width: props.size === "small" ? "23px" : "45px",
       height: "auto",
     },
-    small: {
-      width: theme.spacing(5),
-      height: theme.spacing(5),
-    },
-    medium: {
-      width: `${theme.spacing(9)} !important`,
-      height: `${theme.spacing(9)} !important`,
+    avatar: {
+      backgroundColor: props.backgroundColor,
+      width: `${theme.spacing(avatarSpacing)} !important`,
+      height: `${theme.spacing(avatarSpacing)} !important`,
     },
     noHover: {
       "&:hover": {
-        backgroundColor: "inherit",
+        backgroundColor: props.backgroundColor,
       },
       "&:hover svg": {
-        fill: "#BBB",
+        fill: fillColor,
       },
     },
   })(props);
@@ -68,21 +74,12 @@ export const IconButton = (props: Props): ReactElement => {
     tooltipPlacement,
     disabled,
     iconColor,
+    backgroundColor,
     setRefCallback,
     ...rest
   } = props;
 
-  let color = null;
-
-  if (disabled) {
-    color = "#BBB";
-  } else if (fill) {
-    color = theme.palette.primary.main;
-  }
-
-  const svgIcon = (
-    <SVG src={icon} className={classes.svg} fill={fill ? iconColor : color} />
-  );
+  const svgIcon = <SVG src={icon} className={classes.svg} fill={fillColor} />;
   return (
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme}>
@@ -102,9 +99,9 @@ export const IconButton = (props: Props): ReactElement => {
               {...rest}
             >
               <Avatar
-                className={`${
-                  props.size === "small" ? classes.small : classes.medium
-                } ${props.disabled ? classes.noHover : ""}`}
+                className={`${classes.avatar} ${
+                  props.disabled ? classes.noHover : ""
+                }`}
               >
                 {svgIcon}
               </Avatar>
@@ -126,5 +123,6 @@ IconButton.defaultProps = {
   type: "button",
   component: "button",
   to: null,
-  iconColor: theme.palette.primary.main,
+  iconColor: "inherit",
+  backgroundColor: "inherit",
 } as Props;

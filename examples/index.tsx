@@ -311,7 +311,19 @@ const app = (
           <br></br>
           <Box sx={{ width: "300px" }}>
             <Card title={"Example Card"}>
-              <Typography>This is a card</Typography>
+              <Typography>This is a basic card.</Typography>
+            </Card>
+          </Box>
+          <br></br>
+          <Box sx={{ width: "300px" }}>
+            <Card title={"Example Card"} closeButton={true}>
+              <Typography>This is a card with a close button.</Typography>
+            </Card>
+          </Box>
+          <br></br>
+          <Box sx={{ width: "300px" }}>
+            <Card title={"Example Card"} isPinned={true}>
+              <Typography>This is a card with a pin button.</Typography>
             </Card>
           </Box>
           <br></br>
