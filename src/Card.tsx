@@ -27,10 +27,14 @@ const CardIconButton = styled(IconButton)({
   minWidth: 0,
   padding: 0,
   "& svg": {
-    width: "20px",
+    width: "15px",
     height: "auto",
   },
-  "& div": { "&:hover": { backgroundColor: "#FFFFFF" } },
+  "& div": {
+    width: "30px !important",
+    height: "30px !important",
+    "&:hover": { backgroundColor: "#FFFFFF" },
+  },
 });
 
 export function Card(props: Props): JSX.Element {
