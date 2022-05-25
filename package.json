@@ -72,6 +72,7 @@
     "react-dom": "^17.0.2"
   },
   "dependencies": {
+    "@mui/x-data-grid": "^5.10.0",
     "csstype": "<=3.0.10",
     "react-inlinesvg": "^2.3.0"
   }

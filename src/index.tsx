@@ -26,6 +26,7 @@ export { WarningSnackbar } from "./WarningSnackbar";
 export { ProgressSnackbar } from "./ProgressSnackbar";
 export { Popper } from "./Popper";
 export { Card } from "./Card";
+export { DataGrid } from "./DataGrid";
 export { AdvancedDialog } from "./AdvancedDialog";
 
 export {
@@ -56,18 +57,20 @@ export {
   IconButton as MuiIconbutton,
   Popover as MuiPopover,
   CssBaseline,
-  AppBar,
   Toolbar,
   List,
   ListItem,
-  ListItemText,
   Container,
   ThemeProvider,
+  AppBar,
+  ListItemText,
   StyledEngineProvider,
   Accordion,
   AccordionSummary,
   AccordionDetails,
 } from "@mui/material";
+
+export type { GridRenderCellParams } from "@mui/x-data-grid";
 
 export type { Task } from "./ProgressSnackbar";
 
