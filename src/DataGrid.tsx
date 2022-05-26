@@ -8,7 +8,7 @@ interface Props extends DataGridProps {
 
 export function DataGrid({
   title,
-  pageSize = 15,
+  pageSize = 60,
   rowsPerPageOptions = [15],
   checkboxSelection = true,
   disableSelectionOnClick = true,
