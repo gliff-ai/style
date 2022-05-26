@@ -43,6 +43,7 @@ export function Popover({
     <>
       {cloneElement(TriggerButton as any, {
         onClick: handleClick,
+        fill: Boolean(anchorEl),
       })}
       <MaterialPopover
         open={Boolean(anchorEl)}
