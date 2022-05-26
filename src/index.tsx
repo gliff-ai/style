@@ -70,7 +70,7 @@ export {
   AccordionDetails,
 } from "@mui/material";
 
-export type { GridRenderCellParams } from "@mui/x-data-grid";
+export type { GridRenderCellParams, GridColDef } from "@mui/x-data-grid";
 
 export type { Task } from "./ProgressSnackbar";
 
