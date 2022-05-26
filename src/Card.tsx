@@ -4,12 +4,13 @@ import {
   Card as MaterialCard,
   Paper,
   Typography,
-  IconButton as MaterialIconButton,
   CardProps,
+  styled,
 } from "@mui/material";
 import SVG from "react-inlinesvg";
 import { theme } from "./theme";
 import { icons } from "./icons";
+import { IconButton } from "./IconButton";
 
 interface Props extends CardProps {
   title: string;
@@ -18,7 +19,23 @@ interface Props extends CardProps {
   closeButton?: boolean;
   noPadding?: boolean;
   warningDialog?: boolean;
+  isPinned?: boolean | null;
+  handlePin?: () => void;
 }
+
+const CardIconButton = styled(IconButton)({
+  minWidth: 0,
+  padding: 0,
+  "& svg": {
+    width: "15px",
+    height: "auto",
+  },
+  "& div": {
+    width: "30px !important",
+    height: "30px !important",
+    "&:hover": { backgroundColor: "#FFFFFF" },
+  },
+});
 
 export function Card(props: Props): JSX.Element {
   return (
@@ -39,6 +56,7 @@ export function Card(props: Props): JSX.Element {
           position: "relative",
           borderRadius: "6px 6px 0 0",
           display: "flex",
+          alignItems: "center",
         }}
       >
         {props.warningDialog && (
@@ -58,19 +76,21 @@ export function Card(props: Props): JSX.Element {
         >
           {props.title}
         </Typography>
-
+        {props.isPinned !== null && (
+          <CardIconButton
+            icon={icons.pin}
+            backgroundColor={props.isPinned ? "#FFFFFF" : "inherit"}
+            tooltip={{ name: props.isPinned ? "Turn Off Pin" : "Pin Open" }}
+            onClick={props.handlePin}
+          />
+        )}
         {props.closeButton && (
-          <MaterialIconButton
+          <CardIconButton
+            icon={icons.removeLabel}
+            tooltip={{ name: "Close" }}
             onClick={props.handleClose}
-            size="small"
-            sx={{ position: "absolute", top: "8px", right: "7px" }}
-          >
-            <SVG
-              src={icons.removeLabel}
-              width="15px"
-              fill={props.warningDialog ? "#FFFFFF" : "#000000"}
-            />
-          </MaterialIconButton>
+            iconColor={props.warningDialog ? "#FFFFFF" : "#000000"}
+          />
         )}
       </Paper>
 
@@ -88,4 +108,6 @@ Card.defaultProps = {
   handleClose: null,
   noPadding: null,
   warningDialog: null,
+  isPinned: null,
+  handlePin: null,
 };
