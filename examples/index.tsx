@@ -429,6 +429,7 @@ const app = (
 
           <Popover
             title="Example Popover"
+            anchorOrigin={{ horizontal: "right", vertical: "top" }}
             TriggerButton={
               <IconButton
                 tooltip={{
