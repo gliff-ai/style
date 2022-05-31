@@ -87,6 +87,7 @@ const icons = {
   showStrokeAsPixels: imgSrc("show-strokes-as-pixels"),
   smallImageGrid: imgSrc("small-image-grid"),
   spline: imgSrc("spline-icon"),
+  superMarker: imgSrc("super-marker"),
   tableViewer: imgSrc("table"),
   tick: imgSrc("tick"),
   trustedServices: imgSrc("AI-in-the-loop"),
