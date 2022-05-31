@@ -1,4 +1,4 @@
-import { ReactElement, SyntheticEvent } from "react";
+import { ReactElement, SyntheticEvent, useEffect, useState } from "react";
 import SVG from "react-inlinesvg";
 
 import {
@@ -24,6 +24,16 @@ interface Props {
 }
 
 function ProgressSnackbar({ task, setTask }: Props): ReactElement {
+  const [complete, setComplete] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (task.progress === 100)
+      setTimeout(() => {
+        setComplete(true);
+      }, 200);
+    else setComplete(false);
+  }, [task]);
+
   const handleClose = (event: SyntheticEvent | MouseEvent, reason?: string) => {
     if (reason === "clickaway") {
       return;
@@ -53,7 +63,7 @@ function ProgressSnackbar({ task, setTask }: Props): ReactElement {
                     marginRight: "10px",
                   }}
                 >
-                  {task.progress === 100 ? (
+                  {complete ? (
                     <SVG
                       src={imgSrc("complete")}
                       style={{
