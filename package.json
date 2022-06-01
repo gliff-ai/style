@@ -37,7 +37,7 @@
     "@mui/styles": "^5.8.0",
     "@mui/system": "^5.8.1",
     "@percy/cli": "^1.2.1",
-    "@types/jest": "^26.0.24",
+    "@types/jest": "^27.5.1",
     "@types/react": "^17.0.45",
     "@types/react-dom": "^17.0.17",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
