@@ -74,6 +74,6 @@
   },
   "dependencies": {
     "@mui/x-data-grid": "^5.11.1",
-    "react-inlinesvg": "^2.3.0"
+    "react-inlinesvg": "^3.0.0"
   }
 }
