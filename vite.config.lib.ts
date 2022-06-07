@@ -23,7 +23,8 @@ export default defineConfig({
         "@mui/styles",
         "@mui/system",
         "@emotion/react",
-        "@emotion/styled"
+        "@emotion/styled",
+        "@mui/x-data-grid",
       ],
       output: {
         // Provide global variables to use in the UMD build
