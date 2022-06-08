@@ -34,6 +34,7 @@ export {
   Box,
   RadioGroup,
   Typography,
+  Menu,
   MenuItem,
   Grid,
   FormControl,
