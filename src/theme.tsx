@@ -297,6 +297,9 @@ export const theme = createTheme({
           "&:hover": {
             backgroundColor: "transparent",
           },
+          paddingLeft: "12px",
+          width: "auto",
+          display: "flex",
         },
       },
     },
@@ -305,7 +308,7 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           "&:hover": {
-            backgroundColor: white,
+            backgroundColor: "none",
           },
         },
       },

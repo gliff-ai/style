@@ -57,6 +57,7 @@ export function Card(props: Props): JSX.Element {
           borderRadius: "6px 6px 0 0",
           display: "flex",
           alignItems: "center",
+          justifyContent: "space-between",
         }}
       >
         {props.warningDialog && (
