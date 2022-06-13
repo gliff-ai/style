@@ -50,10 +50,14 @@ export function Dialog({
       {children}
     </Card>
   );
+
   return (
     <>
       {cloneElement(TriggerButton as any, {
-        onClick: handleClick,
+        onClick: () => {
+          handleClick();
+          TriggerButton.props.onClick();
+        },
       })}
       <MaterialDialog open={open} onClose={handleClose}>
         {dialogContent}
