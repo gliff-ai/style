@@ -42,7 +42,10 @@ export function Popover({
   return (
     <>
       {cloneElement(TriggerButton as any, {
-        onClick: handleClick,
+        onClick: (event: MouseEvent<HTMLButtonElement>) => {
+          handleClick(event);
+          TriggerButton.props.onClick();
+        },
         fill: Boolean(anchorEl),
       })}
       <MaterialPopover
