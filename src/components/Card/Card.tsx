@@ -8,9 +8,9 @@ import {
   styled,
 } from "@mui/material";
 import SVG from "react-inlinesvg";
-import { theme } from "src/theme";
-import { icons } from "src/icons";
-import { IconButton } from "src/IconButton";
+import { theme } from "../../theme";
+import { icons } from "../../icons";
+import { IconButton } from "../../IconButton";
 
 interface Props extends CardProps {
   title: string;

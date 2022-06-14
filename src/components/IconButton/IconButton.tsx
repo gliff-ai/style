@@ -9,9 +9,9 @@ import {
 import makeStyles from "@mui/styles/makeStyles";
 import type { ButtonProps } from "@mui/material/Button";
 import SVG from "react-inlinesvg";
-import { BaseTooltipTitle } from "./BaseTooltipTitle";
-import { HtmlTooltip } from "./BaseHtmlTooltip";
-import { theme } from "./theme";
+import { BaseTooltipTitle } from "../../BaseTooltipTitle";
+import { HtmlTooltip } from "../../BaseHtmlTooltip";
+import { theme } from "../../theme";
 
 export interface Tooltip {
   name: string;

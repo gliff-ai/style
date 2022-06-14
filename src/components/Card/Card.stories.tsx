@@ -1,4 +1,4 @@
-import { Typography } from "@mui/material";
+import { Typography, Box } from "@mui/material";
 import { Card } from "./Card";
 
 export default {
@@ -6,19 +6,32 @@ export default {
   component: Card,
 };
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const Primary = () => (
-  <Card title="Example Card">
-    <Typography>This is a basic card.</Typography>
-  </Card>
+  <Box sx={{ width: "300px" }}>
+    <Card title="Example Card">
+      <Typography>This is a basic card.</Typography>
+    </Card>
+  </Box>
 );
 export const Secondary = () => (
-  <Card title="Example Card" closeButton>
-    <Typography>This is a basic card.</Typography>
-  </Card>
+  <Box sx={{ width: "300px" }}>
+    <Card title="Example Card" closeButton>
+      <Typography>This is a basic card.</Typography>
+    </Card>
+  </Box>
 );
 export const Warning = () => (
-  <Card title="Example Card" warningDialog>
-    <Typography>This is a basic card.</Typography>
-  </Card>
+  <Box sx={{ width: "300px" }}>
+    <Card title="Example Card" warningDialog>
+      <Typography>This is a basic card.</Typography>
+    </Card>
+  </Box>
+);
+
+export const Pinned = () => (
+  <Box sx={{ width: "300px" }}>
+    <Card title="Example Card" isPinned>
+      <Typography>This is a basic card.</Typography>
+    </Card>
+  </Box>
 );
