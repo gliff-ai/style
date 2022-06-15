@@ -1,65 +1,42 @@
-import { ButtonGroup } from "@mui/material";
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable react/jsx-props-no-spreading */
 import { IconButton } from "./IconButton";
-import { veryLightBlue, lightestGrey } from "../../theme";
 
 const imgSrc = (src: string, type = "svg"): string =>
   new URL(`/src/assets/${src}.${type}`, import.meta.url).href;
-
-const style = {
-  border: "1px solid",
-  borderColor: veryLightBlue,
-  borderRadius: "9px",
-  paddingTop: "8px",
-  paddingBottom: "8px",
-  background: lightestGrey,
-};
 
 export default {
   title: "IconButton",
   component: IconButton,
 };
 
-export const Primary = () => (
-  <ButtonGroup sx={{ ...style }} orientation="vertical" variant="text">
-    <IconButton
-      tooltip={{ name: "Small Button" }}
-      icon={imgSrc("icon")}
-      size="small"
-    />
-  </ButtonGroup>
-);
+const Template = (args: string) => <IconButton {...args} />;
 
-export const Secondary = () => (
-  <ButtonGroup sx={{ ...style }} orientation="vertical" variant="text">
-    <IconButton
-      tooltip={{
-        name: "Small Button",
-        shortcut: "K",
-        shortcutSymbol: "cmd",
-      }}
-      icon={imgSrc("icon")}
-      size="small"
-    />
-  </ButtonGroup>
-);
+export const Primary = Template.bind({});
+export const Secondary = Template.bind({});
+export const ActiveButton = Template.bind({});
+export const DisabledButton = Template.bind({});
 
-export const ActiveButton = () => (
-  <ButtonGroup sx={{ ...style }} orientation="vertical" variant="text">
-    <IconButton
-      tooltip={{ name: "Small Active Button" }}
-      icon={imgSrc("icon")}
-      fill
-      size="small"
-    />
-  </ButtonGroup>
-);
-export const DisabledButton = () => (
-  <ButtonGroup sx={{ ...style }} orientation="vertical" variant="text">
-    <IconButton
-      tooltip={{ name: "Small Disabled Button" }}
-      icon={imgSrc("icon")}
-      disabled
-      size="small"
-    />
-  </ButtonGroup>
-);
+Primary.args = {
+  tooltip: { name: "Small Button" },
+  icon: imgSrc("icon"),
+  size: "small",
+};
+Secondary.args = {
+  tooltip: { name: "Small Button", shortcut: "K", shortcutSymbol: "cmd" },
+  icon: imgSrc("icon"),
+  size: "small",
+};
+ActiveButton.args = {
+  tooltip: { name: "Small Active Button" },
+  icon: imgSrc("icon"),
+  fill: "true",
+  size: "small",
+};
+DisabledButton.args = {
+  tooltip: { name: "Small Disabled Button" },
+  icon: imgSrc("icon"),
+  disabled: "true",
+  size: "small",
+};
