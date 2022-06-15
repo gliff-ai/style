@@ -1,6 +1,6 @@
 {
   "name": "@gliff-ai/style",
-  "version": "13.5.0",
+  "version": "14.0.0",
   "description": "Theme styles for gliff.ai apps",
   "main": "dist/index.es.js",
   "module": "dist/index.es.js",
@@ -15,12 +15,12 @@
     "prettier": "npx --no-install prettier -c src/*.ts*",
     "lint": "tsc --noEmit && npm run lint:ts && npm run prettier",
     "lint:ts": "npx --no-install eslint src/*.ts*",
-    "serve": "vite",
+    "serve:example": "vite",
+    "serve:storybook": "start-storybook -p 6006",
     "build:example": "vite build",
+    "build:storybook": "build-storybook",
     "test": "jest --coverage --passWithNoTests",
-    "build:patch": "sed -i 's/const generateClassName$1 = createGenerateClassName();/const generateClassName$1 = createGenerateClassName({seed:\"\",disableGlobal:true,productionPrefix:\"jss-style-\"});/g' dist/index.es.js",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build:patch": "sed -i 's/const generateClassName$1 = createGenerateClassName();/const generateClassName$1 = createGenerateClassName({seed:\"\",disableGlobal:true,productionPrefix:\"jss-style-\"});/g' dist/index.es.js"
   },
   "repository": {
     "type": "git",
