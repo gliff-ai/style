@@ -3,12 +3,10 @@ name: Storybook - Azure Static Web Apps CI/CD
 on:
   push:
     branches:
-      - useStorybook
       - main
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
-      - useStorybook
       - main
 
 jobs:
