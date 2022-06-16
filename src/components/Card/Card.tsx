@@ -1,23 +1,17 @@
 import { ReactElement } from "react";
 
-import {
-  Card as MaterialCard,
-  Paper,
-  Typography,
-  CardProps,
-  styled,
-} from "@mui/material";
+import { Card as MaterialCard, Paper, Typography, styled } from "@mui/material";
 import SVG from "react-inlinesvg";
 import { theme } from "../../theme";
 import { icons } from "../../icons";
 import { IconButton } from "../../IconButton";
 
-interface Props extends CardProps {
+interface Props {
   title: string;
   children: ReactElement;
   handleClose?: () => void;
   closeButton?: boolean;
-  noPadding?: boolean;
+  internalPadding?: boolean;
   warningDialog?: boolean;
   isPinned?: boolean | null;
   handlePin?: () => void;
@@ -97,7 +91,7 @@ export function Card(props: Props): JSX.Element {
 
       <Paper
         elevation={0}
-        sx={{ p: props.noPadding ? null : "12px 16px 14px" }}
+        sx={{ p: props.internalPadding ? null : "12px 16px 14px" }}
       >
         {props.children}
       </Paper>
@@ -107,7 +101,7 @@ export function Card(props: Props): JSX.Element {
 Card.defaultProps = {
   closeButton: false,
   handleClose: null,
-  noPadding: null,
+  internalPadding: null,
   warningDialog: null,
   isPinned: null,
   handlePin: null,
