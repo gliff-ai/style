@@ -11,6 +11,7 @@ export default {
   component: IconButton,
 };
 
+// A function from Storybook that allows you to pass in props to your component
 const Template = (args: string) => <IconButton {...args} />;
 
 export const Primary = Template.bind({});
@@ -31,12 +32,12 @@ Secondary.args = {
 ActiveButton.args = {
   tooltip: { name: "Small Active Button" },
   icon: imgSrc("icon"),
-  fill: "true",
+  fill: true,
   size: "small",
 };
 DisabledButton.args = {
   tooltip: { name: "Small Disabled Button" },
   icon: imgSrc("icon"),
-  disabled: "true",
+  disabled: true,
   size: "small",
 };
