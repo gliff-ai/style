@@ -12,7 +12,8 @@ export default {
 };
 
 // A function from Storybook that allows you to pass in props to your component
-const Template = (args: string) => <IconButton {...args} />;
+/* eslint-disable react/jsx-props-no-spreading */
+const Template = (args: string | any) => <IconButton {...args} />;
 
 export const Primary = Template.bind({});
 export const Secondary = Template.bind({});

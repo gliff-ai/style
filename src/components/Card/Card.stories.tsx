@@ -9,7 +9,7 @@ export default {
   component: Card,
 };
 
-// A function from Storybook that allows you to pass in props to your component
+// A wrapper function from Storybook that allows you to pass in props to your component. We use this for showing controls
 const Template = (args: any) => (
   <Box sx={{ width: "300px" }}>
     <Card {...args}>
