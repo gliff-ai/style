@@ -1,5 +1,5 @@
 import { create } from '@storybook/theming';
-import logo from "../src/assets/gliff.svg";
+import logo from "../src/assets/gliff-master-black.svg";
 
 
 
