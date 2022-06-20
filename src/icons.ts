@@ -44,6 +44,7 @@ const icons = {
   download: imgSrc("download-icon"),
   edit: imgSrc("open-in-annotate"),
   eraser: imgSrc("eraser-icon"),
+  error: imgSrc("error"),
   enterKey: imgSrc("enter-key"),
   fill: imgSrc("fill-icon"),
   fitToPage: imgSrc("fit-to-page-icon"),
