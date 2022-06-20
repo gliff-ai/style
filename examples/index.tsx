@@ -327,6 +327,14 @@ const app = (
             </Card>
           </Box>
           <br></br>
+
+          <br></br>
+          <Box sx={{ width: "300px" }}>
+            <Card title={"Example Card"} warningDialog>
+              <Typography>This is a warning card.</Typography>
+            </Card>
+          </Box>
+          <br></br>
           <h2>Icon Button</h2>
           <div>
             <ButtonGroup orientation="vertical" variant="text">

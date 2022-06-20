@@ -6,12 +6,11 @@ import {
   StyledEngineProvider,
   Button,
 } from "@mui/material";
-import makeStyles from "@mui/styles/makeStyles";
 import type { ButtonProps } from "@mui/material/Button";
 import SVG from "react-inlinesvg";
-import { BaseTooltipTitle } from "./BaseTooltipTitle";
-import { HtmlTooltip } from "./BaseHtmlTooltip";
-import { theme } from "./theme";
+import { BaseTooltipTitle } from "../../BaseTooltipTitle";
+import { HtmlTooltip } from "../../BaseHtmlTooltip";
+import { theme } from "../../theme";
 
 export interface Tooltip {
   name: string;
@@ -41,25 +40,11 @@ export const IconButton = (props: Props): ReactElement => {
     fillColor = theme.palette.primary.main;
   }
 
-  const classes = makeStyles({
-    svg: {
-      width: props.size === "small" ? "23px" : "45px",
-      height: "auto",
-    },
-    avatar: {
-      backgroundColor: props.backgroundColor,
-      width: `${theme.spacing(avatarSpacing)} !important`,
-      height: `${theme.spacing(avatarSpacing)} !important`,
-    },
-    noHover: {
-      "&:hover": {
-        backgroundColor: props.backgroundColor,
-      },
-      "&:hover svg": {
-        fill: fillColor,
-      },
-    },
-  })(props);
+  const avatar = {
+    backgroundColor: props.backgroundColor,
+    width: `${theme.spacing(avatarSpacing)} !important`,
+    height: `${theme.spacing(avatarSpacing)} !important`,
+  };
 
   const {
     icon,
@@ -73,7 +58,15 @@ export const IconButton = (props: Props): ReactElement => {
     ...rest
   } = props;
 
-  const svgIcon = <SVG src={icon} className={classes.svg} fill={fillColor} />;
+  const svgIcon = (
+    <SVG
+      src={icon}
+      fill={fillColor}
+      height="auto"
+      width={props.size === "small" ? "23px" : "45px"}
+    />
+  );
+
   return (
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme}>
@@ -92,13 +85,7 @@ export const IconButton = (props: Props): ReactElement => {
               // eslint-disable-next-line react/jsx-props-no-spreading
               {...rest}
             >
-              <Avatar
-                className={`${classes.avatar} ${
-                  props.disabled ? classes.noHover : ""
-                }`}
-              >
-                {svgIcon}
-              </Avatar>
+              <Avatar sx={{ ...avatar }}>{svgIcon}</Avatar>
             </Button>
           </span>
         </HtmlTooltip>
