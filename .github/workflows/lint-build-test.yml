@@ -38,7 +38,7 @@ jobs:
       - name: Snapshot
         run: npx percy storybook ./storybook-static/
         env:
-          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+          PERCY_TOKEN: ${{ secrets.PERCY_STORYBOOK_TOKEN }}
 
 
   Lint:
