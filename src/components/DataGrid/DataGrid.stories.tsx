@@ -58,8 +58,7 @@ export const Primary = Template.bind({});
 
 Primary.args = {
   title: "Example Datagrid",
-  columns: [columns],
-  rows: [rows],
+  columns: [...columns],
+  rows: [...rows],
   sx: { height: "400px" },
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
 };
