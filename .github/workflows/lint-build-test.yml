@@ -2,7 +2,7 @@ name: Lint, Build, Test
 on: push
 
 jobs:
-  Percy:
+  Percy-Example-Page:
     runs-on: ubuntu-18.04
     timeout-minutes: 5
     steps:
@@ -13,13 +13,33 @@ jobs:
         with:
           node-version: 16
       - name: Setup dependencies
-        run: npm i
+        run: npm ci
       - name: Build
         run: npm run build:example
       - name: Snapshot
         run: npx percy snapshot ./dist
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+
+  Percy-Storybook:
+    runs-on: ubuntu-18.04
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16
+      - name: Setup dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build:storybook
+      - name: Snapshot
+        run: npx percy storybook ./storybook-static/
+        env:
+          PERCY_TOKEN: ${{ secrets.PERCY_STORYBOOK_TOKEN }}
+
 
   Lint:
     runs-on: ubuntu-latest
@@ -48,7 +68,7 @@ jobs:
         with:
           node-version: 16
       - name: Setup dependencies
-        run: npm i
+        run: npm ci
       - name: Build
         run: npm run build
   Test:
@@ -62,7 +82,7 @@ jobs:
         with:
           node-version: 16
       - name: Setup dependencies
-        run: npm i
+        run: npm ci
       - name: Test
         run: npm run test
   publish:
@@ -78,7 +98,7 @@ jobs:
         with:
           node-version: 16
       - name: Setup dependencies
-        run: npm i --omit=peer
+        run: npm ci --omit=peer
       - name: Build
         run: npm run build
       - name: Publish

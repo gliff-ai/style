@@ -8,7 +8,9 @@ This repository contains the Open Source code for [gliff.ai](https://gliff.ai)�
 
 STYLE documents themes and base components of gliff.ai products with a focus establishing consistency within the user-interface by using [gliff.ai](https://gliff.ai) branding and human-centered design principles to ensure a unique and easily-understood user experience. When the full [gliff.ai platform](https://gliff.ai/software/) is used, STYLE provides user-interface patterns to create a consistent and user-friendly interface enabling the development of high-quality and auditable datasets that satisfy any relevant regulatory frameworks which enables our users to build world-changing and trustworthy AI models and products.
 
-A preview build of the current `main` branch is [here](https://style.staging.gliff.app/).
+A preview build of the current `main` branch is [here](https://style.gliff.app/).
+
+Our component storybook is [here](https://style-storybook.gliff.app/).
 
 ❌ **This repository does not accept most contributions unfortunately! However, an issue can still be raised if you recognise a problem you wish to bring to the gliff.ai teams attention.** ❌
 
