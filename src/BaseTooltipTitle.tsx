@@ -6,14 +6,13 @@ import {
   ThemeProvider,
   StyledEngineProvider,
 } from "@mui/material";
-
 import makeStyles from "@mui/styles/makeStyles";
-
+import SVG from "react-inlinesvg";
 import { theme, darkGrey } from "./theme";
 import type { Tooltip } from "./tooltips";
 
 type Props = {
-  tooltip: Omit<Tooltip, "icon">;
+  tooltip: Tooltip;
 };
 
 const useStyles = makeStyles({
@@ -38,6 +37,9 @@ const useStyles = makeStyles({
       // First shortcut icon
       marginLeft: "4px",
     },
+    "&:last-child": {
+      marginRight: "8px",
+    },
   },
   avatarFontSize: {
     fontSize: "14px !important",
@@ -49,6 +51,7 @@ const useStyles = makeStyles({
     lineHeight: "9px !important",
     fontWeight: 500,
   },
+  tooltipIcon: { width: "35px", height: "35px" },
 });
 
 export const BaseTooltipTitle = ({ tooltip }: Props): ReactElement => {
@@ -92,6 +95,9 @@ export const BaseTooltipTitle = ({ tooltip }: Props): ReactElement => {
             <Typography>{tooltip.name}</Typography>
           </Box>
           {!tooltip.shortcut ? null : hasShortcutSymbol}
+          {tooltip?.icon && (
+            <SVG src={tooltip?.icon} className={classes.tooltipIcon} />
+          )}
         </Box>
       </ThemeProvider>
     </StyledEngineProvider>

@@ -366,6 +366,14 @@ const app = (
                 icon={imgSrc("icon")}
                 size="small"
               />
+              <IconButton
+                tooltip={{
+                  name: "Small Button",
+                  icon: icons.betaStatus,
+                }}
+                icon={imgSrc("icon")}
+                size="small"
+              />
             </ButtonGroup>
             <br />
             <br />

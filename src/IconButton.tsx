@@ -17,6 +17,7 @@ export interface Tooltip {
   name: string;
   shortcut?: string;
   shortcutSymbol?: string;
+  icon?: string;
 }
 
 export interface Props extends ButtonProps {
