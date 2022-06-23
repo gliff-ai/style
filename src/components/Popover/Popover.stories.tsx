@@ -3,25 +3,26 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { Typography } from "@mui/material";
 import { IconButton } from "../IconButton/IconButton";
-import { Dialog } from "./Dialog";
+import { Popover } from "./Popover";
 
 const imgSrc = (src: string, type = "svg"): string =>
   new URL(`/src/assets/${src}.${type}`, import.meta.url).href;
 
 export default {
-  title: "Dialog",
-  component: Dialog,
+  title: "Popover",
+  component: Popover,
 };
 
 // A wrapper function from Storybook that allows you to pass in props to your component. We use this for showing controls
 
 const Template = (args: any) => (
-  <Dialog
+  <Popover
     {...args}
+    anchorOrigin={{ horizontal: "right", vertical: "top" }}
     TriggerButton={
       <IconButton
         tooltip={{
-          name: "Open Dialog",
+          name: "Open Popover",
         }}
         icon={imgSrc("icon")}
         size="medium"
@@ -29,15 +30,11 @@ const Template = (args: any) => (
     }
   >
     <Typography> Content</Typography>
-  </Dialog>
+  </Popover>
 );
 
-export const StandardDialog = Template.bind({});
-export const ConfirmationDialog = Template.bind({});
-StandardDialog.args = {
-  title: "Standard Dialog",
-};
-ConfirmationDialog.args = {
-  title: "Confirmation Dialog",
-  warningDialog: "true",
+export const StandardPopover = Template.bind({});
+
+StandardPopover.args = {
+  title: "Standard Popover",
 };
