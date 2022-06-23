@@ -99,6 +99,7 @@ const icons = {
   viewSideBySideAnnotations: imgSrc("view-side-by-side"),
   viewAnnotationDifference: imgSrc("view-difference"),
   warning: imgSrc("warning"),
+  zoo: imgSrc("ZOO"),
   zoomIn: imgSrc("zoom-in-icon"),
   zoomOut: imgSrc("zoom-out-icon"),
 } as const;
