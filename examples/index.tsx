@@ -309,6 +309,23 @@ const app = (
             <p></p>
           </HtmlTooltip>
           <br></br>
+          <br></br>
+          <br></br>
+          <HtmlTooltip
+            placement={"top-start"}
+            open={true}
+            title={
+              <BaseTooltipTitle
+                tooltip={{
+                  name: "Tooltip With Big Status",
+                  icon: icons.betaStatus,
+                }}
+              />
+            }
+          >
+            <p></p>
+          </HtmlTooltip>
+          <br></br>
           <Box sx={{ width: "300px" }}>
             <Card title={"Example Card"}>
               <Typography>This is a basic card.</Typography>
@@ -362,14 +379,6 @@ const app = (
                   name: "Small Button",
                   shortcut: "K",
                   shortcutSymbol: "cmd",
-                }}
-                icon={imgSrc("icon")}
-                size="small"
-              />
-              <IconButton
-                tooltip={{
-                  name: "Small Button",
-                  icon: icons.betaStatus,
                 }}
                 icon={imgSrc("icon")}
                 size="small"

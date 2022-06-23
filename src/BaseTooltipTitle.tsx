@@ -20,6 +20,7 @@ const useStyles = makeStyles({
     display: "flex",
     alignItems: "center",
     justifyItems: "space-between",
+    height: "35px",
     "& > div:first-child": {
       // Tooltip text
       marginLeft: "8px",
@@ -37,9 +38,6 @@ const useStyles = makeStyles({
       // First shortcut icon
       marginLeft: "4px",
     },
-    "&:last-child": {
-      marginRight: "8px",
-    },
   },
   avatarFontSize: {
     fontSize: "14px !important",
@@ -51,7 +49,7 @@ const useStyles = makeStyles({
     lineHeight: "9px !important",
     fontWeight: 500,
   },
-  tooltipIcon: { width: "35px", height: "35px" },
+  tooltipIcon: { width: "auto", height: "28px" },
 });
 
 export const BaseTooltipTitle = ({ tooltip }: Props): ReactElement => {
