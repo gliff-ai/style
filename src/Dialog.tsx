@@ -56,7 +56,8 @@ export function Dialog({
       {cloneElement(TriggerButton, {
         onClick: () => {
           handleClick();
-          (TriggerButton.props as { onClick: () => void }).onClick();
+          const { onClick } = TriggerButton.props as { onClick?: () => void };
+          if (onClick) onClick();
         },
       })}
       <MaterialDialog open={open} onClose={handleClose}>
