@@ -40,17 +40,6 @@ export function Dialog({
     }
   }, [close]);
 
-  const dialogContent = (
-    <Card
-      title={title}
-      handleClose={handleClose}
-      closeButton
-      warningDialog={warningDialog}
-    >
-      {children}
-    </Card>
-  );
-
   return (
     <>
       {cloneElement(TriggerButton, {
@@ -60,8 +49,19 @@ export function Dialog({
           if (onClick) onClick();
         },
       })}
-      <MaterialDialog open={open} onClose={handleClose}>
-        {dialogContent}
+      <MaterialDialog
+        sx={{ "& div": { maxWidth: "unset" } }}
+        open={open}
+        onClose={handleClose}
+      >
+        <Card
+          title={title}
+          handleClose={handleClose}
+          closeButton
+          warningDialog={warningDialog}
+        >
+          {children}
+        </Card>
       </MaterialDialog>
     </>
   );
