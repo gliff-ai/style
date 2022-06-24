@@ -30,7 +30,6 @@ const useStyles = makeStyles({
       // shortcut icon
       backgroundColor: theme.palette.primary.main,
       color: darkGrey,
-      width: "30px",
       height: "30px",
       marginLeft: "3px",
     },
@@ -49,7 +48,7 @@ const useStyles = makeStyles({
     lineHeight: "9px !important",
     fontWeight: 500,
   },
-  tooltipIcon: { width: "auto", height: "28px" },
+  tooltipIcon: { width: "auto", height: "24px" },
 });
 
 export const BaseTooltipTitle = ({ tooltip }: Props): ReactElement => {
@@ -68,7 +67,6 @@ export const BaseTooltipTitle = ({ tooltip }: Props): ReactElement => {
           {tooltip.shortcutSymbol.toUpperCase()}
         </Typography>
       </Avatar>
-
       <Avatar>
         <Typography
           className={
@@ -90,9 +88,17 @@ export const BaseTooltipTitle = ({ tooltip }: Props): ReactElement => {
       <ThemeProvider theme={theme}>
         <Box className={classes.mainbox}>
           <Box>
-            <Typography>{tooltip.name}</Typography>
+            <Typography
+              sx={{
+                whiteSpace: "nowrap",
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+              }}
+            >
+              {tooltip.name}
+            </Typography>
           </Box>
-          {!tooltip.shortcut ? null : hasShortcutSymbol}
+          {tooltip.shortcut && hasShortcutSymbol}
           {tooltip?.icon && (
             <SVG src={tooltip?.icon} className={classes.tooltipIcon} />
           )}
