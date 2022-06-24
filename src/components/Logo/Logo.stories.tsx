@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import { LoadingSpinner } from "./LoadingSpinner";
+import { Logo } from "./Logo";
 
 export default {
-  title: "Loading Spinner",
-  component: LoadingSpinner,
+  title: "Logo",
+  component: Logo,
 };
 
 // A wrapper function from Storybook that allows you to pass in props to your component. We use this for showing controls
-const Template = () => <LoadingSpinner />;
+const Template = () => <Logo />;
 
-export const Spinner = Template.bind({});
+export const GliffLogo = Template.bind({});

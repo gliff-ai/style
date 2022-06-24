@@ -9,6 +9,19 @@ const imgSrc = (src: string, type = "svg"): string =>
 export default {
   title: "IconButton",
   component: IconButton,
+  argTypes: {
+    // remove some property from the controls UI
+    to: {
+      table: {
+        disable: true,
+      },
+    },
+    component: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 };
 
 // A wrapper function from Storybook that allows you to pass in props to your component. We use this for showing controls
