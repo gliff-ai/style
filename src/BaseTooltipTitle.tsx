@@ -30,6 +30,7 @@ const useStyles = makeStyles({
       // shortcut icon
       backgroundColor: theme.palette.primary.main,
       color: darkGrey,
+      width: "30px",
       height: "30px",
       marginLeft: "3px",
     },
