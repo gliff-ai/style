@@ -21,6 +21,7 @@ interface Props extends CardProps {
   warningDialog?: boolean;
   isPinned?: boolean | null;
   handlePin?: () => void;
+  backgroundColor?: string;
 }
 
 const CardIconButton = styled(IconButton)({
@@ -42,6 +43,7 @@ export function Card(props: Props): JSX.Element {
     <MaterialCard
       sx={{
         borderRadius: "6px",
+        backgroundColor: props.backgroundColor,
       }}
     >
       <Paper
@@ -97,7 +99,10 @@ export function Card(props: Props): JSX.Element {
 
       <Paper
         elevation={0}
-        sx={{ p: props.noPadding ? null : "12px 16px 14px" }}
+        sx={{
+          p: props.noPadding ? null : "12px 16px 14px",
+          backgroundColor: "transparent",
+        }}
       >
         {props.children}
       </Paper>
@@ -111,4 +116,5 @@ Card.defaultProps = {
   warningDialog: null,
   isPinned: null,
   handlePin: null,
+  backgroundColor: "#FFFFFF",
 };

@@ -9,6 +9,7 @@ interface Props {
   warningDialog?: boolean;
   close?: boolean;
   afterClose?: () => void;
+  backgroundColor?: string;
 }
 
 export function Dialog({
@@ -18,6 +19,7 @@ export function Dialog({
   close,
   warningDialog,
   afterClose,
+  backgroundColor,
 }: Props): ReactElement | null {
   const [open, setOpen] = useState<boolean>(false);
 
@@ -59,6 +61,7 @@ export function Dialog({
           handleClose={handleClose}
           closeButton
           warningDialog={warningDialog}
+          backgroundColor={backgroundColor}
         >
           {children}
         </Card>
@@ -72,4 +75,5 @@ Dialog.defaultProps = {
   close: null,
   afterClose: null,
   warningDialog: null,
+  backgroundColor: "inherit",
 };
