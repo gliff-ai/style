@@ -44,18 +44,29 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           textTransform: "none",
-          color: black,
+        },
+        containedPrimary: {
           "&:hover": {
             borderColor: "transparent",
-            backgroundColor: "transparent",
+            backgroundColor: "#12EBA6",
           },
           "&$disabled": {
             "&$outlined": {
               border: "none",
             },
           },
-          "&.Mui-disabled": {
-            border: "none",
+        },
+        containedSecondary: {
+          "&:hover": {
+            backgroundColor: "#9A67E6",
+          },
+        },
+        outlinedSecondary: {
+          color: "#000000",
+          border: " 0.5px solid #000000",
+          "&:hover": {
+            border: " 0.5px solid #000000",
+            backgroundColor: "#F2F2F2",
           },
         },
       },

@@ -12,8 +12,24 @@ export default {
 const Template = (args: any) => <Button {...args} />;
 
 export const Primary = Template.bind({});
+export const Secondary = Template.bind({});
+export const Outline = Template.bind({});
 
 Primary.args = {
-  text: "Hello",
+  text: "Primary Button",
   disabled: false,
+  disableElevation: true,
+};
+Secondary.args = {
+  text: "Secondary Button",
+  disabled: false,
+  color: "secondary",
+  disableElevation: true,
+};
+Outline.args = {
+  text: "Outlined Button",
+  disabled: false,
+  color: "secondary",
+  variant: "outlined",
+  disableElevation: true,
 };
