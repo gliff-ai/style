@@ -10,6 +10,30 @@ const imgSrc = (src: string, type = "svg"): string =>
 export default {
   title: "Dialog",
   component: Dialog,
+  argTypes: {
+    // remove some property from the controls UI
+    // TODO possibly move this into a separate file
+    TriggerButton: {
+      table: {
+        disable: true,
+      },
+    },
+    warningDialog: {
+      table: {
+        disable: true,
+      },
+    },
+    close: {
+      table: {
+        disable: true,
+      },
+    },
+    afterClose: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 };
 
 // A wrapper function from Storybook that allows you to pass in props to your component. We use this for showing controls
@@ -33,9 +57,11 @@ export const ConfirmationDialog = Template.bind({});
 StandardDialog.args = {
   title: "Standard Dialog",
   children: "Content",
+  buttons: true,
 };
 ConfirmationDialog.args = {
   title: "Confirmation Dialog",
   children: "Content",
   warningDialog: "true",
+  buttons: true,
 };

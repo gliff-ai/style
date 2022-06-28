@@ -1,11 +1,6 @@
 import { MouseEvent, ReactElement } from "react";
-import {
-  ThemeProvider,
-  StyledEngineProvider,
-  Button as MuiButton,
-} from "@mui/material";
+import { Button as MuiButton } from "@mui/material";
 import type { ButtonProps } from "@mui/material/Button";
-import { theme } from "../../theme";
 
 interface Props extends ButtonProps {
   text: string;
@@ -20,20 +15,16 @@ export function Button({
   ...rest
 }: Props): ReactElement {
   return (
-    <StyledEngineProvider injectFirst>
-      <ThemeProvider theme={theme}>
-        <MuiButton
-          variant="contained"
-          color="primary"
-          onClick={onClick}
-          disabled={disabled}
-          // eslint-disable-next-line react/jsx-props-no-spreading
-          {...rest}
-        >
-          {text}
-        </MuiButton>
-      </ThemeProvider>
-    </StyledEngineProvider>
+    <MuiButton
+      variant="contained"
+      color="primary"
+      onClick={onClick}
+      disabled={disabled}
+      // eslint-disable-next-line react/jsx-props-no-spreading
+      {...rest}
+    >
+      {text}
+    </MuiButton>
   );
 }
 
