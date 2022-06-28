@@ -85,6 +85,7 @@ export const IconButton = (props: Props): ReactElement => {
         >
           <span>
             <Button
+              sx={{ minWidth: "unset" }}
               disabled={disabled}
               ref={(ref) => {
                 if (!ref || !setRefCallback) return;
