@@ -1,6 +1,7 @@
 import { ReactElement, useState, cloneElement, useEffect } from "react";
-import { Dialog as MaterialDialog } from "@mui/material";
+import { Box, Dialog as MaterialDialog } from "@mui/material";
 import { Card } from "../Card/Card";
+import { Button } from "../Button/Button";
 
 interface Props {
   children?: ReactElement | null;
@@ -41,14 +42,31 @@ export function Dialog({
   }, [close]);
 
   const dialogContent = (
-    <Card
-      title={title}
-      handleClose={handleClose}
-      closeButton
-      warningDialog={warningDialog}
-    >
-      {children}
-    </Card>
+    <>
+      <Card
+        title={title}
+        handleClose={handleClose}
+        closeButton
+        warningDialog={warningDialog}
+      >
+        <>
+          {children}
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "space-between",
+              marginTop: "60px",
+            }}
+          >
+            <Button text="Button" color="secondary" variant="outlined" />
+            <Button
+              text="Button"
+              color={warningDialog ? "secondary" : "primary"}
+            />
+          </Box>
+        </>
+      </Card>
+    </>
   );
 
   return (
