@@ -38,9 +38,6 @@ export const theme = createTheme({
       light: purple,
     },
   },
-  typography: {
-    fontFamily: "Roboto",
-  },
 
   components: {
     MuiButton: {
