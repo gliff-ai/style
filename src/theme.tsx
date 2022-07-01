@@ -223,6 +223,13 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           height: "50px",
+          borderColor: mainGreen,
+          "&:hover > fieldset": {
+            borderColor: `${mainGreen} !important`,
+          },
+          "&.Mui-focused > fieldset": {
+            border: `1px solid ${black} !important`,
+          },
         },
       },
     },
