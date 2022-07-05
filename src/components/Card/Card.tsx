@@ -5,8 +5,7 @@ import {
   Paper,
   Typography,
   styled,
-  CardContent,
-  CardHeader,
+
 } from "@mui/material";
 import SVG from "react-inlinesvg";
 import { theme } from "../../theme";
