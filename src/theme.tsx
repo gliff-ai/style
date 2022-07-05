@@ -446,9 +446,10 @@ export const theme = createTheme({
           "&:hover svg": {
             fill: black,
           },
-        },
-      },
+        }, 
+      }, 
     },
+
     MuiButtonBase: {
       defaultProps: {
         disableRipple: true,
