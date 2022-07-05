@@ -13,7 +13,7 @@ interface Props {
   buttons?: boolean;
 }
 
-export function Dialog({
+export function Dialogue({
   children,
   title,
   TriggerButton,
@@ -30,13 +30,13 @@ export function Dialog({
 
   const handleClose = (): void => {
     setOpen(false);
-    // Reset defaults when Dialog is closed
+    // Reset defaults when Dialogue is closed
     if (afterClose) {
       afterClose();
     }
   };
 
-  // externally close the Dialog
+  // externally close the Dialogue
   useEffect(() => {
     if (close) {
       setOpen(false);
@@ -90,7 +90,7 @@ export function Dialog({
   );
 }
 
-Dialog.defaultProps = {
+Dialogue.defaultProps = {
   children: null,
   close: null,
   afterClose: null,

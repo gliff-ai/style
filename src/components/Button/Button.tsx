@@ -20,6 +20,7 @@ export function Button({
       color="primary"
       onClick={onClick}
       disabled={disabled}
+      disableElevation
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...rest}
     >
