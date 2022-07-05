@@ -49,25 +49,24 @@ export const theme = createTheme({
           fontSize: "15px",
           letterSpacing: 0,
           padding: "7px 20px",
-          boxShadow: "none"
+          boxShadow: "none",
         },
 
         containedPrimary: {
           "&:hover": {
             borderColor: "transparent",
             backgroundColor: "#12EBA6",
-          },       
-            "&.Mui-disabled": {
+          },
+          "&.Mui-disabled": {
             color: "#595959",
             backgroundColor: "#e2e2e2",
-          }, 
-          
+          },
         },
         containedSecondary: {
-          "&:hover": { 
+          "&:hover": {
             backgroundColor: "#9A67E6",
           },
-           "&.Mui-disabled": {
+          "&.Mui-disabled": {
             color: "#595959",
             backgroundColor: "#e2e2e2",
           },
@@ -79,10 +78,9 @@ export const theme = createTheme({
             border: " 1px solid #000000",
             backgroundColor: "#F2F2F2",
           },
-            "&.Mui-disabled": {
+          "&.Mui-disabled": {
             color: "#bbbbbb",
           },
-
         },
       },
     },
@@ -446,8 +444,8 @@ export const theme = createTheme({
           "&:hover svg": {
             fill: black,
           },
-        }, 
-      }, 
+        },
+      },
     },
 
     MuiButtonBase: {
