@@ -56,8 +56,7 @@ export function Card(props: Props): JSX.Element {
           "button:last-child": {
             marginRight: "-8px",
           },
-          border: "1px solid #d9dde9",
-          borderBottomColor: props.warningDialog ? "#9F6DEA":"#02E098",
+          border: `1px solid ${props.warningDialog ? "#9F6DEA":"#02E098"}`,
         }}
       >
         {props.warningDialog && (
