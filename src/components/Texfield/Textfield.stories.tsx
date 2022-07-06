@@ -19,6 +19,5 @@ const Template = (args: any) => (
 export const Primary = Template.bind({});
 
 Primary.args = {
-  label: "tested",
-  closeButton: false,
+  label: "Text Field",
 };
