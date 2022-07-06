@@ -5,24 +5,19 @@ import SVG from "react-inlinesvg";
 import { icons } from "../../icons";
 
 interface Props extends OutlinedTextFieldProps {
-  key: string;
   onClick?: (event: MouseEvent) => void;
-  disabled?: boolean;
-  closeButton?: boolean;
   label: string;
+  icon?: boolean
 }
 
 export function TextField({
-  key,
   onClick,
-  disabled,
   label,
-  closeButton,
+  icon,
   ...rest
 }: Props): ReactElement {
-  return <MuiTextfield {...rest} key={key} variant="outlined" label={label} InputProps={{
-     endAdornment: (
-              <InputAdornment position="end">
+  const iconAdornment = icon && 
+             ( <InputAdornment position="end">
                 <IconButton
                   onClick={onClick}
                   edge="end"
@@ -34,8 +29,11 @@ export function TextField({
                   />
                 </IconButton>
               </InputAdornment>
-            ),
-          }}
+            ) 
+
+  return <MuiTextfield {...rest} variant="outlined" label={label} InputProps={{
+    endAdornment:(iconAdornment)
+  }}
 />;
 }
 

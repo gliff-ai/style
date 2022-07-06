@@ -20,4 +20,5 @@ export const Primary = Template.bind({});
 
 Primary.args = {
   label: "Text Field",
+  icon: true
 };
