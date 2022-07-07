@@ -185,6 +185,9 @@ export const theme = createTheme({
             color: darkGrey,
           },
         },
+        shrink:{
+          fontSize: "9px",
+        }
       },
     },
 
@@ -223,7 +226,8 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           height: "50px",
-          borderColor: mainGreen,
+          borderRadius: "8px",
+          fontSize: "16px",
           "&:hover > fieldset": {
             borderColor: `${mainGreen} !important`,
           },
@@ -233,7 +237,7 @@ export const theme = createTheme({
         },
       },
     },
-
+   
     MuiAccordionSummary: {
       styleOverrides: {
         root: {
