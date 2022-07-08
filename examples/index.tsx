@@ -85,7 +85,7 @@ const AdvancedDialogExample = (): ReactElement => {
           setOpen(true);
         }}
       />
-      ;
+
       <AdvancedDialog
         title="Advanced Dialog"
         open={open}
