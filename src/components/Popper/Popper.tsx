@@ -37,6 +37,11 @@ export function Popper(props: Props): JSX.Element {
   );
 }
 
+
+
+
+
+
 Popper.defaultProps = {
   handleClickAway: null,
   popperPlacement: "right",
