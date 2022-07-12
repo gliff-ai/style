@@ -9,6 +9,7 @@ interface Props {
   warningDialog?: boolean;
   close?: boolean;
   afterClose?: () => void;
+  backgroundColor?: string;
 }
 
 export function Dialog({
@@ -18,6 +19,7 @@ export function Dialog({
   close,
   warningDialog,
   afterClose,
+  backgroundColor,
 }: Props): ReactElement | null {
   const [open, setOpen] = useState<boolean>(false);
 
@@ -40,17 +42,6 @@ export function Dialog({
     }
   }, [close]);
 
-  const dialogContent = (
-    <Card
-      title={title}
-      handleClose={handleClose}
-      closeButton
-      warningDialog={warningDialog}
-    >
-      {children}
-    </Card>
-  );
-
   return (
     <>
       {cloneElement(TriggerButton, {
@@ -60,8 +51,20 @@ export function Dialog({
           if (onClick) onClick();
         },
       })}
-      <MaterialDialog open={open} onClose={handleClose}>
-        {dialogContent}
+      <MaterialDialog
+        sx={{ "& div": { maxWidth: "unset" } }}
+        open={open}
+        onClose={handleClose}
+      >
+        <Card
+          title={title}
+          handleClose={handleClose}
+          closeButton
+          warningDialog={warningDialog}
+          backgroundColor={backgroundColor}
+        >
+          {children}
+        </Card>
       </MaterialDialog>
     </>
   );
@@ -72,4 +75,5 @@ Dialog.defaultProps = {
   close: null,
   afterClose: null,
   warningDialog: null,
+  backgroundColor: "inherit",
 };

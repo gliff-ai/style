@@ -17,6 +17,7 @@ export interface Tooltip {
   name: string;
   shortcut?: string;
   shortcutSymbol?: string;
+  icon?: string;
 }
 
 export interface Props extends ButtonProps {
@@ -84,6 +85,7 @@ export const IconButton = (props: Props): ReactElement => {
         >
           <span>
             <Button
+              sx={{ minWidth: "unset" }}
               disabled={disabled}
               ref={(ref) => {
                 if (!ref || !setRefCallback) return;

@@ -6,14 +6,13 @@ import {
   ThemeProvider,
   StyledEngineProvider,
 } from "@mui/material";
-
 import makeStyles from "@mui/styles/makeStyles";
-
+import SVG from "react-inlinesvg";
 import { theme, darkGrey } from "./theme";
 import type { Tooltip } from "./tooltips";
 
 type Props = {
-  tooltip: Omit<Tooltip, "icon">;
+  tooltip: Tooltip;
 };
 
 const useStyles = makeStyles({
@@ -21,6 +20,7 @@ const useStyles = makeStyles({
     display: "flex",
     alignItems: "center",
     justifyItems: "space-between",
+    height: "35px",
     "& > div:first-child": {
       // Tooltip text
       marginLeft: "8px",
@@ -49,6 +49,7 @@ const useStyles = makeStyles({
     lineHeight: "9px !important",
     fontWeight: 500,
   },
+  tooltipIcon: { width: "auto", height: "24px" },
 });
 
 export const BaseTooltipTitle = ({ tooltip }: Props): ReactElement => {
@@ -67,7 +68,6 @@ export const BaseTooltipTitle = ({ tooltip }: Props): ReactElement => {
           {tooltip.shortcutSymbol.toUpperCase()}
         </Typography>
       </Avatar>
-
       <Avatar>
         <Typography
           className={
@@ -89,9 +89,20 @@ export const BaseTooltipTitle = ({ tooltip }: Props): ReactElement => {
       <ThemeProvider theme={theme}>
         <Box className={classes.mainbox}>
           <Box>
-            <Typography>{tooltip.name}</Typography>
+            <Typography
+              sx={{
+                whiteSpace: "nowrap",
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+              }}
+            >
+              {tooltip.name}
+            </Typography>
           </Box>
-          {!tooltip.shortcut ? null : hasShortcutSymbol}
+          {tooltip.shortcut && hasShortcutSymbol}
+          {tooltip?.icon && (
+            <SVG src={tooltip?.icon} className={classes.tooltipIcon} />
+          )}
         </Box>
       </ThemeProvider>
     </StyledEngineProvider>
