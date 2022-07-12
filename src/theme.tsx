@@ -38,26 +38,48 @@ export const theme = createTheme({
       light: purple,
     },
   },
-  typography: {
-    fontFamily: "Roboto",
-  },
 
   components: {
     MuiButton: {
       styleOverrides: {
         root: {
-          color: black,
+          textTransform: "none",
+          borderRadius: "6px",
+          fontWeight: 400,
+          fontSize: "15px",
+          letterSpacing: 0,
+          padding: "7px 20px",
+          boxShadow: "none",
+        },
+
+        containedPrimary: {
           "&:hover": {
             borderColor: "transparent",
-            backgroundColor: "transparent",
-          },
-          "&$disabled": {
-            "&$outlined": {
-              border: "none",
-            },
+            backgroundColor: "#12EBA6",
           },
           "&.Mui-disabled": {
-            border: "none",
+            color: "#595959",
+            backgroundColor: "#e2e2e2",
+          },
+        },
+        containedSecondary: {
+          "&:hover": {
+            backgroundColor: "#9A67E6",
+          },
+          "&.Mui-disabled": {
+            color: "#595959",
+            backgroundColor: "#e2e2e2",
+          },
+        },
+        outlinedSecondary: {
+          color: "#000000",
+          border: " 1px solid #000000",
+          "&:hover": {
+            border: " 1px solid #000000",
+            backgroundColor: "#F2F2F2",
+          },
+          "&.Mui-disabled": {
+            color: "#bbbbbb",
           },
         },
       },
@@ -66,7 +88,7 @@ export const theme = createTheme({
     MuiDialog: {
       styleOverrides: {
         paper: {
-          borderRadius: "6px",
+          borderRadius: "8px",
         },
       },
     },
@@ -425,6 +447,7 @@ export const theme = createTheme({
         },
       },
     },
+
     MuiButtonBase: {
       defaultProps: {
         disableRipple: true,
