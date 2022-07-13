@@ -1,12 +1,6 @@
 import { ReactElement } from "react";
 
-import {
-  Card as MaterialCard,
-  Paper,
-  Typography,
-  styled,
-
-} from "@mui/material";
+import { Card as MaterialCard, Paper, Typography, styled } from "@mui/material";
 import SVG from "react-inlinesvg";
 import { theme } from "../../theme";
 import { icons } from "../../icons";
@@ -56,7 +50,7 @@ export function Card(props: Props): JSX.Element {
           "button:last-child": {
             marginRight: "-8px",
           },
-          border: `1px solid ${props.warningDialog ? "#9F6DEA":"#02E098"}`,
+          border: `1px solid ${props.warningDialog ? "#9F6DEA" : "#02E098"}`,
         }}
       >
         {props.warningDialog && (

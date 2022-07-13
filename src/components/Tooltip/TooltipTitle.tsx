@@ -6,7 +6,6 @@ import {
   ThemeProvider,
   StyledEngineProvider,
 } from "@mui/material";
-import makeStyles from "@mui/styles/makeStyles";
 import SVG from "react-inlinesvg";
 import { theme, darkGrey } from "../../theme";
 import type { Tooltip } from "../../tooltips";
@@ -17,66 +16,67 @@ type Props = {
 
 const mainbox = {
   display: "flex",
-    alignItems: "center",
-    justifyItems: "space-between",
-    height: "35px",
-    "& > div:first-child": {
-      // Tooltip text
-      marginLeft: "8px",
-      marginRight: "8px",
-    },
-    "& > div:not(:first-child)": {
-      // shortcut icon
-      backgroundColor: theme.palette.primary.main,
-      color: darkGrey,
-      width: "30px",
-      height: "30px",
-      marginLeft: "3px",
-    },
-    "& > div:nth-of-type(2)": {
-      // First shortcut icon
-      marginLeft: "10px",
-    },
-}
-
-
-const useStyles = makeStyles({
- 
-  avatarFontSize: {
-    fontSize: "14px !important",
-    lineHeight: "14px !important",
-    fontWeight: 600,
+  alignItems: "center",
+  justifyItems: "space-between",
+  height: "35px",
+  "& > div:first-of-type": {
+    // Tooltip text
+    marginLeft: "8px",
+    marginRight: "8px",
   },
-  avatarSmallFontSize: {
-    fontSize: "9px !important",
-    lineHeight: "9px !important",
-    fontWeight: 500,
+  "& > div:not(:first-of-type)": {
+    // shortcut icon
+    backgroundColor: theme.palette.primary.main,
+    color: darkGrey,
+    width: "30px",
+    height: "30px",
+    marginLeft: "3px",
   },
-  tooltipIcon: { width: "auto", height: "24px" },
-});
+  "& > div:nth-of-type(2)": {
+    // First shortcut icon
+    marginLeft: "10px",
+  },
+};
 
 export const TooltipTitle = ({ tooltip }: Props): ReactElement => {
-  const classes = useStyles();
+  console.log(tooltip.shortcutSymbol);
 
   const hasShortcutSymbol = tooltip.shortcutSymbol ? (
     <>
       <Avatar>
         <Typography
-          className={
+          sx={
             tooltip.shortcutSymbol.length > 1
-              ? classes.avatarSmallFontSize
-              : classes.avatarFontSize
+              ? {
+                  fontSize: "9px !important",
+                  lineHeight: "9px !important",
+                  fontWeight: 500,
+                }
+              : {
+                  fontSize: "14px !important",
+                  lineHeight: "14px !important",
+                  fontWeight: 600,
+                }
           }
         >
           {tooltip.shortcutSymbol.toUpperCase()}
         </Typography>
       </Avatar>
+      {console.log(tooltip.shortcutSymbol.length)}
       <Avatar>
         <Typography
-          className={
-            tooltip.shortcut.length > 1
-              ? classes.avatarSmallFontSize
-              : classes.avatarFontSize
+          sx={
+            tooltip.shortcutSymbol.length > 1
+              ? {
+                  fontSize: "9px !important",
+                  lineHeight: "9px !important",
+                  fontWeight: 500,
+                }
+              : {
+                  fontSize: "14px !important",
+                  lineHeight: "14px !important",
+                  fontWeight: 600,
+                }
           }
         >
           {tooltip.shortcut.toUpperCase()}
@@ -90,7 +90,7 @@ export const TooltipTitle = ({ tooltip }: Props): ReactElement => {
   return (
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme}>
-        <Box sx={{...mainbox}}>
+        <Box sx={{ ...mainbox }}>
           <Box>
             <Typography
               sx={{
@@ -103,15 +103,11 @@ export const TooltipTitle = ({ tooltip }: Props): ReactElement => {
             </Typography>
           </Box>
           {tooltip?.icon && (
-            <SVG src={tooltip?.icon} className={classes.tooltipIcon} />
+            <SVG src={tooltip?.icon} width="auto" height="24px" />
           )}
           {tooltip.shortcut && hasShortcutSymbol}
-
         </Box>
       </ThemeProvider>
     </StyledEngineProvider>
   );
 };
-
-
-
