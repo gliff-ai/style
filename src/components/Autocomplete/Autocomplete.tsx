@@ -1,14 +1,13 @@
 import { ReactElement } from "react";
 
-import { Autocomplete as MaterialAutocomplete, TextField  } from "@mui/material";
-
+import { Autocomplete as MaterialAutocomplete, TextField } from "@mui/material";
 
 export function Autocomplete(): JSX.Element {
   return (
-    <MaterialAutocomplete  
-    options={top100Films}
-    getOptionLabel={option => option.title}
-    renderInput={params => (
+    <MaterialAutocomplete
+      options={top100Films}
+      getOptionLabel={(option) => option.title}
+      renderInput={(params) => (
         <TextField {...params} label="Combo box" variant="outlined" fullWidth />
       )}
     />
@@ -21,5 +20,4 @@ const top100Films = [
   { title: "The Godfather: Part II", year: 1974 },
   { title: "The Dark Knight", year: 2008 },
   { title: "12 Angry Men", year: 1957 },
-
-]
+];

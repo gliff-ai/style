@@ -7,24 +7,21 @@ export default {
 };
 
 // A wrapper function from Storybook that allows you to pass in props to your component. We use this for showing controls
-const Template = (args: any) => 
-
- <HtmlTooltip
-            {...args}
-             placement={"top-start"}
-            open={true}
-            title={
-              <TooltipTitle
-                tooltip={{
-                  name: "Tooltip With Big Shortcut",
-                  shortcut: "space",
-                  shortcutSymbol: "cmd",
-                }}
-              />
-            }
- />           
+const Template = (args: any) => (
+  <HtmlTooltip
+    open={true}
+    placement={"top-start"}
+    title={<TooltipTitle {...args} />}
+  >
+    <p></p>
+  </HtmlTooltip>
+);
 export const Primary = Template.bind({});
 
 Primary.args = {
-  label: "Tooltip",
+  tooltip: {
+    name: "hskahadd",
+    shortcut: "K",
+    shortcutSymbol: "cmd",
+  },
 };

@@ -185,9 +185,9 @@ export const theme = createTheme({
             color: darkGrey,
           },
         },
-        shrink:{
+        shrink: {
           fontSize: "9px",
-        }
+        },
       },
     },
 
@@ -237,7 +237,7 @@ export const theme = createTheme({
         },
       },
     },
-   
+
     MuiAccordionSummary: {
       styleOverrides: {
         root: {

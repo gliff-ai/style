@@ -9,9 +9,6 @@ export default {
 };
 
 // A wrapper function from Storybook that allows you to pass in props to your component. We use this for showing controls
-const Template = (args: any) => (
-    <Autocomplete {...args}/>
-);
+const Template = (args: any) => <Autocomplete {...args} />;
 
 export const AutocompleteSingle = Template.bind({});
-

@@ -1,5 +1,5 @@
-import Tooltip, { TooltipProps, tooltipClasses } from '@mui/material/Tooltip';
-import { styled } from '@mui/material/styles';
+import Tooltip, { TooltipProps, tooltipClasses } from "@mui/material/Tooltip";
+import { styled } from "@mui/material/styles";
 import { veryLightBlue, white, darkGrey } from "../../theme";
 
 export const HtmlTooltip = styled(({ className, ...props }: TooltipProps) => (
