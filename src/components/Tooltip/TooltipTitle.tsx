@@ -6,21 +6,20 @@ import {
   ThemeProvider,
   StyledEngineProvider,
 } from "@mui/material";
-
 import makeStyles from "@mui/styles/makeStyles";
-
+import SVG from "react-inlinesvg";
 import { theme, darkGrey } from "../../theme";
 import type { Tooltip } from "../../tooltips";
 
 type Props = {
-  tooltip: Omit<Tooltip, "icon">;
+  tooltip: Tooltip;
 };
 
-const useStyles = makeStyles({
-  mainbox: {
-    display: "flex",
+const mainbox = {
+  display: "flex",
     alignItems: "center",
     justifyItems: "space-between",
+    height: "35px",
     "& > div:first-child": {
       // Tooltip text
       marginLeft: "8px",
@@ -36,9 +35,13 @@ const useStyles = makeStyles({
     },
     "& > div:nth-of-type(2)": {
       // First shortcut icon
-      marginLeft: "4px",
+      marginLeft: "10px",
     },
-  },
+}
+
+
+const useStyles = makeStyles({
+ 
   avatarFontSize: {
     fontSize: "14px !important",
     lineHeight: "14px !important",
@@ -49,6 +52,7 @@ const useStyles = makeStyles({
     lineHeight: "9px !important",
     fontWeight: 500,
   },
+  tooltipIcon: { width: "auto", height: "24px" },
 });
 
 export const TooltipTitle = ({ tooltip }: Props): ReactElement => {
@@ -67,7 +71,6 @@ export const TooltipTitle = ({ tooltip }: Props): ReactElement => {
           {tooltip.shortcutSymbol.toUpperCase()}
         </Typography>
       </Avatar>
-
       <Avatar>
         <Typography
           className={
@@ -87,13 +90,28 @@ export const TooltipTitle = ({ tooltip }: Props): ReactElement => {
   return (
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme}>
-        <Box className={classes.mainbox}>
+        <Box sx={{...mainbox}}>
           <Box>
-            <Typography>{tooltip.name}</Typography>
+            <Typography
+              sx={{
+                whiteSpace: "nowrap",
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+              }}
+            >
+              {tooltip.name}
+            </Typography>
           </Box>
-          {!tooltip.shortcut ? null : hasShortcutSymbol}
+          {tooltip?.icon && (
+            <SVG src={tooltip?.icon} className={classes.tooltipIcon} />
+          )}
+          {tooltip.shortcut && hasShortcutSymbol}
+
         </Box>
       </ThemeProvider>
     </StyledEngineProvider>
   );
 };
+
+
+
