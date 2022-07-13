@@ -1,6 +1,12 @@
 import { ReactElement } from "react";
 
-import { Card as MaterialCard, Paper, Typography, styled } from "@mui/material";
+import {
+  Card as MaterialCard,
+  Paper,
+  Typography,
+  styled,
+
+} from "@mui/material";
 import SVG from "react-inlinesvg";
 import { theme } from "../../theme";
 import { icons } from "../../icons";
@@ -33,25 +39,24 @@ const CardIconButton = styled(IconButton)({
 
 export function Card(props: Props): JSX.Element {
   return (
-    <MaterialCard
-      sx={{
-        borderRadius: "6px",
-      }}
-    >
+    <MaterialCard sx={{ borderRadius: "8px" }}>
       <Paper
         elevation={0}
-        variant="outlined"
-        square
         sx={{
           p: "8px 16px",
           backgroundColor: props.warningDialog
             ? theme.palette.info.light
             : theme.palette.primary.main,
           position: "relative",
-          borderRadius: "6px 6px 0 0",
+          borderRadius: "8px 8px 0 0",
           display: "flex",
           alignItems: "center",
+          height: "27px",
           justifyContent: "space-between",
+          "button:last-child": {
+            marginRight: "-8px",
+          },
+          border: `1px solid ${props.warningDialog ? "#9F6DEA":"#02E098"}`,
         }}
       >
         {props.warningDialog && (
@@ -91,7 +96,12 @@ export function Card(props: Props): JSX.Element {
 
       <Paper
         elevation={0}
-        sx={{ p: props.internalPadding ? null : "12px 16px 14px" }}
+        sx={{
+          p: props.internalPadding ? null : "12px 16px 14px",
+          borderRadius: "0px 0px 8px 8px",
+          border: "1px solid #d9dde9",
+          borderTop: "none",
+        }}
       >
         {props.children}
       </Paper>
