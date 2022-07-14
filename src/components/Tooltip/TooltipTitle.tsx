@@ -39,7 +39,6 @@ const mainbox = {
 };
 
 export const TooltipTitle = ({ tooltip }: Props): ReactElement => {
-  console.log(tooltip.shortcutSymbol);
 
   const hasShortcutSymbol = tooltip.shortcutSymbol ? (
     <>
@@ -62,7 +61,6 @@ export const TooltipTitle = ({ tooltip }: Props): ReactElement => {
           {tooltip.shortcutSymbol.toUpperCase()}
         </Typography>
       </Avatar>
-      {console.log(tooltip.shortcutSymbol.length)}
       <Avatar>
         <Typography
           sx={
@@ -103,7 +101,7 @@ export const TooltipTitle = ({ tooltip }: Props): ReactElement => {
             </Typography>
           </Box>
           {tooltip?.icon && (
-            <SVG src={tooltip?.icon} width="auto" height="24px" />
+            <SVG src={tooltip?.icon} width="100%" height="24px" />
           )}
           {tooltip.shortcut && hasShortcutSymbol}
         </Box>

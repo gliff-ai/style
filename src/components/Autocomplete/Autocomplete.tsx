@@ -6,7 +6,7 @@ export function Autocomplete(): JSX.Element {
   return (
     <MaterialAutocomplete
       options={top100Films}
-      getOptionLabel={(option) => option.title}
+      getOptionLabel={(option: any) => option.title}
       renderInput={(params) => (
         <TextField {...params} label="Combo box" variant="outlined" fullWidth />
       )}
