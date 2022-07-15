@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable react/jsx-props-no-spreading */
 import { Box } from "@mui/system";
-import { TextField } from "./TextField";
+import { TextField } from "./Textfield";
 
 export default {
   title: "TextField",

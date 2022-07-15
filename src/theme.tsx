@@ -267,8 +267,9 @@ export const theme = createTheme({
     MuiAutocomplete: {
       styleOverrides: {
         option: {
+          fontSize: "15px",
           "&.Mui-focused": {
-            backgroundColor: `${mainGreen} !important`,
+             backgroundColor: `${lightGrey} !important` ,
           },
         },
       },
