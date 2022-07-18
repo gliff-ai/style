@@ -30,7 +30,7 @@ import {
   Popper,
   MuiCard,
   Paper,
-  Dialog,
+  Dialogue,
   Card,
   Box,
   DataGrid,
@@ -78,7 +78,7 @@ const AdvancedDialogExample = (): ReactElement => {
       <IconButton
         data-testid="small-button"
         id="small-button"
-        tooltip={{ name: "Advanced Dialog" }}
+        tooltip={{ name: "Advanced Dialogue" }}
         icon={imgSrc("icon")}
         size="medium"
         onClick={() => {
@@ -87,13 +87,13 @@ const AdvancedDialogExample = (): ReactElement => {
       />
 
       <AdvancedDialog
-        title="Advanced Dialog"
+        title="Advanced Dialogue"
         open={open}
-        warningDialog
+        warningDialogue
         onClose={onClose}
         children={
           <Typography>
-            I am an Advanced Dialog. My state is controlled from the parent
+            I am an Advanced Dialogue. My state is controlled from the parent
             component
           </Typography>
         }
@@ -347,7 +347,7 @@ const app = (
 
           <br></br>
           <Box sx={{ width: "300px" }}>
-            <Card title={"Example Card"} warningDialog>
+            <Card title={"Example Card"} warningDialogue>
               <Typography>This is a warning card.</Typography>
             </Card>
           </Box>
@@ -434,14 +434,14 @@ const app = (
             </ButtonGroup>
           </div>
 
-          <h2>Popover And Dialog</h2>
+          <h2>Popover And Dialogue</h2>
 
-          <Dialog
-            title="Example Dialog"
+          <Dialogue
+            title="Example Dialogue"
             TriggerButton={
               <IconButton
                 tooltip={{
-                  name: "Open Dialog",
+                  name: "Open Dialogue",
                 }}
                 icon={imgSrc("icon")}
                 size="medium"
