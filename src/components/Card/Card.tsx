@@ -1,12 +1,6 @@
 import { ReactElement } from "react";
 
-import {
-  Card as MaterialCard,
-  Paper,
-  Typography,
-  styled,
-
-} from "@mui/material";
+import { Card as MaterialCard, Paper, Typography, styled } from "@mui/material";
 import SVG from "react-inlinesvg";
 import { theme } from "../../theme";
 import { icons } from "../../icons";
@@ -21,6 +15,7 @@ interface Props {
   warningDialog?: boolean;
   isPinned?: boolean | null;
   handlePin?: () => void;
+  id?: string | null;
 }
 
 const CardIconButton = styled(IconButton)({
@@ -38,6 +33,15 @@ const CardIconButton = styled(IconButton)({
 });
 
 export function Card(props: Props): JSX.Element {
+  let id: string;
+  if (props.id === null || props.id === undefined) {
+    id = Math.random()
+      .toString(36)
+      .replace(/[^a-z]+/g, "")
+      .substr(0, 5);
+  } else {
+    id = props.id;
+  }
   return (
     <MaterialCard sx={{ borderRadius: "8px" }}>
       <Paper
@@ -56,7 +60,7 @@ export function Card(props: Props): JSX.Element {
           "button:last-child": {
             marginRight: "-8px",
           },
-          border: `1px solid ${props.warningDialog ? "#9F6DEA":"#02E098"}`,
+          border: `1px solid ${props.warningDialog ? "#9F6DEA" : "#02E098"}`,
         }}
       >
         {props.warningDialog && (
@@ -82,6 +86,7 @@ export function Card(props: Props): JSX.Element {
             backgroundColor={props.isPinned ? "#FFFFFF" : "inherit"}
             tooltip={{ name: props.isPinned ? "Turn Off Pin" : "Pin Open" }}
             onClick={props.handlePin}
+            id={`${id}-dailog-pin`}
           />
         )}
         {props.closeButton && (
@@ -90,6 +95,7 @@ export function Card(props: Props): JSX.Element {
             tooltip={{ name: "Close" }}
             onClick={props.handleClose}
             iconColor={props.warningDialog ? "#FFFFFF" : "#000000"}
+            id={`${id}-dailog-close`}
           />
         )}
       </Paper>
@@ -115,4 +121,5 @@ Card.defaultProps = {
   warningDialog: null,
   isPinned: null,
   handlePin: null,
+  id: null,
 };
