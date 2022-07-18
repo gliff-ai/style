@@ -69,6 +69,7 @@ export {
   Accordion,
   AccordionSummary,
   AccordionDetails,
+  Link,
 } from "@mui/material";
 
 export type { GridRenderCellParams, GridColDef } from "@mui/x-data-grid";

@@ -44,12 +44,6 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           textTransform: "none",
-          borderRadius: "6px",
-          fontWeight: 400,
-          fontSize: "15px",
-          letterSpacing: 0,
-          padding: "7px 20px",
-          boxShadow: "none",
         },
 
         containedPrimary: {
@@ -197,6 +191,9 @@ export const theme = createTheme({
             color: darkGrey,
           },
         },
+        shrink: {
+          fontSize: "9px",
+        },
       },
     },
 
@@ -235,6 +232,14 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           height: "50px",
+          borderRadius: "8px",
+          fontSize: "16px",
+          "&:hover > fieldset": {
+            borderColor: `${mainGreen} !important`,
+          },
+          "&.Mui-focused > fieldset": {
+            border: `1px solid ${black} !important`,
+          },
         },
       },
     },
@@ -262,8 +267,9 @@ export const theme = createTheme({
     MuiAutocomplete: {
       styleOverrides: {
         option: {
+          fontSize: "15px",
           "&.Mui-focused": {
-            backgroundColor: `${mainGreen} !important`,
+            backgroundColor: `${lightGrey} !important`,
           },
         },
       },

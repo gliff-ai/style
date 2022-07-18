@@ -8,6 +8,15 @@ interface Props extends ButtonProps {
   disabled?: boolean;
 }
 
+const button = {
+  borderRadius: "6px",
+  fontWeight: 400,
+  fontSize: "15px",
+  letterSpacing: 0,
+  padding: "7px 20px",
+  boxShadow: "none",
+};
+
 export function Button({
   text,
   onClick,
@@ -23,6 +32,7 @@ export function Button({
       disableElevation
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...rest}
+      sx={{ ...button }}
     >
       {text}
     </MuiButton>
