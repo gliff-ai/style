@@ -1,6 +1,6 @@
 import { ReactElement, useState, MouseEvent, cloneElement } from "react";
 import { Popover as MaterialPopover, PopoverOrigin } from "@mui/material";
-import { Card } from "./Card";
+import { Card } from "@/components";
 
 export const imgSrc = (src: string, type = "svg"): string =>
   new URL(`/src/assets/${src}.${type}`, import.meta.url).href;
