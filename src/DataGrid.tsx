@@ -15,7 +15,7 @@ export function DataGrid({
   ...rest
 }: Props): ReactElement {
   return (
-    <Card title={title} noPadding>
+    <Card title={title} internalPadding={false}>
       <MaterialDataGrid
         pageSize={pageSize}
         rowsPerPageOptions={rowsPerPageOptions}
