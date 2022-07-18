@@ -7,6 +7,38 @@ import { TextField } from "./Textfield";
 export default {
   title: "TextField",
   component: TextField,
+    argTypes: { 
+      disableElevation: {
+      table: {
+        disable: true,
+      },
+    },
+    onClick: {
+      table: {
+        disable: true,
+      },
+    },
+    margin: {
+      table: {
+        disable: true,
+      },
+    },
+    focused: {
+      table: {
+        disable: true,
+      },
+    },
+    hiddenLabel: {
+      table: {
+        disable: true,
+      },
+    },   
+    ref: {
+      table: {
+        disable: true,
+      },
+    },
+    }
 };
 
 // A wrapper function from Storybook that allows you to pass in props to your component. We use this for showing controls

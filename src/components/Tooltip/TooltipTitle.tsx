@@ -39,7 +39,6 @@ const mainbox = {
 };
 
 export const TooltipTitle = ({ tooltip }: Props): ReactElement => {
-
   const hasShortcutSymbol = tooltip.shortcutSymbol ? (
     <>
       <Avatar>

@@ -269,7 +269,7 @@ export const theme = createTheme({
         option: {
           fontSize: "15px",
           "&.Mui-focused": {
-             backgroundColor: `${lightGrey} !important` ,
+            backgroundColor: `${lightGrey} !important`,
           },
         },
       },
