@@ -11,17 +11,10 @@ interface Props {
   close?: boolean;
   afterClose?: () => void;
   buttons?: boolean;
+  id?: string | null;
 }
 
-export function Dialogue({
-  children,
-  title,
-  TriggerButton,
-  close,
-  warningDialog,
-  afterClose,
-  buttons,
-}: Props): ReactElement | null {
+export function Dialogue(props: Props): ReactElement | null {
   const [open, setOpen] = useState<boolean>(false);
 
   const handleClick = (): void => {
@@ -31,30 +24,31 @@ export function Dialogue({
   const handleClose = (): void => {
     setOpen(false);
     // Reset defaults when Dialogue is closed
-    if (afterClose) {
-      afterClose();
+    if (props.afterClose) {
+      props.afterClose();
     }
   };
 
   // externally close the Dialogue
   useEffect(() => {
-    if (close) {
+    if (props.close) {
       setOpen(false);
     }
-  }, [close]);
+  }, [props.close]);
 
   const dialogContent = (
     <>
       <Card
-        title={title}
+        title={props.title}
         handleClose={handleClose}
         closeButton
-        warningDialog={warningDialog}
+        warningDialog={props.warningDialog}
+        id={props.id}
       >
         <>
-          <Typography>{children}</Typography>
+          <Typography>{props.children}</Typography>
 
-          {buttons && (
+          {props.buttons && (
             <Box
               sx={{
                 display: "flex",
@@ -65,7 +59,7 @@ export function Dialogue({
               <Button text="Button" color="secondary" variant="outlined" />
               <Button
                 text="Button"
-                color={warningDialog ? "secondary" : "primary"}
+                color={props.warningDialog ? "secondary" : "primary"}
               />
             </Box>
           )}
@@ -76,10 +70,12 @@ export function Dialogue({
 
   return (
     <>
-      {cloneElement(TriggerButton, {
+      {cloneElement(props.TriggerButton, {
         onClick: () => {
           handleClick();
-          const { onClick } = TriggerButton.props as { onClick?: () => void };
+          const { onClick } = props.TriggerButton.props as {
+            onClick?: () => void;
+          };
           if (onClick) onClick();
         },
       })}
@@ -96,4 +92,5 @@ Dialogue.defaultProps = {
   afterClose: null,
   warningDialog: null,
   buttons: false,
+  id: null,
 };
