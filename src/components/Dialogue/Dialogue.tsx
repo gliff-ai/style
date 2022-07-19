@@ -2,7 +2,7 @@ import { ReactElement, useState, cloneElement, useEffect } from "react";
 import { Box, Dialog as MaterialDialog, Typography } from "@mui/material";
 import { Card } from "../Card/Card";
 import { Button } from "../Button/Button";
-import { white } from "@/theme";
+import { white } from "../../theme";
 
 interface Props {
   children?: ReactElement | null;
