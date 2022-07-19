@@ -2,7 +2,7 @@ import { ReactElement } from "react";
 
 import { Card as MaterialCard, Paper, Typography, styled } from "@mui/material";
 import SVG from "react-inlinesvg";
-import { theme } from "../../theme";
+import { theme, white } from "../../theme";
 import { icons } from "../../icons";
 import { IconButton } from "../../IconButton";
 
@@ -16,6 +16,7 @@ interface Props {
   isPinned?: boolean | null;
   handlePin?: () => void;
   id?: string | null;
+  backgroundColor?: string;
 }
 
 const CardIconButton = styled(IconButton)({
@@ -107,6 +108,7 @@ export function Card(props: Props): JSX.Element {
           borderRadius: "0px 0px 8px 8px",
           border: "1px solid #d9dde9",
           borderTop: "none",
+          backgroundColor: props.backgroundColor,
         }}
       >
         {props.children}
@@ -122,4 +124,5 @@ Card.defaultProps = {
   isPinned: null,
   handlePin: null,
   id: null,
+  backgroundColor: white,
 };
