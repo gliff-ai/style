@@ -56,7 +56,6 @@ export function Card(props: Props): JSX.Element {
           borderRadius: "8px 8px 0 0",
           display: "flex",
           alignItems: "center",
-          height: "27px",
           justifyContent: "space-between",
           "button:last-child": {
             marginRight: "-8px",
