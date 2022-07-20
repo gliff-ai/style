@@ -1,6 +1,6 @@
 import { DataGrid as MaterialDataGrid, DataGridProps } from "@mui/x-data-grid";
 import { ReactElement } from "react";
-import { Card } from "./Card";
+import { Card } from "@/components";
 
 interface Props extends DataGridProps {
   title: string;
@@ -15,7 +15,7 @@ export function DataGrid({
   ...rest
 }: Props): ReactElement {
   return (
-    <Card title={title} noPadding>
+    <Card title={title} internalPadding>
       <MaterialDataGrid
         pageSize={pageSize}
         rowsPerPageOptions={rowsPerPageOptions}

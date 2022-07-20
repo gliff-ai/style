@@ -2,6 +2,7 @@ import { ReactElement, useState, cloneElement, useEffect } from "react";
 import { Box, Dialog as MaterialDialog, Typography } from "@mui/material";
 import { Card } from "../Card/Card";
 import { Button } from "../Button/Button";
+import { white } from "../../theme";
 
 interface Props {
   children?: ReactElement | null;
@@ -12,6 +13,7 @@ interface Props {
   afterClose?: () => void;
   buttons?: boolean;
   id?: string | null;
+  backgroundColor?: string;
 }
 
 export function Dialogue(props: Props): ReactElement | null {
@@ -44,6 +46,7 @@ export function Dialogue(props: Props): ReactElement | null {
         closeButton
         warningDialog={props.warningDialog}
         id={props.id}
+        backgroundColor={props.backgroundColor}
       >
         <>
           <Typography>{props.children}</Typography>
@@ -93,4 +96,5 @@ Dialogue.defaultProps = {
   warningDialog: null,
   buttons: false,
   id: null,
+  backgroundColor: white,
 };

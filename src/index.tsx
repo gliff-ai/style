@@ -10,24 +10,27 @@ export {
   mainGreen,
   black,
   darkGrey,
-} from "./theme";
+} from "@/theme";
 
-export { HtmlTooltip } from "./BaseHtmlTooltip";
+export { Card, Dialogue } from "@/components";
 
-export { BaseIconButton } from "./BaseIconButton";
-export { IconButton } from "./IconButton";
-export { BaseTextButton } from "./BaseTextButton";
-export { BaseTooltipTitle } from "./BaseTooltipTitle";
-export { Dialog } from "./Dialog";
-export { Popover } from "./Popover";
-export { Logo } from "./Logo";
-export { LoadingSpinner } from "./LoadingSpinner";
-export { WarningSnackbar } from "./WarningSnackbar";
-export { ProgressSnackbar } from "./ProgressSnackbar";
-export { Popper } from "./Popper";
-export { Card } from "./Card";
-export { DataGrid } from "./DataGrid";
-export { AdvancedDialog } from "./AdvancedDialog";
+export { icons } from "@/icons";
+
+export { HtmlTooltip } from "@/BaseHtmlTooltip";
+export { BaseIconButton } from "@/BaseIconButton";
+export { IconButton } from "@/IconButton";
+export { BaseTextButton } from "@/BaseTextButton";
+export { BaseTooltipTitle } from "@/BaseTooltipTitle";
+export { Popover } from "@/Popover";
+export { Logo } from "@/Logo";
+export { LoadingSpinner } from "@/LoadingSpinner";
+export { WarningSnackbar } from "@/WarningSnackbar";
+export { ProgressSnackbar } from "@/ProgressSnackbar";
+export { Popper } from "@/Popper";
+export { DataGrid } from "@/DataGrid";
+export { AdvancedDialog } from "@/AdvancedDialog";
+export type { Task } from "@/ProgressSnackbar";
+export type { Tooltip, Tooltips } from "@/tooltips";
 
 export {
   CardContent,
@@ -72,12 +75,6 @@ export {
 } from "@mui/material";
 
 export type { GridRenderCellParams, GridColDef } from "@mui/x-data-grid";
-
-export type { Task } from "./ProgressSnackbar";
-
-export type { Tooltip, Tooltips } from "./tooltips";
-
-export { icons } from "./icons";
 
 export const generateClassName =
   (prefix: string) =>
