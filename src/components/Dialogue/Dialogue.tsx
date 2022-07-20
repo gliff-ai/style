@@ -1,4 +1,10 @@
-import { ReactElement, useState, cloneElement, useEffect } from "react";
+import {
+  ReactElement,
+  useState,
+  cloneElement,
+  useEffect,
+  MouseEvent,
+} from "react";
 import { Box, Dialog as MaterialDialog, Typography } from "@mui/material";
 import { Card } from "../Card/Card";
 import { Button } from "../Button/Button";
@@ -11,9 +17,9 @@ interface Props {
   warningDialog?: boolean;
   close?: boolean;
   afterClose?: () => void;
-  buttons?: boolean;
   id?: string | null;
   backgroundColor?: string;
+  onConfirm?: (event: MouseEvent) => void | null;
 }
 
 export function Dialogue(props: Props): ReactElement | null {
@@ -51,7 +57,7 @@ export function Dialogue(props: Props): ReactElement | null {
         <>
           <Typography>{props.children}</Typography>
 
-          {props.buttons && (
+          {props.onConfirm && (
             <Box
               sx={{
                 display: "flex",
@@ -59,10 +65,19 @@ export function Dialogue(props: Props): ReactElement | null {
                 marginTop: "60px",
               }}
             >
-              <Button text="Button" color="secondary" variant="outlined" />
               <Button
-                text="Button"
+                text="Cancel"
+                color="secondary"
+                variant="outlined"
+                onClick={handleClose}
+              />
+              <Button
+                text="Confirm"
                 color={props.warningDialog ? "secondary" : "primary"}
+                onClick={(e) => {
+                  props.onConfirm(e);
+                  handleClose();
+                }}
               />
             </Box>
           )}
@@ -97,4 +112,5 @@ Dialogue.defaultProps = {
   buttons: false,
   id: null,
   backgroundColor: white,
+  onConfirm: null,
 };
