@@ -6,3 +6,4 @@ export { IconButton } from "./IconButton/IconButton";
 export { LoadingSpinner } from "./LoadingSpinner/LoadingSpinner";
 export { Logo } from "./Logo/Logo";
 export { Popover } from "./Popover/Popover";
+export { Notepad } from "./Notepad";

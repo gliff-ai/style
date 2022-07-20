@@ -12,7 +12,7 @@ export {
   darkGrey,
 } from "@/theme";
 
-export { Card, Dialogue } from "@/components";
+export { Card, Dialogue, Notepad } from "@/components";
 
 export { icons } from "@/icons";
 
@@ -31,6 +31,7 @@ export { DataGrid } from "@/DataGrid";
 export { AdvancedDialog } from "@/AdvancedDialog";
 export type { Task } from "@/ProgressSnackbar";
 export type { Tooltip, Tooltips } from "@/tooltips";
+export { Dialog } from "@/Dialog";
 
 export {
   CardContent,
