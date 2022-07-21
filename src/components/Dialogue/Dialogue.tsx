@@ -20,6 +20,7 @@ interface Props {
   id?: string | null;
   backgroundColor?: string;
   onConfirm?: (event: MouseEvent) => void | null;
+  confirmEnabled?: boolean;
 }
 
 export function Dialogue(props: Props): ReactElement | null {
@@ -78,6 +79,7 @@ export function Dialogue(props: Props): ReactElement | null {
                   props.onConfirm(e);
                   handleClose();
                 }}
+                disabled={!props.confirmEnabled}
               />
             </Box>
           )}
@@ -113,4 +115,5 @@ Dialogue.defaultProps = {
   id: null,
   backgroundColor: white,
   onConfirm: null,
+  confirmEnabled: true,
 };
