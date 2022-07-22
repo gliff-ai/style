@@ -35,6 +35,7 @@ import {
   Box,
   DataGrid,
   AdvancedDialog,
+  Notepad,
 } from "../src";
 
 export const imgSrc = (src: string, type = "svg"): string =>
@@ -468,6 +469,11 @@ const app = (
           />
           <h2>Popper</h2>
           <ExamplePopper />
+          <h2>Notepad</h2>
+          <div style={{ width: "300px" }}>
+            <Notepad rows={5} placeholder="Helper text" />
+          </div>
+
           <h2>Icons</h2>
           <section style={{ float: "left" }}>
             {Object.entries(icons).map(([name, src]) => (

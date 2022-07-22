@@ -12,7 +12,7 @@ export {
   darkGrey,
 } from "@/theme";
 
-export { Card, Dialogue, Button } from "@/components";
+export { Card, Dialogue, Notepad, Button } from "@/components";
 
 export { icons } from "@/icons";
 

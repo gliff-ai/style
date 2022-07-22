@@ -1,4 +1,10 @@
-import { ReactElement, useState, cloneElement, useEffect } from "react";
+import {
+  ReactElement,
+  useState,
+  cloneElement,
+  useEffect,
+  MouseEvent,
+} from "react";
 import { Box, Dialog as MaterialDialog, Typography } from "@mui/material";
 import { Card } from "../Card/Card";
 import { Button } from "../Button/Button";
@@ -10,10 +16,13 @@ interface Props {
   title: string;
   warningDialog?: boolean;
   close?: boolean;
-  afterClose?: () => void;
-  buttons?: boolean;
+  afterOpen?: (() => void) | null;
+  afterClose?: (() => void) | null;
   id?: string | null;
   backgroundColor?: string;
+  onCancel?: (() => void) | null;
+  onConfirm?: ((event: MouseEvent) => void) | null;
+  confirmEnabled?: boolean;
 }
 
 export function Dialogue(props: Props): ReactElement | null {
@@ -21,6 +30,10 @@ export function Dialogue(props: Props): ReactElement | null {
 
   const handleClick = (): void => {
     setOpen(true);
+
+    if (props.afterOpen) {
+      props.afterOpen();
+    }
   };
 
   const handleClose = (): void => {
@@ -51,7 +64,7 @@ export function Dialogue(props: Props): ReactElement | null {
         <>
           <Typography>{props.children}</Typography>
 
-          {props.buttons && (
+          {props.onConfirm && (
             <Box
               sx={{
                 display: "flex",
@@ -59,10 +72,25 @@ export function Dialogue(props: Props): ReactElement | null {
                 marginTop: "60px",
               }}
             >
-              <Button text="Button" color="secondary" variant="outlined" />
               <Button
-                text="Button"
+                text="Cancel"
+                color="secondary"
+                variant="outlined"
+                onClick={() => {
+                  if (props.onCancel) {
+                    props.onCancel();
+                  }
+                  handleClose();
+                }}
+              />
+              <Button
+                text="Confirm"
                 color={props.warningDialog ? "secondary" : "primary"}
+                onClick={(e) => {
+                  props.onConfirm(e);
+                  handleClose();
+                }}
+                disabled={!props.confirmEnabled}
               />
             </Box>
           )}
@@ -92,9 +120,13 @@ export function Dialogue(props: Props): ReactElement | null {
 Dialogue.defaultProps = {
   children: null,
   close: null,
+  afterOpen: null,
   afterClose: null,
   warningDialog: null,
   buttons: false,
   id: null,
   backgroundColor: white,
+  onCancel: null,
+  onConfirm: null,
+  confirmEnabled: true,
 };
