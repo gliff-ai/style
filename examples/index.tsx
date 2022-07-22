@@ -17,7 +17,7 @@ import ReactDOM from "react-dom";
 import SVG from "react-inlinesvg";
 
 import {
-  BaseTextButton,
+  Button,
   HtmlTooltip,
   BaseTooltipTitle,
   Popover,
@@ -57,7 +57,7 @@ const SnackBar = (): ReactElement => {
 
   return (
     <>
-      <BaseTextButton text="Open" onClick={handleClick} />
+      <Button text="Open" onClick={handleClick} />
       <WarningSnackbar
         messageText={<>Snackbar</>}
         onClose={handleClose}
@@ -120,7 +120,7 @@ const ExamplePopper = (): ReactElement => {
 
   return (
     <>
-      <BaseTextButton text="Open Popper" onClick={handleClick} />
+      <Button text="Open Popper" onClick={handleClick} />
 
       <Popper
         open={Boolean(anchorEl)}
@@ -238,8 +238,8 @@ const app = (
         <div style={{ margin: "50px" }}>
           <h2>Logo</h2>
           <Logo />
-          <h2>BaseTextButton</h2>
-          <BaseTextButton text="Hello World" />
+          <h2>Button</h2>
+          <Button text="Hello World" />
           <br></br>
           <br></br>
           <DataGrid
@@ -252,7 +252,7 @@ const app = (
           <br></br>
           <br></br>
           <br></br>
-          <BaseTextButton text="Hello World" disabled={true} />
+          <Button text="Hello World" disabled={true} />
           <h2>SnackBar</h2>
           <SnackBar />
           <h2>HtmlTooltip / BaseTooltipTitle</h2>
