@@ -44,12 +44,6 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           textTransform: "none",
-          borderRadius: "6px",
-          fontWeight: 400,
-          fontSize: "15px",
-          letterSpacing: 0,
-          padding: "7px 20px",
-          boxShadow: "none",
         },
 
         containedPrimary: {

@@ -12,14 +12,13 @@ export {
   darkGrey,
 } from "@/theme";
 
-export { Card, Dialogue, Notepad } from "@/components";
+export { Card, Dialogue, Notepad, Button } from "@/components";
 
 export { icons } from "@/icons";
 
 export { HtmlTooltip } from "@/BaseHtmlTooltip";
 export { BaseIconButton } from "@/BaseIconButton";
 export { IconButton } from "@/IconButton";
-export { BaseTextButton } from "@/BaseTextButton";
 export { BaseTooltipTitle } from "@/BaseTooltipTitle";
 export { Popover } from "@/Popover";
 export { Logo } from "@/Logo";
@@ -52,7 +51,7 @@ export {
   Avatar,
   InputLabel,
   Alert,
-  Button,
+  Button as MuiButton,
   ButtonGroup,
   Divider,
   Input,
