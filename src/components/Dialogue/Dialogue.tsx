@@ -16,10 +16,12 @@ interface Props {
   title: string;
   warningDialog?: boolean;
   close?: boolean;
-  afterClose?: () => void;
+  afterOpen?: (() => void) | null;
+  afterClose?: (() => void) | null;
   id?: string | null;
   backgroundColor?: string;
-  onConfirm?: (event: MouseEvent) => void | null;
+  onCancel?: (() => void) | null;
+  onConfirm?: ((event: MouseEvent) => void) | null;
   confirmEnabled?: boolean;
 }
 
@@ -28,6 +30,10 @@ export function Dialogue(props: Props): ReactElement | null {
 
   const handleClick = (): void => {
     setOpen(true);
+
+    if (props.afterOpen) {
+      props.afterOpen();
+    }
   };
 
   const handleClose = (): void => {
@@ -70,7 +76,12 @@ export function Dialogue(props: Props): ReactElement | null {
                 text="Cancel"
                 color="secondary"
                 variant="outlined"
-                onClick={handleClose}
+                onClick={() => {
+                  if (props.onCancel) {
+                    props.onCancel();
+                  }
+                  handleClose();
+                }}
               />
               <Button
                 text="Confirm"
@@ -109,11 +120,13 @@ export function Dialogue(props: Props): ReactElement | null {
 Dialogue.defaultProps = {
   children: null,
   close: null,
+  afterOpen: null,
   afterClose: null,
   warningDialog: null,
   buttons: false,
   id: null,
   backgroundColor: white,
+  onCancel: null,
   onConfirm: null,
   confirmEnabled: true,
 };
