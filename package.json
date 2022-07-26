@@ -4,7 +4,7 @@
   "description": "Theme styles for gliff.ai apps",
   "main": "dist/index.es.js",
   "module": "dist/index.es.js",
-  "typings": "dist/index.d.ts",
+  "typings": "dist/src/index.d.ts",
   "files": [
     "dist"
   ],

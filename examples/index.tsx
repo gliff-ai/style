@@ -90,7 +90,7 @@ const AdvancedDialogExample = (): ReactElement => {
       <AdvancedDialog
         title="Advanced Dialogue"
         open={open}
-        warningDialogue
+        warningDialog
         onClose={onClose}
         children={
           <Typography>
@@ -231,6 +231,20 @@ const rows = [
   { id: 12, lastName: "Stark", firstName: "Arya", age: 16 },
 ];
 
+const NotepadWrapper = (): ReactElement => {
+  const [notepadText, setNotepadText] = useState<string>("");
+  return (
+    <Notepad
+      value={notepadText}
+      onChange={(e) => {
+        setNotepadText(e.target.value);
+      }}
+      rows={5}
+      placeholder="Helper text"
+    />
+  );
+};
+
 const app = (
   <StylesProvider>
     <StyledEngineProvider injectFirst>
@@ -348,7 +362,7 @@ const app = (
 
           <br></br>
           <Box sx={{ width: "300px" }}>
-            <Card title={"Example Card"} warningDialogue>
+            <Card title={"Example Card"} warningDialog>
               <Typography>This is a warning card.</Typography>
             </Card>
           </Box>
@@ -470,10 +484,9 @@ const app = (
           <h2>Popper</h2>
           <ExamplePopper />
           <h2>Notepad</h2>
-          <div style={{ width: "300px" }}>
-            <Notepad rows={5} placeholder="Helper text" />
+          <div style={{ width: "500px" }}>
+            <NotepadWrapper />
           </div>
-
           <h2>Icons</h2>
           <section style={{ float: "left" }}>
             {Object.entries(icons).map(([name, src]) => (
