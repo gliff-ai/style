@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+import { ReactElement, SyntheticEvent } from "react";
 import SVG from "react-inlinesvg";
 import {
   IconButton,
@@ -6,6 +6,7 @@ import {
   SnackbarContent,
   ThemeProvider,
   StyledEngineProvider,
+  SnackbarCloseReason,
 } from "@mui/material";
 import makeStyles from "@mui/styles/makeStyles";
 import { theme } from "./theme";
@@ -43,7 +44,10 @@ const useStyle = makeStyles(() => ({
 
 interface Props {
   open: boolean;
-  onClose: () => void;
+  onClose: (
+    event?: Event | SyntheticEvent,
+    reason?: SnackbarCloseReason
+  ) => void;
   messageText: string | ReactElement;
 }
 
