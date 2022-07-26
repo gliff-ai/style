@@ -11,6 +11,7 @@ import { Button } from "../Button/Button";
 import { white } from "../../theme";
 
 interface Props {
+  id?: string | null;
   children?: ReactElement | null;
   TriggerButton: JSX.Element;
   title: string;
@@ -18,11 +19,11 @@ interface Props {
   close?: boolean;
   afterOpen?: (() => void) | null;
   afterClose?: (() => void) | null;
-  id?: string | null;
   backgroundColor?: string;
-  onCancel?: (() => void) | null;
-  onConfirm?: ((event: MouseEvent) => void) | null;
   confirmEnabled?: boolean;
+  confirmText?: string;
+  onConfirm?: ((event: MouseEvent) => void) | null;
+  onCancel?: (() => void) | null;
 }
 
 export function Dialogue(props: Props): ReactElement | null {
@@ -84,7 +85,7 @@ export function Dialogue(props: Props): ReactElement | null {
                 }}
               />
               <Button
-                text="Confirm"
+                text={props.confirmText}
                 color={props.warningDialog ? "secondary" : "primary"}
                 onClick={(e) => {
                   props.onConfirm(e);
@@ -129,4 +130,5 @@ Dialogue.defaultProps = {
   onCancel: null,
   onConfirm: null,
   confirmEnabled: true,
+  confirmText: "Confirm",
 };
