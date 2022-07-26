@@ -21,5 +21,5 @@
     "examples/**/*.ts*",
     "src/**/**/*.ts*",
   ],
-  "exclude": ["src/**/**/*_.ts*","node_modules/**/*"]
+  "exclude": ["src/**/**/*_.ts*"]
 }
