@@ -18,12 +18,8 @@
     "experimentalDecorators": true,
   },
   "include": [
-    "examples/src/**/*.tsx",
-    "src/**/*.tsx",
-    "src/**/*.ts",
-    "test/**/*.ts",
-    "typings/**/*.ts",
-    "./jest-setup.ts"
+    "examples/**/*.ts*",
+    "src/**/**/*.ts*",
   ],
-  "exclude": ["src/**/*_.tsx","node_modules/**/*"]
+  "exclude": ["src/**/**/*_.ts*"]
 }
