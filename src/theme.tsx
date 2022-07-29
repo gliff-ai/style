@@ -78,11 +78,11 @@ export const theme = createTheme({
         },
       },
     },
-
     MuiDialog: {
       styleOverrides: {
         paper: {
           borderRadius: "8px",
+          maxWidth: "unset",
         },
       },
     },
