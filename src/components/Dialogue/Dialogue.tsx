@@ -5,7 +5,7 @@ import {
   useEffect,
   MouseEvent,
 } from "react";
-import { Box, Dialog as MaterialDialog, Typography } from "@mui/material";
+import { Box, Dialog as MaterialDialog } from "@mui/material";
 import { Card } from "../Card/Card";
 import { Button } from "../Button/Button";
 import { white } from "../../theme";
@@ -63,8 +63,7 @@ export function Dialogue(props: Props): ReactElement | null {
         backgroundColor={props.backgroundColor}
       >
         <>
-          <Typography>{props.children}</Typography>
-
+          {props.children}
           {props.onConfirm && (
             <Box
               sx={{
